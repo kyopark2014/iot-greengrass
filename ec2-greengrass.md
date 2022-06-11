@@ -68,3 +68,20 @@ software.amazon.awssdk.core.exception.SdkClientException: Unable to load credent
 	at com.aws.greengrass.easysetup.GreengrassSetup.performSetup(GreengrassSetup.java:319)
 	at com.aws.greengrass.easysetup.GreengrassSetup.main(GreengrassSetup.java:269)
 ```  
+
+## config 확인
+
+```c
+echo $AWS_DEFAULT_REGION
+echo $AWS_ACCESS_KEY_ID
+echo $AWS_SECRET_ACCESS_KEY
+echo $AWS_SESSION_TOKEN
+```
+
+아래처럼 입력합니다. 
+
+```c
+export AWS_DEFAULT_REGION=ap-northeast-2
+export AWS_ACCESS_KEY_ID=SAMPLEIXN5TFSRWUTG2
+export AWS_SECRET_ACCESS_KEY=SAMPLE2mOX9sDr9UxE6GELyT9Xkhc6a5nPFDcgc
+```
