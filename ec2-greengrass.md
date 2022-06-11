@@ -35,6 +35,9 @@ $ sudo yum install java-1.8.0-openjdk
 
 3) install
 
+
+[Installer arguments](https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-installer.html)에서 각 argument에 대한 상세한 내용을 알 수 있습니다. 
+
 ```c
 sudo -E java -Droot="/greengrass/v2" -Dlog.store=FILE -jar ./GreengrassCore/lib/Greengrass.jar \
 --aws-region ap-northeast-2 \
