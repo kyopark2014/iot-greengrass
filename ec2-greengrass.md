@@ -47,6 +47,24 @@ sudo -E java -Droot="/greengrass/v2" -Dlog.store=FILE -jar ./GreengrassCore/lib/
 ```
 
 
+## config 확인
+
+아래와 같이 config 확인 명령어를 통해 변수들이 export 되어 있는지 확인 합니다. 
+
+```c
+echo $AWS_DEFAULT_REGION
+echo $AWS_ACCESS_KEY_ID
+echo $AWS_SECRET_ACCESS_KEY
+echo $AWS_SESSION_TOKEN
+```
+
+입력되지 않은 경우에 아래처럼 입력합니다. 
+
+```c
+export AWS_DEFAULT_REGION=ap-northeast-2
+export AWS_ACCESS_KEY_ID=SAMPLEIXN5TFSRWUTG2
+export AWS_SECRET_ACCESS_KEY=SAMPLE2mOX9sDr9UxE6GELyT9Xkhc6a5nPFDcgc
+```
 
 ## Troubleshooting
 
@@ -138,24 +156,6 @@ software.amazon.awssdk.services.iam.model.IamException: User: arn:aws:iam::accou
 	at com.aws.greengrass.easysetup.GreengrassSetup.provision(GreengrassSetup.java:519)
 	at com.aws.greengrass.easysetup.GreengrassSetup.performSetup(GreengrassSetup.java:319)
 	at com.aws.greengrass.easysetup.GreengrassSetup.main(GreengrassSetup.java:269)
-	
-
-
-## config 확인
-
-아래와 같이 config 확인 명령어를 통해 변수들이 export 되어 있는지 확인 합니다. 
-
-```c
-echo $AWS_DEFAULT_REGION
-echo $AWS_ACCESS_KEY_ID
-echo $AWS_SECRET_ACCESS_KEY
-echo $AWS_SESSION_TOKEN
 ```
 
-입력되지 않은 경우에 아래처럼 입력합니다. 
 
-```c
-export AWS_DEFAULT_REGION=ap-northeast-2
-export AWS_ACCESS_KEY_ID=SAMPLEIXN5TFSRWUTG2
-export AWS_SECRET_ACCESS_KEY=SAMPLE2mOX9sDr9UxE6GELyT9Xkhc6a5nPFDcgc
-```
