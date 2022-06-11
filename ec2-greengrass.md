@@ -98,7 +98,7 @@ software.amazon.awssdk.core.exception.SdkClientException: Unable to load credent
 
 ### no identity-based policy allows the iam:GetRole action
 
-아래와 같이 "no identity-based policy allows the iam:GetRole action" 에러가 발생합니다. 
+아래와 같이 "no identity-based policy allows the iam:GetRole action" 에러가 발생하는 경우에, [Minimal IAM policy for installer to provision resources](https://docs.aws.amazon.com/greengrass/v2/developerguide/provision-minimal-iam-policy.html)에 따라 policy가 추가 되어 있는지 확인 합니다. 
 
 ```c
 $ sudo -E java -Droot="/greengrass/v2" -Dlog.store=FILE -jar ./GreengrassCore/lib/Greengrass.jar --aws-region ap-northeast-2 --thing-name GreengrassCore --thing-group-name GreengrassGroup --component-default-user ggc_user:ggc_group --provision true --setup-system-service true --deploy-dev-tools true
