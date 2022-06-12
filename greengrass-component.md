@@ -136,3 +136,28 @@ $ sudo tail -f /greengrass/v2/logs/greengrass.log
 2022-06-12T17:04:48.335Z [INFO] (Thread-3) com.aws.greengrass.deployment.IotJobsHelper: No deployment job found. {ThingName=GreengrassCore}
 ```
 
+## 결과 확인 
+
+1) MQTT test clinet로 이동합니다. 
+
+https://ap-northeast-2.console.aws.amazon.com/iot/home?region=ap-northeast-2#/test
+
+
+로컬 Greengrass 컴포넌트를 테스트한 후 다음 명령어로 Core 디바이스를 제거합니다.
+
+```c
+sudo /greengrass/v2/bin/greengrass-cli deployment create --remove="com.example.HelloMqtt"
+```
+
+## 참고
+로컬 Greengrass 컴포넌트를 재 시작하려면 다음 명령어를 사용합니다.
+
+```c
+sudo /greengrass/v2/bin/greengrass-cli component restart --names "com.example.HelloWorld"
+```
+
+설치된 Greengrass 컴포넌트를 확인하려면 다음 명령어를 사용합니다.
+
+```c
+sudo /greengrass/v2/bin/greengrass-cli component list
+```
