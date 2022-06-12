@@ -2,7 +2,7 @@
 
 ## EC2 user 만들기
 
-1) iot용 계정 만들기 
+1) IoT용 계정 만들기 
 
 IAM console에서 Create Policy를 선택하여 "aws-policy-greengrass"를 생성합니다. 
 
@@ -329,7 +329,7 @@ software.amazon.awssdk.services.iot.model.IotException: User: arn:aws:sts::accou
 	at com.aws.greengrass.easysetup.GreengrassSetup.provision(GreengrassSetup.java:508)
 	at com.aws.greengrass.easysetup.GreengrassSetup.performSetup(GreengrassSetup.java:319)
 	at com.aws.greengrass.easysetup.GreengrassSetup.main(GreengrassSetup.java:269)
-	
+```	
 
 ## The security token included in the request is invalid
 
@@ -391,4 +391,4 @@ software.amazon.awssdk.services.iam.model.IamException: The security token inclu
 	at com.aws.greengrass.easysetup.GreengrassSetup.provision(GreengrassSetup.java:519)
 	at com.aws.greengrass.easysetup.GreengrassSetup.performSetup(GreengrassSetup.java:319)
 	at com.aws.greengrass.easysetup.GreengrassSetup.main(GreengrassSetup.java:269)
-	
+```	
