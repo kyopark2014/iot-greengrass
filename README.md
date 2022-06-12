@@ -9,4 +9,12 @@
 
 [AWS IoT Greengrass V2 for beginners (Korean)](https://catalog.us-east-1.prod.workshops.aws/workshops/0b21ceb7-2108-4a82-9e76-4c56d4b52db5/ko-KR)의 워크샵을 수행합니다. 
 
+
+arn:aws:iot:ap-northeast-2:account-id:thing/GreengrassCore
+
 ![noname](https://user-images.githubusercontent.com/52392004/173241708-ad053a77-3079-4d45-b9fc-afb1ca740b8d.png)
+
+
+arn:aws:iot:ap-northeast-2:account-id:thinggroup/GreengrassGroup
+
+![noname](https://user-images.githubusercontent.com/52392004/173241860-a045202c-de5a-4a13-a8ec-12bec2060be0.png)
