@@ -11,3 +11,9 @@
 
 
 1) [Greengrass CLI 설치](https://github.com/kyopark2014/iot-greengrass/blob/main/greengrass-cli.md)에 따라 Greengrass CLI를 설치합니다.
+
+
+
+2) Greengrass components 생성
+
+[Greengreen Component](https://github.com/kyopark2014/iot-greengrass/blob/main/greengrass-component.md)을 따라서, receipe와 artifact을 생성합니다.
