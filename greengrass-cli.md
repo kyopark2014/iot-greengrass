@@ -44,7 +44,10 @@ https://ap-northeast-2.console.aws.amazon.com/iot/home?region=ap-northeast-2#/gr
 
 ![noname](https://user-images.githubusercontent.com/52392004/173243420-f67479d9-0e1c-4fb9-af7d-b8ec5eca09bc.png)
 
-
+```c
+$ /greengrass/v2/bin/greengrass-cli -V
+bash: /greengrass/v2/bin/greengrass-cli: No such file or directory
+```
 
 ### To deploy the Greengrass CLI component (AWS CLI)
 
