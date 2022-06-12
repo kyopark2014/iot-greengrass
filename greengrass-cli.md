@@ -20,6 +20,11 @@ https://ap-northeast-2.console.aws.amazon.com/iot/home?region=ap-northeast-2#/gr
 
 4) [Specify target]에서 [Target type]으로 "Thing group"을 선택하고, [Target name]으로 생성한 group 이름을 선택합니다. 여기서는 기 생성한 "GreengrassGroup"을 선택합니다. 이후 [Next]를 선택합니다. 
 
+
+![noname](https://user-images.githubusercontent.com/52392004/173243225-633c987f-e82d-4d79-979f-364616661c03.png)
+
+
+
 5) 이후 [Select components]에 "aws.greengrass.Cli"가 선택되었는지 확인 후, [Next]를 선택합니다. 
 
 6) [Configure components]에서 Selected components에 "aws.greengrass.Cli" 확인후 [Next]를 선택합니다. 
