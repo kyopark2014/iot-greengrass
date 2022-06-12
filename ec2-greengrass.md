@@ -1,4 +1,4 @@
-# EC2에 greengrass 설치하기
+# EC2에 Greengrass 설치하기
 
 ## EC2 user 만들기
 
