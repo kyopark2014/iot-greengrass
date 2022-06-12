@@ -40,6 +40,10 @@ https://ap-northeast-2.console.aws.amazon.com/iot/home?region=ap-northeast-2#/gr
 ![image](https://user-images.githubusercontent.com/52392004/173243274-7df3c3ee-6fd2-4280-9234-4959c775a20a.png)
 
 
+9) [IoT job]을 선택하여 들어가면 아래처럼 
+
+![noname](https://user-images.githubusercontent.com/52392004/173243420-f67479d9-0e1c-4fb9-af7d-b8ec5eca09bc.png)
+
 
 
 ### To deploy the Greengrass CLI component (AWS CLI)
