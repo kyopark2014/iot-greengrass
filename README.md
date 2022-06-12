@@ -2,7 +2,7 @@
 
 ## EC2에 Greengrass 설치
 
-[EC2에 greengrass 설치하기](https://github.com/kyopark2014/iot-greengrass/blob/main/ec2-greengrass.md)에 따라서 Greengrass를 설치합니다. 
+[EC2에 Greengrass 설치하기](https://github.com/kyopark2014/iot-greengrass/blob/main/ec2-greengrass.md)에 따라서 Greengrass를 설치합니다. 
 
 
 ## Workshop
