@@ -105,5 +105,34 @@ sudo /greengrass/v2/bin/greengrass-cli deployment create \
   --recipeDir ~/GGv2Dev/recipes \
   --artifactDir ~/GGv2Dev/artifacts \
   --merge "com.example.HelloMqtt=1.0.0"
+Jun 12, 2022 5:02:01 PM software.amazon.awssdk.eventstreamrpc.EventStreamRPCConnection$1 onConnectionSetup
+INFO: Socket connection /greengrass/v2/ipc.socket:8033 to server result [AWS_ERROR_SUCCESS]
+Jun 12, 2022 5:02:01 PM software.amazon.awssdk.eventstreamrpc.EventStreamRPCConnection$1 onProtocolMessage
+INFO: Connection established with event stream RPC server
+Local deployment submitted! Deployment Id: f414af45-a4d1-4554-8ca3-555c105e89db
+```
+
+
+```c
+$ sudo tail -f /greengrass/v2/logs/greengrass.log
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2022-06-12T17:02:13.912Z [INFO] (pool-2-thread-93) com.aws.greengrass.deployment.DeploymentService: deployment-task-execution. Finished deployment task. {deploymentId=f414af45-a4d1-4554-8ca3-555c105e89db, serviceName=DeploymentService, currentState=RUNNING}
+2022-06-12T17:02:23.952Z [INFO] (pool-2-thread-12) com.aws.greengrass.deployment.DeploymentService: Current deployment finished. {DeploymentId=f414af45-a4d1-4554-8ca3-555c105e89db, serviceName=DeploymentService, currentState=RUNNING}
+2022-06-12T17:02:24.002Z [INFO] (pool-2-thread-12) com.aws.greengrass.deployment.DeploymentStatusKeeper: Stored deployment status. {DeploymentId=f414af45-a4d1-4554-8ca3-555c105e89db, DeploymentStatus=FAILED}
+2022-06-12T17:02:24.018Z [INFO] (pool-2-thread-12) com.aws.greengrass.deployment.DeploymentDirectoryManager: Persist link to last deployment. {link=/greengrass/v2/deployments/previous-failure}
+2022-06-12T17:02:24.018Z [INFO] (pool-2-thread-12) com.aws.greengrass.deployment.DeploymentDirectoryManager: Clean up link to earlier deployment. {link=/greengrass/v2/deployments/previous-success}
+2022-06-12T17:04:40.891Z [INFO] (Thread-3) com.aws.greengrass.mqttclient.AwsIotMqttClient: Connection resumed. {clientId=GreengrassCore, sessionPresent=true}
+2022-06-12T17:04:40.894Z [INFO] (Thread-3) com.aws.greengrass.status.FleetStatusService: fss-status-update-published. Status update published to FSS. {serviceName=FleetStatusService, currentState=RUNNING}
+2022-06-12T17:04:40.895Z [WARN] (Thread-3) com.aws.greengrass.mqttclient.AwsIotMqttClient: Connection interrupted. {clientId=GreengrassCore, error=The connection was closed unexpectedly.}
+2022-06-12T17:04:48.095Z [INFO] (Thread-3) com.aws.greengrass.mqttclient.AwsIotMqttClient: Connection resumed. {clientId=GreengrassCore, sessionPresent=true}
+2022-06-12T17:04:48.115Z [WARN] (Thread-3) com.aws.greengrass.mqttclient.AwsIotMqttClient: Connection interrupted. {clientId=GreengrassCore, error=The connection was closed unexpectedly.}
+2022-06-12T17:04:48.319Z [INFO] (Thread-3) com.aws.greengrass.mqttclient.AwsIotMqttClient: Connection resumed. {clientId=GreengrassCore, sessionPresent=true}
+2022-06-12T17:04:48.333Z [INFO] (Thread-3) com.aws.greengrass.deployment.IotJobsHelper: No deployment job found. {ThingName=GreengrassCore}
+2022-06-12T17:04:48.334Z [INFO] (Thread-3) com.aws.greengrass.deployment.IotJobsHelper: No deployment job found. {ThingName=GreengrassCore}
+2022-06-12T17:04:48.335Z [INFO] (Thread-3) com.aws.greengrass.deployment.IotJobsHelper: No deployment job found. {ThingName=GreengrassCore}
 ```
 
