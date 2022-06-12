@@ -49,6 +49,63 @@ $ /greengrass/v2/bin/greengrass-cli -V
 bash: /greengrass/v2/bin/greengrass-cli: No such file or directory
 ```
 
+설치가 잘되면 아래처럼 확인이 가능합니다. 
+
+```c
+$ /greengrass/v2/bin/greengrass-cli help
+Usage: greengrass-cli [-hV] [--ggcRootPath=<ggcRootPath>] [COMMAND]
+Greengrass command line interface
+
+      --ggcRootPath=<ggcRootPath>
+                  The AWS IoT Greengrass V2 root directory.
+  -h, --help      Show this help message and exit.
+  -V, --version   Print version information and exit.
+Commands:
+  help                Show help information for a command.
+  component           Retrieve component information and stop or restart
+                        components.
+  deployment          Create local deployments and retrieve deployment status.
+  logs                Analyze Greengrass logs.
+  get-debug-password  Generate a password for use with the HTTP debug view
+                        component.
+```                        
+
+아래처럼 Greengrass Core 디바이스의 components 목록을 확인 할 수 있습니다. 
+
+```c
+$ sudo /greengrass/v2/bin/greengrass-cli component list
+
+Jun 12, 2022 4:46:32 PM software.amazon.awssdk.eventstreamrpc.EventStreamRPCConnection$1 onConnectionSetup
+INFO: Socket connection /greengrass/v2/ipc.socket:8033 to server result [AWS_ERROR_SUCCESS]
+Jun 12, 2022 4:46:32 PM software.amazon.awssdk.eventstreamrpc.EventStreamRPCConnection$1 onProtocolMessage
+INFO: Connection established with event stream RPC server
+Components currently running in Greengrass:
+Component Name: FleetStatusService
+    Version: null
+    State: RUNNING
+    Configuration: null
+Component Name: aws.greengrass.Nucleus
+    Version: 2.5.6
+    State: FINISHED
+    Configuration: {"awsRegion":"ap-northeast-2","componentStoreMaxSizeBytes":"10000000000","deploymentPollingFrequencySeconds":"15","envStage":"prod","fleetStatus":{"periodicStatusPublishIntervalSeconds":86400.0},"greengrassDataPlanePort":"8443","httpClient":{},"iotCredEndpoint":"c198kakbg1m4dh.credentials.iot.ap-northeast-2.amazonaws.com","iotDataEndpoint":"anr3wll34rul5-ats.iot.ap-northeast-2.amazonaws.com","iotRoleAlias":"GreengrassV2TokenExchangeRoleAlias","jvmOptions":"-Dlog.store=FILE","logging":{},"mqtt":{"spooler":{}},"networkProxy":{"proxy":{}},"platformOverride":{},"runWithDefault":{"posixUser":"ggc_user:ggc_group"},"telemetry":{}}
+Component Name: DeploymentService
+    Version: 0.0.0
+    State: RUNNING
+    Configuration: null
+Component Name: UpdateSystemPolicyService
+    Version: 0.0.0
+    State: RUNNING
+    Configuration: null
+Component Name: TelemetryAgent
+    Version: 0.0.0
+    State: RUNNING
+    Configuration: null
+Component Name: aws.greengrass.Cli
+    Version: 2.5.6
+    State: RUNNING
+    Configuration: {"AuthorizedPosixGroups":null,"AuthorizedWindowsGroups":null}
+```    
+                        
 ### To deploy the Greengrass CLI component (AWS CLI)
 
 arn:aws:iot:ap-northeast-2:account-id:thing/GreengrassCore
