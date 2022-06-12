@@ -35,6 +35,10 @@ https://ap-northeast-2.console.aws.amazon.com/iot/home?region=ap-northeast-2#/gr
 
 8) [Review]후에 [Deploy]를 선택합니다.  
 
+이후 아래처럼 Deployment가 실행되어서, device가 online이라면 설치가 수행됩니다. 
+
+![image](https://user-images.githubusercontent.com/52392004/173243274-7df3c3ee-6fd2-4280-9234-4959c775a20a.png)
+
 
 
 
