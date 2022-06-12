@@ -2,6 +2,91 @@
 
 ## EC2 user 만들기
 
+1) iot용 계정 만들기 
+
+IAM console에서 Create Policy를 선택하여 "aws-policy-greengrass"를 생성합니다. 
+
+https://us-east-1.console.aws.amazon.com/iamv2/home#/policies
+
+이때 입력하는 policy는 [Minimal IAM policy for installer to provision resources](https://docs.aws.amazon.com/greengrass/v2/developerguide/provision-minimal-iam-policy.html)을 참조하여 아래처럼 생성합니다. 
+
+```java
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "CreateTokenExchangeRole",
+            "Effect": "Allow",
+            "Action": [
+                "iam:AttachRolePolicy",
+                "iam:CreatePolicy",
+                "iam:CreateRole",
+                "iam:GetPolicy",
+                "iam:GetRole",
+                "iam:PassRole"
+            ],
+            "Resource": [
+                "arn:aws:iam::account-id:role/GreengrassV2TokenExchangeRole",
+                "arn:aws:iam::account-id:policy/GreengrassV2TokenExchangeRoleAccess"
+            ]
+        },
+        {
+            "Sid": "CreateIoTResources",
+            "Effect": "Allow",
+            "Action": [
+                "iot:AddThingToThingGroup",
+                "iot:AttachPolicy",
+                "iot:AttachThingPrincipal",
+                "iot:CreateKeysAndCertificate",
+                "iot:CreatePolicy",
+                "iot:CreateRoleAlias",
+                "iot:CreateThing",
+                "iot:CreateThingGroup",
+                "iot:DescribeEndpoint",
+                "iot:DescribeRoleAlias",
+                "iot:DescribeThingGroup",
+                "iot:GetPolicy"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "DeployDevTools",
+            "Effect": "Allow",
+            "Action": [
+                "greengrass:CreateDeployment",
+                "iot:CancelJob",
+                "iot:CreateJob",
+                "iot:DeleteThingShadow",
+                "iot:DescribeJob",
+                "iot:DescribeThing",
+                "iot:DescribeThingGroup",
+                "iot:GetThingShadow",
+                "iot:UpdateJob",
+                "iot:UpdateThingShadow"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+```
+
+[IAM console]에서 [Add user]를 선택하여, "iotuser"로 계정을 생성합니다.
+
+https://us-east-1.console.aws.amazon.com/iamv2/home#/users
+
+이때 "Add permissions"을 선택하여 아래와 같은 퍼미션을 추가합니다. 
+
+![image](https://user-images.githubusercontent.com/52392004/173210257-c10dc32e-f7db-4e55-b7e3-b3a3cc327b61.png)
+
+
+2) EC2 생성 및 접속
+
+EC2 console에 접속하여 [Launch instances]를 선택하여 "GreenGrass"라는 이름으로 EC2를 생성합니다. 이때, OS는 "Amazon Linux", Instance type은 "t2.micro"를 선택하였습니다. 
+
+https://ap-northeast-2.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-2#Instances:v=3
+
+ssh를 이용해 아래처럼 접속합니다. 여기서 EC2의 ip는 "Public IPv4 address"에 있는 ipv4 address를 사용합니다. 
+
 ```c
 $ ssh ec2-user@150.223.112.443 -i ssh-seoul.cer
 ```
