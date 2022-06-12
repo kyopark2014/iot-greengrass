@@ -29,15 +29,33 @@ Archive:  greengrass-nucleus-latest.zip
 
 2) java 설치하기 
 
+아래와 같이 java를 설치하여 줍니다.
+
 ```c
 $ sudo yum install java-1.8.0-openjdk
 ```
 
+3) config 확인
 
-3) install
+아래와 같이 config 확인 명령어를 통해 변수들이 export 되어 있는지 확인 합니다. 
 
+```c
+echo $AWS_DEFAULT_REGION
+echo $AWS_ACCESS_KEY_ID
+echo $AWS_SECRET_ACCESS_KEY
+```
 
-[Installer arguments](https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-installer.html)에서 각 argument에 대한 상세한 내용을 알 수 있습니다. 
+변수값 확인후 입력이 필요한 경우에 아래처럼 입력합니다. 
+
+```c
+export AWS_DEFAULT_REGION=ap-northeast-2
+export AWS_ACCESS_KEY_ID=SAMPLSample5TI2W4DP4B
+export AWS_SECRET_ACCESS_KEY=SamPle+ulrFsfsY0+gWeU3Sample5W4E2zuaZpc
+```
+
+3) 아래와 같이 greengrass installer를 실행해줍니다.
+
+여기서 things name을 GreengrassCore로, thing group 이름을 GreengrassGroup을 지정했습니다. 특히, things 이름이 중복되지 않도록 넣어주어야 합니다. [Installer arguments](https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-installer.html)에서 각 argument에 대한 상세한 내용을 알 수 있습니다. 
 
 ```c
 sudo -E java -Droot="/greengrass/v2" -Dlog.store=FILE -jar ./GreengrassCore/lib/Greengrass.jar \
@@ -82,37 +100,8 @@ Successfully set up Nucleus as a system service
 ```
 
 
-## config 확인
 
-아래와 같이 config 확인 명령어를 통해 변수들이 export 되어 있는지 확인 합니다. 
 
-```c
-echo $AWS_DEFAULT_REGION
-echo $AWS_ACCESS_KEY_ID
-echo $AWS_SECRET_ACCESS_KEY
-echo $AWS_SESSION_TOKEN
-```
-
-```
-$ aws sts get-session-token
-{
-    "Credentials": {
-        "SecretAccessKey": "SAMPLEVxtTSnndWRM0EvwJ8Uxdr3a8teFdAoxIQ",
-        "SessionToken": "SamPleZ2luX2VjEEkaDmFwLW5vcnRoZWFzdC0yIkcwRQIhANOtesAE04TVyO95H2ZBIPFXgqyvVofIpqWI3X0C9+8kAiAcoMPsR+UzZLFU0yMzZER7Fk9N9PrIW4eJdVlxowMZCCrrAQhSEAAaDDY3NzE0Njc1MDgyMiIMM7uWP3LLXUGG4ttHKsgBXXIYe6Xa/qTdYuNwQ57+NMq4lvSnACI14dpvgYknii8soCTkclsbK2zX5svPXv0RK7IrWwmHmfw1liwGJHORQxpBdVdfInAkOYkJWI8yfqWGrdOX4y/TfAGDqFewpWxE93Fvm0kAsmpleasbHj9vAOjuP3TAYc38j07AwBFLVp6KHcGNcTRBmpCKaVzxEOygNcyHJM1fsE2KLYtVHQR/8UMxEZEllA8M94IshTirxqFZvXofXSdPD6jrZLI/KD+nAYwGxqQw+eaUlQY6mAFzXngvWU5671qmTCr9vFZW2sv4XxQ11udhUy+8IwPR1/GR0IRKZGAzbXoRt+uQV05guXHvIJDFDoSampleJCueu638mSD/erlR8vkCxwtNObc9gOrUVO796/RZFR8Sd8zUg/gPVChrhbBrp87Xptlu/CZfcS6iJ2W5QFWjTIq9PXrHksYuqwPWsdgvG81E4+lQYRCI8otrSw==",
-        "Expiration": "2022-06-12T12:29:45Z",
-        "AccessKeyId": "SAMPLEKIXN5TCTGRGD3G"
-    }
-}
-```
-
-입력되지 않은 경우에 아래처럼 입력합니다. 
-
-```c
-export AWS_DEFAULT_REGION=ap-northeast-2
-export AWS_ACCESS_KEY_ID=SAMPLEKIXN5TCTGRGD3G
-export AWS_SECRET_ACCESS_KEY=SAMPLEVxtTSnndWRM0EvwJ8Uxdr3a8teFdAoxIQ
-export AWS_SESSION_TOKEN=SamPleZ2luX2VjEEkaDmFwLW5vcnRoZWFzdC0yIkcwRQIhANOtesAE04TVyO95H2ZBIPFXgqyvVofIpqWI3X0C9+8kAiAcoMPsR+UzZLFU0yMzZER7Fk9N9PrIW4eJdVlxowMZCCrrAQhSEAAaDDY3NzE0Njc1MDgyMiIMM7uWP3LLXUGG4ttHKsgBXXIYe6Xa/qTdYuNwQ57+NMq4lvSnACI14dpvgYknii8soCTkclsbK2zX5svPXv0RK7IrWwmHmfw1liwGJHORQxpBdVdfInAkOYkJWI8yfqWGrdOX4y/TfAGDqFewpWxE93Fvm0kAsmpleasbHj9vAOjuP3TAYc38j07AwBFLVp6KHcGNcTRBmpCKaVzxEOygNcyHJM1fsE2KLYtVHQR/8UMxEZEllA8M94IshTirxqFZvXofXSdPD6jrZLI/KD+nAYwGxqQw+eaUlQY6mAFzXngvWU5671qmTCr9vFZW2sv4XxQ11udhUy+8IwPR1/GR0IRKZGAzbXoRt+uQV05guXHvIJDFDoSampleJCueu638mSD/erlR8vkCxwtNObc9gOrUVO796/RZFR8Sd8zUg/gPVChrhbBrp87Xptlu/CZfcS6iJ2W5QFWjTIq9PXrHksYuqwPWsdgvG81E4+lQYRCI8otrSw==
-```
 
 ## Troubleshooting
 
