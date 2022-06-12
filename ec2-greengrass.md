@@ -61,18 +61,31 @@ echo $AWS_SECRET_ACCESS_KEY
 echo $AWS_SESSION_TOKEN
 ```
 
+```
+$ aws sts get-session-token
+{
+    "Credentials": {
+        "SecretAccessKey": "SAMPLEVxtTSnndWRM0EvwJ8Uxdr3a8teFdAoxIQ",
+        "SessionToken": "SamPleZ2luX2VjEEkaDmFwLW5vcnRoZWFzdC0yIkcwRQIhANOtesAE04TVyO95H2ZBIPFXgqyvVofIpqWI3X0C9+8kAiAcoMPsR+UzZLFU0yMzZER7Fk9N9PrIW4eJdVlxowMZCCrrAQhSEAAaDDY3NzE0Njc1MDgyMiIMM7uWP3LLXUGG4ttHKsgBXXIYe6Xa/qTdYuNwQ57+NMq4lvSnACI14dpvgYknii8soCTkclsbK2zX5svPXv0RK7IrWwmHmfw1liwGJHORQxpBdVdfInAkOYkJWI8yfqWGrdOX4y/TfAGDqFewpWxE93Fvm0kAsmpleasbHj9vAOjuP3TAYc38j07AwBFLVp6KHcGNcTRBmpCKaVzxEOygNcyHJM1fsE2KLYtVHQR/8UMxEZEllA8M94IshTirxqFZvXofXSdPD6jrZLI/KD+nAYwGxqQw+eaUlQY6mAFzXngvWU5671qmTCr9vFZW2sv4XxQ11udhUy+8IwPR1/GR0IRKZGAzbXoRt+uQV05guXHvIJDFDoSampleJCueu638mSD/erlR8vkCxwtNObc9gOrUVO796/RZFR8Sd8zUg/gPVChrhbBrp87Xptlu/CZfcS6iJ2W5QFWjTIq9PXrHksYuqwPWsdgvG81E4+lQYRCI8otrSw==",
+        "Expiration": "2022-06-12T12:29:45Z",
+        "AccessKeyId": "SAMPLEKIXN5TCTGRGD3G"
+    }
+}
+```
+
 입력되지 않은 경우에 아래처럼 입력합니다. 
 
 ```c
 export AWS_DEFAULT_REGION=ap-northeast-2
-export AWS_ACCESS_KEY_ID=SAMPLEIXN5TFSRWUTG2
-export AWS_SECRET_ACCESS_KEY=SAMPLE2mOX9sDr9UxE6GELyT9Xkhc6a5nPFDcgc
+export AWS_ACCESS_KEY_ID=SAMPLEKIXN5TCTGRGD3G
+export AWS_SECRET_ACCESS_KEY=SAMPLEVxtTSnndWRM0EvwJ8Uxdr3a8teFdAoxIQ
+export AWS_SESSION_TOKEN=SamPleZ2luX2VjEEkaDmFwLW5vcnRoZWFzdC0yIkcwRQIhANOtesAE04TVyO95H2ZBIPFXgqyvVofIpqWI3X0C9+8kAiAcoMPsR+UzZLFU0yMzZER7Fk9N9PrIW4eJdVlxowMZCCrrAQhSEAAaDDY3NzE0Njc1MDgyMiIMM7uWP3LLXUGG4ttHKsgBXXIYe6Xa/qTdYuNwQ57+NMq4lvSnACI14dpvgYknii8soCTkclsbK2zX5svPXv0RK7IrWwmHmfw1liwGJHORQxpBdVdfInAkOYkJWI8yfqWGrdOX4y/TfAGDqFewpWxE93Fvm0kAsmpleasbHj9vAOjuP3TAYc38j07AwBFLVp6KHcGNcTRBmpCKaVzxEOygNcyHJM1fsE2KLYtVHQR/8UMxEZEllA8M94IshTirxqFZvXofXSdPD6jrZLI/KD+nAYwGxqQw+eaUlQY6mAFzXngvWU5671qmTCr9vFZW2sv4XxQ11udhUy+8IwPR1/GR0IRKZGAzbXoRt+uQV05guXHvIJDFDoSampleJCueu638mSD/erlR8vkCxwtNObc9gOrUVO796/RZFR8Sd8zUg/gPVChrhbBrp87Xptlu/CZfcS6iJ2W5QFWjTIq9PXrHksYuqwPWsdgvG81E4+lQYRCI8otrSw==
 ```
 
 ## Troubleshooting
 
 ### Unable to load credentials
-아래와 같이 설치시 "unable to load credentials"에러가 발생시 아래의 [config 확인]을 참조하여 credential을 export 합니다. 
+아래와 같이 설치시 "unable to load credentials"에러가 발생시, [config 확인]을 참조하여 credential을 export 합니다. 
 
 ```c
 $ sudo -E java -Droot="/greengrass/v2" -Dlog.store=FILE -jar ./GreengrassCore/lib/Greengrass.jar --aws-region ap-northeast-2 --thing-name GreengrassCore --thing-group-name GreengrassGroup --component-default-user ggc_user:ggc_group --provision true --setup-system-service true --deploy-dev-tools true
@@ -163,8 +176,7 @@ software.amazon.awssdk.services.iam.model.IamException: User: arn:aws:iam::accou
 
 ### not authorized to perform: iot:GetPolicy
 
-not authorized to perform: iot:GetPolicy
-
+[config 확인]을 참조하여 credential을 export 합니다. 
 
 ```c
 $ sudo -E java -Droot="/greengrass/v2" -Dlog.store=FILE -jar ./GreengrassCore/lib/Greengrass.jar --aws-region ap-northeast-2 --thing-name GreengrassCore --thing-group-name GreengrassGroup --component-default-user ggc_user:ggc_group --provision true --setup-system-service true --deploy-dev-tools true
