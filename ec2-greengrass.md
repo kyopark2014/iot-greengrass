@@ -7,7 +7,7 @@ $ ssh ec2-user@150.223.112.443 -i ssh-seoul.cer
 ```
 
 
-## greengrass 설치 
+## Greengrass 설치 
 
 1) 설치 파일을 다운로드 합니다. 
 
