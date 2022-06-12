@@ -1,4 +1,4 @@
-# iot-greengrass
+# AWS IoT Greengrass
 
 ## EC2에 Greengrass 설치
 
