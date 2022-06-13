@@ -56,3 +56,9 @@ AWS Account ID는 아래처럼 확인 할 수 있습니다.
 $ aws sts get-caller-identity --query Account --output text
 ```
 
+EC2에 jq 설치를 합니다.
+
+```c
+$ sudo yum install jq -y
+```
+
