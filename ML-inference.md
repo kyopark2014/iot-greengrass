@@ -18,10 +18,7 @@ $ sudo yum install git -y
 $ git clone https://github.com/aws-samples/aiot-e2e-sagemaker-greengrass-v2-nvidia-jetson
 ```
 
-ggv2-deploy-cloud 디렉토리 아래에 있는 config.json을 편집합니다.
-"Account"를 앞에서 확인한 12자리 계정 번호로 변경한 후 "[YOUR-S3-BUCKET]"을 아래 그림처럼 ***mybucket-[My Account Number]***형식의 버킷 이름으로 교체합니다.
-아래 그림은 계정 번호가 123451234123인 경우에 대한 예 입니다.
-
+ggv2-deploy-cloud 디렉토리 아래에 있는 config.json을 편집합니다. "Account"에 자신의 account-id를 업데이트하고, "[YOUR-S3-BUCKET]"에는 생성한 버킷 이름을 입력합니다. 
 
 ```java
 {
