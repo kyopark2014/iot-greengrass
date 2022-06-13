@@ -18,7 +18,7 @@ $ sudo yum install git -y
 $ git clone https://github.com/aws-samples/aiot-e2e-sagemaker-greengrass-v2-nvidia-jetson
 ```
 
-ggv2-deploy-cloud 디렉토리 아래에 있는 config.json을 편집합니다. "Account"에 자신의 account-id를 업데이트하고, "[YOUR-S3-BUCKET]"에는 생성한 버킷 이름을 입력합니다. 
+ggv2-deploy-cloud 디렉토리 아래에 있는 config.json(aiot-e2e-sagemaker-greengrass-v2-nvidia-jetson/ggv2-deploy-cloud/config.json)을 편집합니다. "Account"에 자신의 account-id를 업데이트하고, "[YOUR-S3-BUCKET]"에는 생성한 버킷 이름을 입력합니다. 
 
 ```java
 {
