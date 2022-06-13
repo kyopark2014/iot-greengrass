@@ -27,3 +27,34 @@ ggv2-deploy-cloud 디렉토리 아래에 있는 config.json을 편집합니다.
 "Account"를 앞에서 확인한 12자리 계정 번호로 변경한 후 "[YOUR-S3-BUCKET]"을 아래 그림처럼 ***mybucket-[My Account Number]***형식의 버킷 이름으로 교체합니다.
 아래 그림은 계정 번호가 123451234123인 경우에 대한 예 입니다.
 
+
+```java
+{
+    "Project": {
+        "Name": "MLInferenceFromScratch",
+        "Account": "1234512345123",
+        "Region": "us-east-1",
+        "Profile": "ggv2-demo"
+    },
+    "Component": {
+        "ComponentName": "com.example.ImgClassification",
+        "ComponentVersion": "1.0.0",
+        "SendMessage": "True",
+        "Topic": "ml/example/imgclassification",
+        "PredictionIntervalSecs": 3,
+        "Timeout": 10
+    },
+    "Artifacts": {
+        "S3Bucket": "[YOUR-S3-BUCKET]",
+        "S3Prefix": "ggv2/artifacts",
+        "ZipArchiveName": "my-model"
+    },
+    "Parameters": {
+        "UseGPU": 0,
+        "ScoreThreshold": 0.25,
+        "MaxNumClasses": 3,
+        "ModelInputShape": "(224,224)"
+    }
+}
+```
+
