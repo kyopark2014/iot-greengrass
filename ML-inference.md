@@ -11,11 +11,6 @@ git을 EC2에 설치합니다.
 $ sudo yum install git -y
 ```
 
-AWS Account ID 확인을 합니다.
-
-```c
-$ aws sts get-caller-identity --query Account --output text
-```
 
 소스코드를 다운로드 합니다.
 
@@ -56,5 +51,11 @@ ggv2-deploy-cloud 디렉토리 아래에 있는 config.json을 편집합니다.
         "ModelInputShape": "(224,224)"
     }
 }
+```
+
+AWS Account ID는 아래처럼 확인 할 수 있습니다. 
+
+```c
+$ aws sts get-caller-identity --query Account --output text
 ```
 
