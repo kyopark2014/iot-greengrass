@@ -20,7 +20,7 @@ $ aws sts get-caller-identity --query Account --output text
 소스코드를 다운로드 합니다.
 
 ```c
-$ aws sts get-caller-identity --query Account --output text
+$ git clone https://github.com/aws-samples/aiot-e2e-sagemaker-greengrass-v2-nvidia-jetson
 ```
 
 ggv2-deploy-cloud 디렉토리 아래에 있는 config.json을 편집합니다.
