@@ -17,3 +17,8 @@
 2) Greengrass components 생성
 
 [Greengreen Component](https://github.com/kyopark2014/iot-greengrass/blob/main/greengrass-component.md)을 따라서, receipe와 artifact을 생성합니다.
+
+3) Device에서 ML Inference
+
+[디바이스에서의 ML Inference](https://github.com/kyopark2014/iot-greengrass/blob/main/ML-inference.md)을 이용하여 ML을 실행할 수 있습니다.
+
