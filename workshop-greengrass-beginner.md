@@ -15,11 +15,9 @@ export AWS_ACCESS_KEY_ID=SAMPLE3IXN5TI2W4DP4A
 export AWS_SECRET_ACCESS_KEY=0sampleabulrFsfsY0+gWeU3QciaBm5W4E2z123pc
 ```
 
-
-## Greengreass 설치 
+## 로컬 Greengrass 컴포넌트 생성 및 배포
 
 1) Installer download
-
 
 ```c
 $ curl -s https://d2s8p88vqu9w66.cloudfront.net/releases/greengrass-nucleus-latest.zip > greengrass-nucleus-latest.zip && unzip greengrass-nucleus-latest.zip -d GreengrassCore
