@@ -1,9 +1,9 @@
-# Workshop
+# Workshop - 로컬 Greengrass 컴포넌트 생성 및 배포
 
 [AWS IoT Greengrass V2 for beginners (Korean)](https://catalog.us-east-1.prod.workshops.aws/workshops/0b21ceb7-2108-4a82-9e76-4c56d4b52db5/ko-KR)에 대해 설명합니다. 
 
 
-## Cloud9 서버 준비
+## Cloud9 서버 준비 및 Greengrass Install 다운로드
 
 편의를 위해 Cloud9 서버를 준비합니다.
 
@@ -15,13 +15,13 @@ export AWS_ACCESS_KEY_ID=SAMPLE3IXN5TI2W4DP4A
 export AWS_SECRET_ACCESS_KEY=0sampleabulrFsfsY0+gWeU3QciaBm5W4E2z123pc
 ```
 
-## 로컬 Greengrass 컴포넌트 생성 및 배포
-
-1) Installer download
+Installer download를 아래와 같이 수행합니다. 
 
 ```c
 $ curl -s https://d2s8p88vqu9w66.cloudfront.net/releases/greengrass-nucleus-latest.zip > greengrass-nucleus-latest.zip && unzip greengrass-nucleus-latest.zip -d GreengrassCore
 ```
+
+## Component 설치 및 배포 
 
 아래 이름으로 thing device를 생성하고자 합니다. 
 
@@ -29,7 +29,7 @@ Core device name: GreengrassQuickStartCore-18163f7ac3e
 
 Thing group name: GreengrassQuickStartGroup
 
-아래 명령어로 IoT Core에 thing을 생성하고, greengrass에 등록합니다. 
+아래 명령어로 IoT Core에 thing을 생성하고, greengrass에 component로 등록합니다. 
 
 ```c
 $ sudo -E java -Droot="/greengrass/v2" -Dlog.store=FILE -jar ./GreengrassCore/lib/Greengrass.jar --aws-region ap-northeast-2 --thing-name GreengrassQuickStartCore-18163f7ac3e --thing-group-name GreengrassQuickStartGroup --component-default-user ggc_user:ggc_group --provision true --setup-system-service true --deploy-dev-tools true
