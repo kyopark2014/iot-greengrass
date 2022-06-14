@@ -110,7 +110,7 @@ https://ap-northeast-2.console.aws.amazon.com/iot/home?region=ap-northeast-2#/te
 ![image](https://user-images.githubusercontent.com/52392004/173701949-c482d009-1e75-4af1-9a46-393316bd4dd2.png)
 
 
-## Troubleshooting: state가 BROKEN가 인 경우
+## Troubleshooting: state가 "BROKEN" 인 경우
 
 아래와 같이 com.example.HelloMqtt의 state가 BROKEN으로 확인되었습니다.
 
