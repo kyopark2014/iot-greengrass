@@ -10,9 +10,10 @@
 [AWS IoT Greengrass V2 for beginners (Korean)](https://catalog.us-east-1.prod.workshops.aws/workshops/0b21ceb7-2108-4a82-9e76-4c56d4b52db5/ko-KR)의 워크샵을 수행합니다. 
 
 
+
+## EC2(Linux)에서 Greengrass 설치 및 배포
+
 1) [Greengrass CLI 설치](https://github.com/kyopark2014/iot-greengrass/blob/main/greengrass-cli.md)에 따라 Greengrass CLI를 설치합니다.
-
-
 
 2) Greengrass components 생성
 
