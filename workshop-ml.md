@@ -74,9 +74,9 @@ $ aws greengrassv2 list-components
                     }
                 ], 
                 "creationTimestamp": 1655244071.301, 
-                "arn": "arn:aws:greengrass:ap-northeast-2:677146750822:components:com.example.ImgClassification:versions:1.0.0"
+                "arn": "arn:aws:greengrass:ap-northeast-2:123456789012:components:com.example.ImgClassification:versions:1.0.0"
             }, 
-            "arn": "arn:aws:greengrass:ap-northeast-2:677146750822:components:com.example.ImgClassification"
+            "arn": "arn:aws:greengrass:ap-northeast-2:123456789012:components:com.example.ImgClassification"
         }, 
         {
             "componentName": "com.example.HelloMqtt", 
