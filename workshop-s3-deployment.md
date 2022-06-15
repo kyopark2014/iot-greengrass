@@ -1,4 +1,4 @@
-## Greengrass device의 GreengrassV2TokenExchangeRole에 Amazon S3 Role 추가
+## Amazon S3을 이용한 Greengrass device 배포환경 구축하기 
 
 아래의 Policy를 가지는 "GGv2WorkshopS3Policy"을 생성합니다. 
 
