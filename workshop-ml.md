@@ -56,4 +56,5 @@ sudo chmod +x create_gg_component.sh
 ./create_gg_component.sh
 ```
 
-"create_gg_component.sh"을 실행합니다.
+상ㄱ
+"create_gg_component.sh"을 실행합
