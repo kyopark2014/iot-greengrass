@@ -3,30 +3,27 @@
 아래의 Policy를 가지는 "GGv2WorkshopS3Policy"을 생성합니다. 
 
 ```java
-	 {
-            "Sid": "DeployDevTools",
-            "Effect": "Allow",
-            "Action": [
-                "greengrass:CreateDeployment",
-                "greengrass:GetServiceRoleForAccount",
-                "iot:CancelJob",
-                "iot:CreateJob",
-                "iot:DeleteThingShadow",
-                "iot:DescribeJob",
-                "iot:DescribeThing",
-                "iot:DescribeThingGroup",
-                "iot:GetThingShadow",
-                "iot:UpdateJob",
-                "iot:UpdateThingShadow"
-            ],
-            "Resource": "*"
-        }
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Resource": "arn:aws:s3:::*"
+    }
+  ]
+}
 ```
 
 "GreengrassV2TokenExchangeRole"에 "GGv2WorkshopS3Policy" Policy를 추가합니다.
 
 
-아래와 같이 S3를 Artifact로 가지는 recipe 파일을 생성합니다.
+![noname](https://user-images.githubusercontent.com/52392004/173942768-ee8bbb64-bcbf-4c17-9d34-9056a060d1c8.png)
+
+
+아래와 같이 S3를 Artifact로 가지는 recipe 파일을 생성합니다. 기존 local deployment와 비교하여 Artifacts에 S3 URI가 추가되었습니다.
 
 ```java
 {
@@ -70,7 +67,7 @@
 }
 ```
 
-아래과 같이 MYBUCKET에 bucket name을 등록하고, 아래와 같이 python 파일을 복사합니다. 
+아래과 같이 이전에 생성한 s3의 "MYBUCKET"에 Recipes, Artifacts 파일들을 복사합니다. 
 
 ```c
 $ aws s3 cp --recursive ~/GGv2Dev/ s3://$MYBUCKET
@@ -78,10 +75,11 @@ upload: ../GGv2Dev/artifacts/com.example.HelloMqtt/1.0.0/hello_mqtt.py to s3://g
 upload: ../GGv2Dev/recipes/com.example.HelloMqtt-1.0.0.json to s3://greengrass-ksdyb/recipes/com.example.HelloMqtt-1.0.0.json
 ```
 
-
 아래의 명령어로 실행합니다. 
 
 ```java
-$ cd ~/GGv2Dev/recipes && aws greengrassv2 create-component-version  --inline-recipe fileb://com.example.HelloMqtt-1.0.0.json --region $AWS_DEFAULT_REGION
+$ cd ~/GGv2Dev/recipes && aws greengrassv2 create-component-version  \
+--inline-recipe fileb://com.example.HelloMqtt-1.0.0.json \
+--region $AWS_DEFAULT_REGION
 ```
 
