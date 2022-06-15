@@ -31,7 +31,7 @@ ggv2-deploy-cloud 디렉토리 아래에 있는 config.json을 편집합니다. 
         "Timeout": 10
     },
     "Artifacts": {
-        "S3Bucket": "greengrass",
+        "S3Bucket": "greengrass-bucket",
         "S3Prefix": "ggv2/artifacts",
         "ZipArchiveName": "my-model"
     },
