@@ -1,5 +1,9 @@
 # AWS IoT Greengrass
 
+## Greengrass Commands
+
+유용한 [Greengrass 명령어](https://github.com/kyopark2014/iot-greengrass/blob/main/greengrass-commands.md)를 정리하였습니다.
+
 ## Greengress Workshop
 
 1) [Workshop Greengrass](https://github.com/kyopark2014/iot-greengrass/blob/main/workshop-greengrass-beginner.md)을 따라서, Cloud9에 Greengrass V2를 설치하고, Local에서 배포를 수행합니다. 
