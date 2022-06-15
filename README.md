@@ -23,3 +23,10 @@
 
 [디바이스에서의 ML Inference](https://github.com/kyopark2014/iot-greengrass/blob/main/ML-inference.md)을 이용하여 ML을 실행할 수 있습니다.
 
+
+## Reference
+
+[Troubleshooting identity and access issues for AWS IoT Greengrass](https://docs.aws.amazon.com/greengrass/v1/developerguide/security_iam_troubleshoot.html)
+
+[Troubleshooting AWS IoT Greengrass V2]
+(https://docs.aws.amazon.com/greengrass/v2/developerguide/troubleshooting.html)
