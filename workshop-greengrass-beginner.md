@@ -15,21 +15,15 @@ export AWS_ACCESS_KEY_ID=SAMPLE3IXN5TI2W4DP4A
 export AWS_SECRET_ACCESS_KEY=0sampleabulrFsfsY0+gWeU3QciaBm5W4E2z123pc
 ```
 
-## 로컬 Greengrass 컴포넌트 생성 및 배포
+## Greengrass V2 생성 및 배포
 
-1) Installer download
+1) Greengrass installer를 아래 명령어로 다운로드 합니다. 
 
 ```c
 $ curl -s https://d2s8p88vqu9w66.cloudfront.net/releases/greengrass-nucleus-latest.zip > greengrass-nucleus-latest.zip && unzip greengrass-nucleus-latest.zip -d GreengrassCore
 ```
 
-아래 이름으로 thing device를 생성하고자 합니다. 
-
-Core device name: GreengrassQuickStartCore-18163f7ac3e
-
-Thing group name: GreengrassQuickStartGroup
-
-아래 명령어로 IoT Core에 thing을 생성하고, greengrass에 등록합니다. 
+2) 아래 명령어로 IoT Core에 thing을 생성하고, greengrass에 등록합니다. 이때 생성되는 Core device name은 GreengrassQuickStartCore-18163f7ac3e이고, Thing group name은 GreengrassQuickStartGroup
 
 ```c
 $ sudo -E java -Droot="/greengrass/v2" -Dlog.store=FILE -jar ./GreengrassCore/lib/Greengrass.jar --aws-region ap-northeast-2 --thing-name GreengrassQuickStartCore-18163f7ac3e --thing-group-name GreengrassQuickStartGroup --component-default-user ggc_user:ggc_group --provision true --setup-system-service true --deploy-dev-tools true
@@ -56,7 +50,116 @@ Configured Nucleus to deploy aws.greengrass.Cli component
 Successfully set up Nucleus as a system service
 ```
 
-아래 명령어로 com.example.HelloMqtt가 잘 등록되어 있음을 확인 합니다. 이때 state가 "RUNING"이어야 합니다. 
+3) Local deployment를 위해 Receipe와 Artifact를 생성합니다.
+
+- Recipe 생성
+
+```c
+mkdir -p ~/GGv2Dev/recipes
+touch ~/GGv2Dev/recipes/com.example.HelloMqtt-1.0.0.json
+```
+
+이때, json 파일의 내용은 아래와 같습니다. 
+
+```java
+{
+	"RecipeFormatVersion": "2020-01-25",
+	"ComponentName": "com.example.HelloMqtt",
+	"ComponentVersion": "1.0.0",
+	"ComponentDescription": "My first AWS IoT Greengrass component.",
+	"ComponentPublisher": "Amazon",
+	"ComponentConfiguration": {
+		"DefaultConfiguration": {
+			"accessControl": {
+				"aws.greengrass.ipc.mqttproxy": {
+					"com.example.HelloMqtt:mqttproxy:1": {
+						"policyDescription": "Allows access to publish to all AWS IoT Core topics.",
+						"operations": [
+							"aws.greengrass#PublishToIoTCore"
+						],
+						"resources": [
+							"*"
+						]
+					}
+				}
+			}
+		}
+	},
+	"Manifests": [{
+		"Platform": {
+			"os": "linux"
+		},
+		"Lifecycle": {
+			"Install": {
+				"RequiresPrivilege": true,
+				"Script": "sudo pip3 install awsiotsdk"
+			},
+			"Run": "python3 {artifacts:path}/hello_mqtt.py"
+		}
+	}]
+}
+```
+
+- Artifact는 아래와 같이 생성합니다.
+
+```c
+mkdir -p ~/GGv2Dev/artifacts/com.example.HelloMqtt/1.0.0
+touch ~/GGv2Dev/artifacts/com.example.HelloMqtt/1.0.0/hello_mqtt.py
+```
+
+이때 hello_mqtt.py의 내용은 아래와 같습니다.
+
+```pytion
+import json
+import time
+import os
+import random
+
+import awsiot.greengrasscoreipc
+import awsiot.greengrasscoreipc.model as model
+
+if __name__ == '__main__':
+    ipc_client = awsiot.greengrasscoreipc.connect()
+
+    while True:
+        telemetry_data = {
+            "timestamp": int(round(time.time() * 1000)),
+            "battery_level": random.randrange(98, 101),
+            "location": {
+                "longitude": round(random.uniform(101.0, 120.0),2),
+                "latitude": round(random.uniform(30.0, 40.0),2),
+            },
+        }
+
+        op = ipc_client.new_publish_to_iot_core()
+        op.activate(model.PublishToIoTCoreRequest(
+            topic_name="ggv2/{}/telemetry".format(os.getenv("AWS_IOT_THING_NAME")),
+            qos=model.QOS.AT_LEAST_ONCE,
+            payload=json.dumps(telemetry_data).encode(),
+        ))
+        try:
+            result = op.get_response().result(timeout=1.0)
+            print("successfully published message:", result)
+        except Exception as e:
+            print("failed to publish message:", e)
+
+        time.sleep(5)
+```
+
+아래 
+아래 명령어로 
+Local deployment를 
+수행합니다.
+ 
+```c 
+ sudo /greengrass/v2/bin/greengrass-cli deployment create \
+  --recipeDir ~/GGv2Dev/recipes \
+  --artifactDir ~/GGv2Dev/artifacts \
+  --merge "com.example.HelloMqtt=1.0.0"
+
+
+
+"com.example.HelloMqtt"가 잘 등록되어 있음을 아래와 같이 확인 합니다. 이때 state가 "RUNNING"이어야 합니다. 
 
 ```c
 $ sudo /greengrass/v2/bin/greengrass-cli component list
