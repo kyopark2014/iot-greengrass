@@ -15,7 +15,7 @@ export AWS_ACCESS_KEY_ID=SAMPLE3IXN5TI2W4DP4A
 export AWS_SECRET_ACCESS_KEY=0sampleabulrFsfsY0+gWeU3QciaBm5W4E2z123pc
 ```
 
-## Greengrass V2 생성 및 배포
+## Greengrass V2 생성 및 Local 배포
 
 1) Greengrass installer를 아래 명령어로 다운로드 합니다. 
 
