@@ -9,6 +9,8 @@
 
 [Workshop Greengrass](https://github.com/kyopark2014/iot-greengrass/blob/main/workshop-greengrass-beginner.md)을 따라서, Cloud9에 Greengrass V2를 설치하고, Local에서 배포를 수행합니다. 
 
+[Amazon S3를 이용하여 Greengrass Component를 배포하기](https://github.com/kyopark2014/iot-greengrass/blob/main/workshop-s3-deployment.md)에 따라, Amazon S3를 통해 배포환경을 구성 합니다.
+
 
 
 ## EC2(Linux)에서 Greengrass 설치 및 배포
