@@ -54,7 +54,7 @@ sudo chmod +x create_gg_component.sh
 ./create_gg_component.sh
 ```
 
-상기와 같이 shell script를 실행합니다. 
+상기와 같이 shell script를 실행하면 아래와 같은 결과를 얻을 수 있습니ㅏ다. 
 
 ```c
 $ aws greengrassv2 list-components
