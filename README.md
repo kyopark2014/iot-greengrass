@@ -28,5 +28,4 @@
 
 [Troubleshooting identity and access issues for AWS IoT Greengrass](https://docs.aws.amazon.com/greengrass/v1/developerguide/security_iam_troubleshoot.html)
 
-[Troubleshooting AWS IoT Greengrass V2]
-(https://docs.aws.amazon.com/greengrass/v2/developerguide/troubleshooting.html)
+[Troubleshooting AWS IoT Greengrass V2](https://docs.aws.amazon.com/greengrass/v2/developerguide/troubleshooting.html)
