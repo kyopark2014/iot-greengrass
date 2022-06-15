@@ -146,17 +146,14 @@ if __name__ == '__main__':
         time.sleep(5)
 ```
 
-아래 
-아래 명령어로 
-Local deployment를 
-수행합니다.
+아래 명령어로 Local deployment를 수행합니다.
  
 ```c 
  sudo /greengrass/v2/bin/greengrass-cli deployment create \
   --recipeDir ~/GGv2Dev/recipes \
   --artifactDir ~/GGv2Dev/artifacts \
   --merge "com.example.HelloMqtt=1.0.0"
-
+```
 
 
 "com.example.HelloMqtt"가 잘 등록되어 있음을 아래와 같이 확인 합니다. 이때 state가 "RUNNING"이어야 합니다. 
