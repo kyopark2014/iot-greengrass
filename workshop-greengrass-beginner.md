@@ -56,7 +56,7 @@ Configured Nucleus to deploy aws.greengrass.Cli component
 Successfully set up Nucleus as a system service
 ```
 
-아래 명령어로 com.example.HelloMqtt가 잘 등록되어 있음을 확인 합니다. 이때 state가 "RUNNING"이어야 합니다. 
+아래 명령어로 com.example.HelloMqtt가 잘 등록되어 있음을 확인 합니다. 이때 state가 "RUNING"이어야 합니다. 
 
 ```c
 $ sudo /greengrass/v2/bin/greengrass-cli component list
