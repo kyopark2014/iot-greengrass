@@ -1,8 +1,8 @@
 # AWS IoT Greengrass
 
-## Greengrass Commands
+## Greengrass Commands와 Memo
 
-유용한 [Greengrass 명령어](https://github.com/kyopark2014/iot-greengrass/blob/main/greengrass-commands.md)를 정리하였습니다.
+유용한 [Greengrass 명령어와 중요한 메모들](https://github.com/kyopark2014/iot-greengrass/blob/main/greengrass-commands.md)를 정리하였습니다.
 
 ## Greengress Workshop
 
