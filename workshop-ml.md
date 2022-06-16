@@ -44,7 +44,7 @@ ggv2-deploy-cloud 디렉토리 아래에 있는 config.json을 편집합니다. 
 }
 ```
 
-아래와 같이 ggv2-deploy-cloud 폴더의 create_gg_component.sh을 실행합니다. 
+아래와 같이 "ggv2-deploy-cloud" 폴더의 "create_gg_component.sh"을 실행합니다. 
 
 ```c
 cd aiot-e2e-sagemaker-greengrass-v2-nvidia-jetson/ggv2-deploy-cloud
