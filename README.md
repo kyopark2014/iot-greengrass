@@ -8,6 +8,15 @@ Greengrass 사용시 보안을 위하여 기능이 제한된 계정을 사용하
 
 유용한 [Greengrass 명령어와 중요한 메모들](https://github.com/kyopark2014/iot-greengrass/blob/main/greengrass-commands.md)를 정리하였습니다.
 
+### v2.0과 v1.0의 차이점 
+
+- Core software
+- Components
+- Inter-process communication (IPC)
+- Docker containers
+- Nucleus and component security
+- Operating system integration and interaction
+
 ## Greengress Workshop
 
 1) [Workshop Greengrass](https://github.com/kyopark2014/iot-greengrass/blob/main/workshop-greengrass-beginner.md)을 따라서, Cloud9에 Greengrass V2를 설치하고, Local에서 배포를 수행합니다. 
