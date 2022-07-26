@@ -39,7 +39,7 @@ Manifests:
         done
      Artifacts:
        - URI: s3://BUCKET/artifacts/demo.example.hello_world/…
-
+```
 
 ## Greengrass 계정 생성
 
