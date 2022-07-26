@@ -1,5 +1,13 @@
 # AWS IoT Greengrass
 
+
+## Greengrass 특징 
+
+v2.0부터 JVM으로 구동되므로 별도 컴파일 없이 구동 가능합니다. 
+
+![image](https://user-images.githubusercontent.com/52392004/181127427-8cbd6bf1-60b1-4f4f-b8c4-dd211d0b3f98.png)
+
+
 ## Greengrass 계정 생성
 
 Greengrass 사용시 보안을 위하여 기능이 제한된 계정을 사용하여야 합니다. 이를 위해 [Greengrass를 위한 계정 등록](https://github.com/kyopark2014/iot-greengrass/blob/main/greengrass-user-registration.md)에 따라 계정을 생성합니다. 
