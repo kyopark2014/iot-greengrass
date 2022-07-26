@@ -18,6 +18,8 @@ Greengrass 사용시 보안을 위하여 기능이 제한된 계정을 사용하
 
 ### v2.0과 v1.0의 차이점 
 
+상세한 차이점은 [Greengrass Version](https://github.com/kyopark2014/iot-greengrass/blob/main/version-difference.md)을 참고 바랍니다. 
+
 - Core software
 - Components
 - Inter-process communication (IPC)
