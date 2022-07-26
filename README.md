@@ -5,7 +5,7 @@
 
 v2.0부터 JVM으로 구동되므로 별도 컴파일 없이 구동 가능합니다. 
 
-![image](https://user-images.githubusercontent.com/52392004/181127427-8cbd6bf1-60b1-4f4f-b8c4-dd211d0b3f98.png)
+![image](https://user-images.githubusercontent.com/52392004/181129624-d2a73168-5a8d-4336-be98-1815664a6bff.png)
 
 ### Components
 
