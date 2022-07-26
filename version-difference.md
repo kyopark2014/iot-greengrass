@@ -7,7 +7,7 @@
 
 ## V2.0
 
-![image](https://user-images.githubusercontent.com/52392004/181127535-8d7637f9-20e9-408b-8660-162000445818.png)
+![image](https://user-images.githubusercontent.com/52392004/181129681-435e1d24-c589-4fd0-ad93-947fbba34a05.png)
 
 
 ## Reference
