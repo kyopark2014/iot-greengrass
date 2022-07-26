@@ -7,6 +7,11 @@ v2.0부터 JVM으로 구동되므로 별도 컴파일 없이 구동 가능합니
 
 ![image](https://user-images.githubusercontent.com/52392004/181127427-8cbd6bf1-60b1-4f4f-b8c4-dd211d0b3f98.png)
 
+### Components
+
+하나의 Component는 Receipe file과 Artifacts로 구성됩니다. 
+
+Component의 dependency를 yaml 파일 안에 ComponentDependencies에 정의 할 수 있습니다. 
 
 ## Greengrass 계정 생성
 
