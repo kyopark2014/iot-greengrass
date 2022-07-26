@@ -15,6 +15,8 @@ v2.0부터 JVM으로 구동되므로 별도 컴파일 없이 구동 가능합니
 
 - Component는 ComponentName과 ComponentVersion으로 구분합니다.
 
+- Component states: RUNNING, FINISHED, ERRORED, BROKEN
+
 
 ```java
 ---
