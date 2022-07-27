@@ -1,8 +1,8 @@
 # Inter-process Communication
 
-## IPC 구조
+## Component 들의 통신방법
 
-아래와 같이 각 Component들은 Authorization policies에 따른 권한을 가지고 있습니다. Local componet들 사이와 Local Compent와 IoTMQTTClient 사이는 PUBSUB을 사용합니다. 여기서 IoTMQTTClient는 IoT Core와 MQTT 통신을 합니다. 
+각 Component들은 Authorization policies에 따른 권한을 가지고 있습니다. Local componet들 사이와 Local Compent 또는 IoTMQTTClient 사이는 PUBSUB을 사용합니다. 여기서 IoTMQTTClient는 IoT Core와 MQTT 통신을 합니다. 
 
 Recipy의 "accessControl"를 이용하여 Autorization policies를 정의 할 수 있는데, 기본적으로 모든 Component는 nucleus와 IPC 통신을 합니다. 
 
