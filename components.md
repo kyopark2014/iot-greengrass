@@ -10,6 +10,9 @@
 
 - Component states: RUNNING, FINISHED, ERRORED, BROKEN
 
+<img width="943" alt="image" src="https://user-images.githubusercontent.com/52392004/181391984-e37e213c-3620-4893-813b-71aad1b41e5b.png">
+
+
 ## Artifacts
 
 스크립트, 컴파일된 코드, 정적 리소스등을 포함합니다.
