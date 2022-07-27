@@ -10,6 +10,13 @@
 
 - Component states: RUNNING, FINISHED, ERRORED, BROKEN
 
+## Artifacts
+
+스크립트, 컴파일된 코드, 정적 리소스등을 포함합니다.
+
+### Artifacts 예제
+
+
 
 ## Receipe 예제
 
