@@ -2,7 +2,7 @@
 
 ## Component의 특징
 
-- 하나의 Component는 Receipe file과 Artifacts로 구성됩니다. 
+- 하나의 Component는 Recipe file과 Artifacts로 구성됩니다. 
 
 - Component의 dependency를 yaml 파일 안에 ComponentDependencies에 정의 할 수 있습니다. 
 
