@@ -10,7 +10,7 @@
 
 - Component states: RUNNING, FINISHED, ERRORED, BROKEN
 
-- AWS에서 제공하는 components: Nucleus, Greengrass CLI, Log manager, Stream manager, Local debug console, Secret manager, Secure tunneling 등 
+- AWS에서 제공하는 Components: Nucleus, Greengrass CLI, Log manager, Stream manager, Local debug console, Secret manager, Secure tunneling 등 
 
 <img width="929" alt="image" src="https://user-images.githubusercontent.com/52392004/181392075-43f385db-222d-4506-9727-5f0aa7211619.png">
 
