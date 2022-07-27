@@ -9,42 +9,7 @@ v2.0부터는 Java기반으로 Core가 변경되어서, 별도 컴파일 없이 
 
 ### Components
 
-- 하나의 Component는 Receipe file과 Artifacts로 구성됩니다. 
-
-- Component의 dependency를 yaml 파일 안에 ComponentDependencies에 정의 할 수 있습니다. 
-
-- Component는 ComponentName과 ComponentVersion으로 구분합니다.
-
-- Component states: RUNNING, FINISHED, ERRORED, BROKEN
-
-
-```java
----
-RecipeFormatVersion: 2020-01-25
-ComponentName: demo.example.hello_world
-ComponentVersion: '1.0.0'
-ComponentDescription: My first AWS IoT Greengrass component.
-ComponentPublisher: Amazon
-ComponentDependencies:
-  aws.greengrass.TokenExchangeService:
-    VersionRequirement: '>=0.0.0'
-    DependencyType: HARD
-ComponentConfiguration:
-  DefaultConfiguration:
-    Message: world
-Manifests:
-  - Platform:
-      os: linux
-    Lifecycle:
-      Run: |
-        while true; do
-          python3 {artifacts:path}/hello_world.py \
-            '{configuration:/Message}’
-          sleep 5
-        done
-     Artifacts:
-       - URI: s3://BUCKET/artifacts/demo.example.hello_world/…
-```
+Greengrass V2.0은 [Component](https://github.com/kyopark2014/iot-greengrass/blob/main/components.md)를 이용하여 구성됩니다.
 
 ## Greengrass 계정 생성
 
