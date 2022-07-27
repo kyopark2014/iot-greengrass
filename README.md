@@ -11,6 +11,10 @@ v2.0부터는 Java기반으로 Core가 변경되어서, 별도 컴파일 없이 
 
 Greengrass V2.0은 [Component](https://github.com/kyopark2014/iot-greengrass/blob/main/components.md)를 이용하여 구성됩니다.
 
+### IPC 구조
+
+Greengrass의 Components들은 [IPC 통신](https://github.com/kyopark2014/iot-greengrass/blob/main/IPC.md)을 합니다. 
+
 ## Greengrass 계정 생성
 
 Greengrass 사용시 보안을 위하여 기능이 제한된 계정을 사용하여야 합니다. 이를 위해 [Greengrass를 위한 계정 등록](https://github.com/kyopark2014/iot-greengrass/blob/main/greengrass-user-registration.md)에 따라 계정을 생성합니다. 
