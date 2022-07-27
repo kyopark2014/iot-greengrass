@@ -16,7 +16,7 @@ Recipy의 "accessControl"를 이용하여 Autorization policies를 정의 할 �
 
 4) Component2가 topicB로 Publish를 하면, IoTMqtt service가 이를 받아서 IoT Core로 전송할 수 있습니다. 
 
-![image](https://user-images.githubusercontent.com/52392004/181377811-8fe7ca09-c29f-48f4-8849-c81db97e717c.png)
+![image](https://user-images.githubusercontent.com/52392004/181382025-d2a786dd-b2f1-46a7-9cc5-065ae749c54d.png)
 
 #### Recipy 예제 
 
