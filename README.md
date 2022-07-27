@@ -3,7 +3,7 @@
 
 ## Greengrass 특징 
 
-v2.0부터 Java기반으로 Core가 변경되 JVM으로 구동되므로 별도 컴파일 없이 구동 가능합니다. 
+v2.0부터는 Java기반으로 Core가 변경되어서, 별도 컴파일 없이 구동 가능합니다. 
 
 ![image](https://user-images.githubusercontent.com/52392004/181129624-d2a73168-5a8d-4336-be98-1815664a6bff.png)
 
