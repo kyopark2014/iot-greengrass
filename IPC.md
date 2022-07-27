@@ -10,7 +10,7 @@ Recipy의 "accessControl"를 이용하여 Autorization policies를 정의 할 �
 
 1) Component1과 Component2가 Necleus에 IPC로 연결됩니다.
 
-2) IPC service는 recipy에서 autorization policy를 확인합니다. 여기서 Component1은 topicA에 locally publish가 가능하고, Component2는 topicA를 subscribe하고 topicB를 publish 할 수 있습니다. 
+2) Neucleus는 recipy에서 autorization policy를 확인합니다. 여기서 Component1은 topicA에 locally publish가 가능하고, Component2는 topicA를 subscribe하고 topicB를 publish 할 수 있습니다. 
 
 3) Component1이 Component2에 메시지를 보내기 위해서 publish를 하면, PubSub service를 통해 topicA를 subscribe하고 있는 Component2로 메시지를 전달할 수 있습니다. 
 
