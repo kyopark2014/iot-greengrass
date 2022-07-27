@@ -10,7 +10,7 @@
 
 - Component states: RUNNING, FINISHED, ERRORED, BROKEN
 
-<img width="943" alt="image" src="https://user-images.githubusercontent.com/52392004/181391984-e37e213c-3620-4893-813b-71aad1b41e5b.png">
+<img width="929" alt="image" src="https://user-images.githubusercontent.com/52392004/181392075-43f385db-222d-4506-9727-5f0aa7211619.png">
 
 
 ## Artifacts
