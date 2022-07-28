@@ -21,6 +21,37 @@
 
 ### Artifacts 예제
 
+## Receipe 예제
+
+```java
+---
+RecipeFormatVersion: 2020-01-25
+ComponentName: demo.example.hello_world
+ComponentVersion: '1.0.0'
+ComponentDescription: My first AWS IoT Greengrass component.
+ComponentPublisher: Amazon
+ComponentDependencies:
+  aws.greengrass.TokenExchangeService:
+    VersionRequirement: '>=0.0.0'
+    DependencyType: HARD
+ComponentConfiguration:
+  DefaultConfiguration:
+    Message: world
+Manifests:
+  - Platform:
+      os: linux
+    Lifecycle:
+      Run: |
+        while true; do
+          python3 {artifacts:path}/hello_world.py \
+            '{configuration:/Message}’
+          sleep 5
+        done
+     Artifacts:
+       - URI: s3://BUCKET/artifacts/demo.example.hello_world/…
+```
+
+
 ```java
 
 	"RecipeFormatVersion": "2020-01-25",
@@ -60,36 +91,6 @@
 }
 ```
 
-
-## Receipe 예제
-
-```java
----
-RecipeFormatVersion: 2020-01-25
-ComponentName: demo.example.hello_world
-ComponentVersion: '1.0.0'
-ComponentDescription: My first AWS IoT Greengrass component.
-ComponentPublisher: Amazon
-ComponentDependencies:
-  aws.greengrass.TokenExchangeService:
-    VersionRequirement: '>=0.0.0'
-    DependencyType: HARD
-ComponentConfiguration:
-  DefaultConfiguration:
-    Message: world
-Manifests:
-  - Platform:
-      os: linux
-    Lifecycle:
-      Run: |
-        while true; do
-          python3 {artifacts:path}/hello_world.py \
-            '{configuration:/Message}’
-          sleep 5
-        done
-     Artifacts:
-       - URI: s3://BUCKET/artifacts/demo.example.hello_world/…
-```
 
 ## Reference 
 
