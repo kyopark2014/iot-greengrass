@@ -32,9 +32,9 @@ This role alias refers to the IAM role.
 
 9. If IAM validates the signature successfully and authorizes the request, the request is successful. Otherwise, IAM sends an exception.
 
-## Reference
 
-[Credentials Provider Workflow](https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html)
+
+## credentials provider endpoint 
 
 ```c
 aws iot describe-endpoint --endpoint-type iot:CredentialProvider
@@ -42,3 +42,8 @@ aws iot describe-endpoint --endpoint-type iot:CredentialProvider
     "endpointAddress": "samplekbg1m4dh.credentials.iot.ap-northeast-2.amazonaws.com"
 }
 ```
+
+
+## Reference
+
+[Credentials Provider Workflow](https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html)
