@@ -36,3 +36,9 @@ This role alias refers to the IAM role.
 
 [Credentials Provider Workflow](https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html)
 
+```c
+aws iot describe-endpoint --endpoint-type iot:CredentialProvider
+{
+    "endpointAddress": "samplekbg1m4dh.credentials.iot.ap-northeast-2.amazonaws.com"
+}
+```
