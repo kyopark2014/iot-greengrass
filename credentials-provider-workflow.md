@@ -1,5 +1,14 @@
 # Credentials Provider Workflow
 
+## IAM role: GreengrassV2TokenExchangeRole
+
+This role has a policy named GreengrassV2TokenExchangeRoleAccess and a trust relationship that allows credentials.iot.amazonaws.com to assume the role. The policy includes the minimum permissions for the core device.
+
+This policy doesn't include access to files in S3 buckets. You must add permissions to the role to allow core devices to retrieve component artifacts from S3 buckets. For more information, see Allow access to S3 buckets for component artifacts.
+
+AWS IoT role alias: GreengrassV2TokenExchangeRoleAlias
+This role alias refers to the IAM role.
+ 
 
 ## Credentials Provider Workflow
 
