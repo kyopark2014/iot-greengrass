@@ -10,7 +10,7 @@ AWS IoT role alias: GreengrassV2TokenExchangeRoleAlias
 This role alias refers to the IAM role.
  
 
-## Credentials Provider Workflow
+## Credentials provider workflow
 
 ![image](https://user-images.githubusercontent.com/52392004/181392716-4b78f2f8-202a-4190-a8e0-69a9fbd6b5ea.png)
 
@@ -34,7 +34,7 @@ This role alias refers to the IAM role.
 
 
 
-## credentials provider endpoint 
+## Credentials provider endpoint 
 
 ```c
 aws iot describe-endpoint --endpoint-type iot:CredentialProvider
