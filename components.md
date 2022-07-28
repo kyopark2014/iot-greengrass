@@ -53,7 +53,7 @@ Manifests:
 
 
 ```java
-
+{
 	"RecipeFormatVersion": "2020-01-25",
 	"ComponentName": "com.example.HelloMqtt",
 	"ComponentVersion": "1.0.0",
