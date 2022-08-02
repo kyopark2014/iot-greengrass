@@ -1,5 +1,10 @@
 # Component Deployment
 
+## V2에서의 배포
+
+![image](https://user-images.githubusercontent.com/52392004/182495293-6777b3d3-f367-4885-971b-56d884a48fcb.png)
+
+
 ## Component 생성
 
 1. Component의 artifact를 S3 Bucket에 업로드합니다.
