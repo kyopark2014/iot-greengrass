@@ -11,7 +11,7 @@
 
 
 
-## Deployment 생성
+## 배포 Component 생성
 
 1. Component의 artifact를 S3 Bucket에 업로드합니다.
 
