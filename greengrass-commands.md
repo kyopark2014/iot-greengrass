@@ -126,10 +126,10 @@ $ sudo /greengrass/v2/bin/greengrass-cli deployment create --remove="com.example
 }
 ```
 
-- Artifact 예제 
 
-```python
 
+```java
+{
 	"RecipeFormatVersion": "2020-01-25",
 	"ComponentName": "com.example.HelloMqtt",
 	"ComponentVersion": "1.0.0",
