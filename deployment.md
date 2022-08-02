@@ -2,7 +2,13 @@
 
 ## V2에서의 배포
 
-![image](https://user-images.githubusercontent.com/52392004/182495293-6777b3d3-f367-4885-971b-56d884a48fcb.png)
+1) Publish components
+2) Create deployment
+3) Deploy to Thing
+4) Deploy to Thing Group
+
+![image](https://user-images.githubusercontent.com/52392004/182495514-a72fb776-bb23-4ec3-b316-b261212ca956.png)
+
 
 
 ## Component 생성
