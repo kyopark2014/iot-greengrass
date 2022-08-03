@@ -21,7 +21,7 @@ component를 통해서 실행될 코드 부분인 Artifacts에는 스크립트, 
 
 ### Artifacts 예제
 
-## Receipe 예제
+## Recipe 예제
 
 ```java
 ---
@@ -116,7 +116,7 @@ Manifests:
 }
 ```
 
-#### Necleus를 위한 receipe.yaml
+#### Necleus를 위한 recipe.yaml
 
 ```yaml
 ---
