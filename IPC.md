@@ -6,6 +6,34 @@
 
 Recipy의 "accessControl"를 이용하여 Autorization policies를 정의 할 수 있는데, 기본적으로 모든 Component는 nucleus와 IPC 통신을 합니다. 
 
+
+### IPC service identifier
+
+IPC service identifier는 aws.greengrass.ipc.mqttproxy 입니다. 이를 위해 아래와 같이 policy를 정의 할 수 있습니다. 
+
+[Example authorization policy with limited access](https://docs.aws.amazon.com/greengrass/v2/developerguide/ipc-iot-core-mqtt.html)
+
+```java
+{
+  "accessControl": {
+    "aws.greengrass.ipc.mqttproxy": {
+      "com.example.MyIoTCorePubSubComponent:mqttproxy:1": {
+        "policyDescription": "Allows access to publish/subscribe to factory 1 topics.",
+        "operations": [
+          "aws.greengrass#PublishToIoTCore",
+          "aws.greengrass#SubscribeToIoTCore"
+        ],
+        "resources": [
+          "factory/1/actions",
+          "factory/1/events"
+        ]
+      }
+    }
+  }
+}
+```
+
+
 ### 동작 프로세스
 
 1) Component1과 Component2가 Necleus에 IPC로 연결됩니다.
