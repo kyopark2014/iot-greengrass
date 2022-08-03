@@ -19,6 +19,11 @@ Greengrass v2.0부터는 Java기반으로 Core가 변경되어서, 별도 컴파
 
 Greengrass의 Components들은 [IPC 통신](https://github.com/kyopark2014/iot-greengrass/blob/main/IPC.md)을 통해 Necleus와 연결되고, Components 사이는 [MQTT](https://github.com/kyopark2014/IoT-Core-Contents/blob/main/mqtt.md) PUBSUB으로 메시지를 교환할 수 있습니다. 
 
+### Component examples
+
+[Component 예제](https://github.com/kyopark2014/iot-greengrass/blob/main/component-examples.md)에서는 component를 위한 예제를 보여줍니다. 
+
+
 ### Credentials Provider Workflow
 
 [Credentials Provider Workflow](https://github.com/kyopark2014/iot-greengrass/blob/main/credentials-provider-workflow.md)
