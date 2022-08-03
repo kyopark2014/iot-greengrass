@@ -20,7 +20,8 @@ export AWS_SECRET_ACCESS_KEY=0sampleabulrFsfsY0+gWeU3QciaBm5W4E2z123pc
 1) Greengrass installer를 아래 명령어로 다운로드 합니다. 
 
 ```c
-$ curl -s https://d2s8p88vqu9w66.cloudfront.net/releases/greengrass-nucleus-latest.zip > greengrass-nucleus-latest.zip && unzip greengrass-nucleus-latest.zip -d GreengrassCore
+curl -s https://d2s8p88vqu9w66.cloudfront.net/releases/greengrass-nucleus-latest.zip > greengrass-nucleus-latest.zip 
+unzip greengrass-nucleus-latest.zip -d GreengrassCore
 ```
 
 2) 아래 명령어로 IoT Core에 thing을 생성하고, greengrass에 등록합니다. 이때 생성되는 Core device name은 GreengrassQuickStartCore-18163f7ac3e이고, Thing group name은 GreengrassQuickStartGroup
