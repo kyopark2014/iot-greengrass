@@ -17,7 +17,7 @@ export AWS_SECRET_ACCESS_KEY=0sampleabulrFsfsY0+gWeU3QciaBm5W4E2z123pc
 
 ## Greengrass V2 생성 및 Local 배포
 
-1) Download the installer 
+### 1) Download the installer 
 
 Greengrass installer를 아래 명령어로 다운로드 합니다. 
 
@@ -33,7 +33,7 @@ unzip greengrass-nucleus-latest.zip -d GreengrassCore
 
 
 
-2) Run the installer 
+### 2) Run the installer 
 
 아래 명령어로 IoT Core에 thing을 생성하고, greengrass에 등록합니다. 이때 생성되는 Core device name은 GreengrassQuickStartCore-18163f7ac3e이고, Thing group name은 GreengrassQuickStartGroup
 
@@ -124,7 +124,7 @@ GreengrassV2TokenExchangeRoleAccess인 policy 내용은 아래와 같습니다.
 
 <img width="1106" alt="image" src="https://user-images.githubusercontent.com/52392004/182634546-20bfe9f5-9c6b-4074-bf9b-9d72d2b7a340.png">
 
-### Greengrass CLI
+#### Greengrass CLI
 
 Greengrass-cli가 설치되어 있는지 확인합니다. 
 
@@ -136,7 +136,7 @@ bash: /greengrass/v2/bin/greengrass-cli: No such file or directory
 만약 상기와 같이 설치되어 있지 않다면, [Greengrass CLI 설치](https://github.com/kyopark2014/iot-greengrass/blob/main/greengrass-cli.md)에 따라 Greengrass CLI를 설치합니다.
 
 
-3) Local deployment를 위해 Receipe와 Artifact를 생성합니다.
+### 3) Local deployment를 위해 Receipe와 Artifact를 생성합니다.
 
 - Recipe 생성
 
