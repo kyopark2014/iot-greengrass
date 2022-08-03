@@ -26,7 +26,8 @@ unzip greengrass-nucleus-latest.zip -d GreengrassCore
 
 다운로드한 Greengrass에는 아래와 같은 파일들이 있습니다. 
 
-![noname](https://user-images.githubusercontent.com/52392004/182630425-c4e9efa3-f6b2-4665-ac7f-d1cd30b17736.png)
+![noname](https://user-images.githubusercontent.com/52392004/182630947-38690340-239d-43a6-b9a6-cfbfb1ce7a94.png)
+
 
 
 
