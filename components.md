@@ -184,3 +184,5 @@ Lifecycle: {}
 ## Reference 
 
 [AWS re:Invent 2020: Dive deep and accelerate your implementation of AWS IoT Greengrass 2.0](https://www.youtube.com/watch?v=t2x49uZuTwE)
+
+[AWS-provided components](https://docs.aws.amazon.com/greengrass/v2/developerguide/public-components.html)
