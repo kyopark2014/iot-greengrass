@@ -9,7 +9,7 @@ Greengrass v2.0부터는 Java기반으로 Core가 변경되어서, 별도 컴파
 
 ### Components
 
-Greengrass component는 Greengrass core device를 구동하는 소프트웨어입니다. 이를 이용하여 local에서 core device를 개발하고 시험할 수 있습니다. Greengrass에서는 기본기능(basic feature)과 공통 라이브러리(common liabrary)를 비롯한 local 개발 툴을 component로 제공합니다. 
+Greengrass component는 Greengrass core device를 구동하는 소프트웨어입니다. 이를 이용하여 local에서 core device를 개발하고 시험할 수 있습니다. Greengrass에서는 기본기능(basic feature)과 공통 라이브러리(common liabrary)를 비롯한 local 개발 툴을 components로 제공합니다. 
 
 
 
