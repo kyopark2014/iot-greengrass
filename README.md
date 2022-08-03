@@ -9,6 +9,10 @@ Greengrass v2.0부터는 Java기반으로 Core가 변경되어서, 별도 컴파
 
 ### Components
 
+Greengrass components는 Greengrass core device를 구동하는 소프트웨어입니다. 이를 이용하여 local에서 core device를 개발하고 시험할 수 있습니다. Greengrass에서는 기본기능(basic feature)과 공통 라이브러리(common liabrary)를 비롯한 local 개발 툴을 component로 제공합니다. 
+
+
+
 Greengrass V2.0은 [Component](https://github.com/kyopark2014/iot-greengrass/blob/main/components.md)를 이용하여 구성됩니다. [Docker 이미지를 이용](https://github.com/kyopark2014/iot-greengrass/blob/main/docker-component.md)하여 Component를 생성할 수 있습니다. 생성된 Component는 cloud를 이용하여 다른 [device에 배포](https://github.com/kyopark2014/iot-greengrass/blob/main/deployment.md) 할 수 있습니다. 
 
 또한, [Lambda를 Component로 등록](https://github.com/kyopark2014/iot-greengrass/blob/main/lambda.md)할 수 있습니다. 
