@@ -14,6 +14,42 @@
 
 <img width="929" alt="image" src="https://user-images.githubusercontent.com/52392004/181392075-43f385db-222d-4506-9727-5f0aa7211619.png">
 
+### [AWS-provided components](https://docs.aws.amazon.com/greengrass/v2/developerguide/public-components.html)
+
+- Greengrass nucleus: The nucleus of the AWS IoT Greengrass Core software. Use this component to configure and update the software on your core devices.
+- Client device auth: Enables local IoT devices, called client devices, to connect to the core device.
+- CloudWatch metrics: Publishes custom metrics to Amazon CloudWatch.
+- AWS IoT Device Defender: Notifies administrators of changes in the state of the Greengrass core device to identify unusual behavior.
+- Docker application manager: Enables AWS IoT Greengrass to download Docker images from Docker Hub and Amazon Elastic Container Registry (Amazon ECR).
+- Edge connector for Kinesis Video Streams: Reads video feeds from local cameras, publishes the streams to Kinesis Video Streams, and displays the streams in Grafana dashboards with AWS IoT TwinMaker.
+- Greengrass CLI: Provides a command-line interface that you can use to create local deployments and interact with the Greengrass core device and its components.
+- IP detector: 	Reports MQTT broker connectivity information to AWS IoT Greengrass, so client devices can discover how to connec
+- Kinesis Data Firehose: Publishes data through Amazon Kinesis Data Firehose delivery streams to destinations in the AWS Cloud.
+- Lambda launcher: Handles processes and environment configuration for Lambda functions.
+- Lambda manager: Handles interprocess communication and scaling for Lambda functions.
+- Lambda runtimes: Provides artifacts for each Lambda runtime.
+- Legacy subscription router: Manages subscriptions for Lambda functions that run on AWS IoT Greengrass V1.
+- Local debug console: Provides a local console that you can use to debug and manage the Greengrass core device and its components.
+- Log manager: Collects and uploads logs on the Greengrass core device.
+- Machine learning components: Provides machine learning models and sample inference code that you can use to perform machine learning inference on Greengrass core devices.
+- Modbus-RTU protocol adapter: Polls information from local Modbus RTU devices.
+- Nucleus telemetry emitter: Publishes system health telemetry data gathered from the nucleus to a local topic or to an AWS IoT Core MQTT topic.
+- MQTT bridge: Relays MQTT messages between client devices, local AWS IoT Greengrass publish/subscribe, and AWS IoT Core.
+- MQTT 3.1.1 broker (Moquette): Runs an MQTT 3.1.1 broker that handles messages between client devices and the core device.
+- MQTT 5 broker (EMQX): Runs an MQTT 5 broker that handles messages between client devices and the core device.
+- PKCS#11 provider: Enables Greengrass components to to access a private key and certificate that you securely store in a hardware security module (HSM).
+- Secret manager: Deploys secrets from AWS Secrets Manager secrets so that you can securely use credentials, such as passwords, in custom components on the Greengrass core device.
+- Secure tunneling: Enables AWS IoT secure tunneling connections that you can use to establish bidrectional communications with Greengrass core devices that are behind restricted firewall
+- Shadow manager: Enables interaction with shadows on the core device. It manages shadow document storage and also the synchronization of local shadow states with the AWS IoT Device Shadow service.
+- Amazon SNS: Publishes messages to Amazon SNS topics.
+- Stream manager: Streams high-volume data from local sources to the AWS Cloud.
+- Systems Manager Agent: Manage the core device with AWS Systems Manager, which enables you to patch devices, run commands, and more.
+- Token exchange service: Provides AWS credentials that you can use to interact with AWS services.
+- IoT SiteWise OPC-UA collector: Collects data from OPC-UA servers.
+- IoT SiteWise OPC-UA data source simulator: Runs a local OPC-UA server that generates sample data.
+- IoT SiteWise publisher: Publishes data to the AWS Cloud.
+- IoT SiteWise processor: Processes data on the Greengrass core devices.
+
 
 ## Artifacts
 
