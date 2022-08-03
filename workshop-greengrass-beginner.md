@@ -5,7 +5,7 @@
 
 ## Cloud9 서버 준비
 
-편의를 위해 Cloud9 서버를 준비합니다.
+편의를 위해 Cloud9 서버를 준비합니다. 이때, 환경설정의 편의를 위해 "Ubuntu Server 18.04 LTS"을 선택합니다.
 
 Credential을 등록합니다.
 
