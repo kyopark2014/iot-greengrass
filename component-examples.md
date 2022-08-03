@@ -90,3 +90,7 @@ while True:
 # To stop subscribing, close the operation stream.
 operation.close()
 ```
+
+## Referece
+
+[Use the AWS IoT Device SDK to communicate with the Greengrass nucleus, other components, and AWS IoT Core](https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-subscribe-operations)
