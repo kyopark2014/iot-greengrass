@@ -3,7 +3,7 @@
 
 ## Greengrass 특징 
 
-Greengrass v2.0부터는 Java기반으로 Core가 변경되어서, 별도 컴파일 없이 구동 가능합니다. Greengrass는 Greengrass.jar와 components로 구성되는데, AWS가 제공하는 necleus, streammanger 등이 있으며, 사용자가 compoenent를 recipt로 정의 할 수 있습니다. 
+Greengrass v2.0부터는 Java기반으로 Core가 변경되어서, 별도 컴파일 없이 구동 가능합니다. Greengrass는 Greengrass.jar와 components로 구성되는데, component에는 AWS가 제공하는 necleus, streammanger 등이 있으며, 사용자가 compoenent를 recipt를 이용해 직접 정의 할 수 있습니다. 
 
 ![image](https://user-images.githubusercontent.com/52392004/181129624-d2a73168-5a8d-4336-be98-1815664a6bff.png)
 
