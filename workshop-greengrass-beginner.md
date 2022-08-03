@@ -239,7 +239,13 @@ if __name__ == '__main__':
   --artifactDir ~/GGv2Dev/artifacts \
   --merge "com.example.HelloMqtt=1.0.0"
 ```
-
+```c
+Aug 03, 2022 3:31:46 PM software.amazon.awssdk.eventstreamrpc.EventStreamRPCConnection$1 onConnectionSetup
+INFO: Socket connection /greengrass/v2/ipc.socket:8033 to server result [AWS_ERROR_SUCCESS]
+Aug 03, 2022 3:31:46 PM software.amazon.awssdk.eventstreamrpc.EventStreamRPCConnection$1 onProtocolMessage
+INFO: Connection established with event stream RPC server
+Local deployment submitted! Deployment Id: 4a340ea0-0aad-4c7f-a9de-55bda9cad0f5
+```
 
 "com.example.HelloMqtt"가 잘 등록되어 있음을 아래와 같이 확인 합니다. 이때 state가 "RUNNING"이어야 합니다. 
 
