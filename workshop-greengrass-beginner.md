@@ -72,6 +72,29 @@ Added ggc_user to ggc_group
 Successfully set up Nucleus as a system service
 ```
 
+이때 /greengrass/v2 폴더에는 아래와 같은 파일들이 생성됩니다. 
+
+```c
+$ ls -al
+total 60
+drwxr-xr-x 12 root root 4096 Aug  3 14:25 .
+drwxr-xr-x  3 root root 4096 Aug  3 14:25 ..
+drwx------  3 root root 4096 Aug  3 14:25 alts
+drwxr-xr-x  2 root root 4096 Aug  3 14:25 bin
+drwxr-xr-x  2 root root 4096 Aug  3 14:25 cli_ipc_info
+drwx------  2 root root 4096 Aug  3 14:25 config
+drwx------  2 root root 4096 Aug  3 14:25 deployments
+srw-rw-rw-  1 root root    0 Aug  3 14:25 ipc.socket
+drwx------  2 root root 4096 Aug  3 14:25 logs
+drwxr-xr-x  5 root root 4096 Aug  3 14:25 packages
+drwx------  4 root root 4096 Aug  3 14:25 plugins
+-rw-r--r--  1 root root 1679 Aug  3 14:25 privKey.key
+-rw-r--r--  1 root root 1188 Aug  3 14:25 rootCA.pem
+drwxr-xr-x  2 root root 4096 Aug  3 14:25 telemetry
+-rw-r--r--  1 root root 1220 Aug  3 14:25 thingCert.crt
+drwxr-xr-x  2 root root 4096 Aug  3 14:25 work
+```
+
 GreengrassV2TokenExchangeRoleAccess인 policy 내용은 아래와 같습니다. 
 
 ```java
