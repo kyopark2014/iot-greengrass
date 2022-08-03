@@ -47,7 +47,7 @@
 - Token exchange service: Provides AWS credentials that you can use to interact with AWS services.
 - IoT SiteWise OPC-UA collector: Collects data from OPC-UA servers.
 - IoT SiteWise OPC-UA data source simulator: Runs a local OPC-UA server that generates sample data.
-- IoT SiteWise publisher: Publishes data to the AWS Cloud.
+- [IoT SiteWise publisher](https://github.com/kyopark2014/aws-iot-sitewise/blob/main/sitewise-publisher.md): Publishes data to the AWS Cloud.
 - IoT SiteWise processor: Processes data on the Greengrass core devices.
 
 
