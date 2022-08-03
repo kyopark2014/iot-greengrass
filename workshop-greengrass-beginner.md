@@ -124,6 +124,17 @@ GreengrassV2TokenExchangeRoleAccess인 policy 내용은 아래와 같습니다.
 
 <img width="1106" alt="image" src="https://user-images.githubusercontent.com/52392004/182634546-20bfe9f5-9c6b-4074-bf9b-9d72d2b7a340.png">
 
+### Greengrass CLI
+
+Greengrass-cli가 설치되어 있는지 확인합니다. 
+
+```c
+$ /greengrass/v2/bin/greengrass-cli -V
+bash: /greengrass/v2/bin/greengrass-cli: No such file or directory
+```
+
+만약 상기와 같이 설치되어 있지 않다면, [Greengrass CLI 설치](https://github.com/kyopark2014/iot-greengrass/blob/main/greengrass-cli.md)에 따라 Greengrass CLI를 설치합니다.
+
 
 3) Local deployment를 위해 Receipe와 Artifact를 생성합니다.
 
