@@ -53,18 +53,22 @@ Creating IoT Thing "GreengrassQuickStartCore-18163f7ac3e"...
 Attaching certificate to IoT thing...
 Successfully provisioned AWS IoT resources for the device with IoT Thing Name: [GreengrassQuickStartCore-18163f7ac3e]!
 Adding IoT Thing [GreengrassQuickStartCore-18163f7ac3e] into Thing Group: [GreengrassQuickStartGroup]...
+IoT Thing Group "GreengrassQuickStartGroup" already existed, reusing it
 Successfully added Thing into Thing Group: [GreengrassQuickStartGroup]
 Setting up resources for aws.greengrass.TokenExchangeService ... 
 Attaching TES role policy to IoT thing...
-Encountered error - User: arn:aws:iam::account-id:user/iotuser is not authorized to perform: iam:GetPolicy on resource: policy arn:aws:iam::aws:policy/GreengrassV2TokenExchangeRoleAccess because no identity-based policy allows the iam:GetPolicy action (Service: Iam, Status Code: 403, Request ID: d72030b9-6467-4d11-9fa0-9eca93d2d085, Extended Request ID: null); No permissions to lookup managed policy, looking for a user defined policy...
+No managed IAM policy found, looking for user defined policy...
 IAM policy named "GreengrassV2TokenExchangeRoleAccess" already exists. Please attach it to the IAM role if not already
 Configuring Nucleus with provisioned resource details...
-Root CA file found at "/greengrass/v2/rootCA.pem". Contents will be preserved.
 Downloading Root CA from "https://www.amazontrust.com/repository/AmazonRootCA1.pem"
 Created device configuration
 Successfully configured Nucleus with provisioned resource details!
-Creating a deployment for Greengrass first party components to the thing group
-Configured Nucleus to deploy aws.greengrass.Cli component
+Thing group exists, it could have existing deployment and devices, hence NOT creating deployment for Greengrass first party dev tools, please manually create a deployment if you wish to
+Creating user ggc_user 
+ggc_user created 
+Creating group ggc_group 
+ggc_group created 
+Added ggc_user to ggc_group 
 Successfully set up Nucleus as a system service
 ```
 
