@@ -11,7 +11,7 @@ v2.0부터는 Java기반으로 Core가 변경되어서, 별도 컴파일 없이 
 
 Greengrass V2.0은 [Component](https://github.com/kyopark2014/iot-greengrass/blob/main/components.md)를 이용하여 구성됩니다. [Docker 이미지를 이용](https://github.com/kyopark2014/iot-greengrass/blob/main/docker-component.md)하여 Component를 생성할 수 있습니다. 생성된 Component는 cloud를 이용하여 다른 [device에 배포](https://github.com/kyopark2014/iot-greengrass/blob/main/deployment.md) 할 수 있습니다. 
 
-[Lambda로 Component로 등록](https://github.com/kyopark2014/iot-greengrass/blob/main/lambda.md)할 수 있습니다. 
+[Lambda를 Component로 등록](https://github.com/kyopark2014/iot-greengrass/blob/main/lambda.md)할 수 있습니다. 
 
 ### Component간 통신방법
 
