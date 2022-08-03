@@ -19,7 +19,6 @@
 
 component를 통해서 실행될 코드 부분인 Artifacts에는 스크립트, 컴파일된 코드, 정적 리소스등이 포함합니다. Component는 종속적으로 지정된 구성요소의 다른 artifacts도 사용할 수 있습니다. 
 
-### Artifacts 예제
 
 ## Recipe 예제
 
