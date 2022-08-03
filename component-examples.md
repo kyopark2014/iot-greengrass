@@ -38,7 +38,7 @@ future_response.result(TIMEOUT)
 
 lifecycle이 끝나도 subscribe 할수 있도록 [IPC event stream](https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-subscribe-operations)으로 정의합니다.
 
-```java
+```python
 import time
 import traceback
 
