@@ -34,10 +34,13 @@ unzip greengrass-nucleus-latest.zip -d GreengrassCore
 2) 아래 명령어로 IoT Core에 thing을 생성하고, greengrass에 등록합니다. 이때 생성되는 Core device name은 GreengrassQuickStartCore-18163f7ac3e이고, Thing group name은 GreengrassQuickStartGroup
 
 ```c
-$ sudo -E java -Droot="/greengrass/v2" -Dlog.store=FILE -jar ./GreengrassCore/lib/Greengrass.jar \
+sudo -E java -Droot="/greengrass/v2" -Dlog.store=FILE -jar ./GreengrassCore/lib/Greengrass.jar \
 	--aws-region ap-northeast-2 \
 	--thing-name GreengrassQuickStartCore-18163f7ac3e \
 	--thing-group-name GreengrassQuickStartGroup --component-default-user ggc_user:ggc_group --provision true --setup-system-service true --deploy-dev-tools true
+```	
+
+```c
 Provisioning AWS IoT resources for the device with IoT Thing Name: [GreengrassQuickStartCore-18163f7ac3e]...
 Found IoT policy "GreengrassV2IoTThingPolicy", reusing it
 Creating keys and certificate...
