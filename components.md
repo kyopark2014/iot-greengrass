@@ -116,6 +116,71 @@ Manifests:
 }
 ```
 
+#### Necleus를 위한 receipe.yaml
+
+```yaml
+---
+RecipeFormatVersion: "2020-01-25"
+ComponentName: "aws.greengrass.Nucleus"
+ComponentVersion: "2.7.0"
+ComponentType: "aws.greengrass.nucleus"
+ComponentDescription: "Core functionality for device side orchestration of deployments\
+  \ and lifecycle management for execution of Greengrass components and applications.\
+  \ This includes features such as starting, stopping, and monitoring execution of\
+  \ components and apps, interprocess communication server for communication between\
+  \ components, component installation and configuration management."
+ComponentPublisher: "AWS"
+ComponentConfiguration:
+  DefaultConfiguration:
+    jvmOptions: ""
+    iotDataEndpoint: ""
+    iotCredEndpoint: ""
+    greengrassDataPlanePort: "8443"
+    awsRegion: ""
+    iotRoleAlias: ""
+    mqtt: {}
+    networkProxy: {}
+    runWithDefault: {}
+    deploymentPollingFrequencySeconds: "15"
+    componentStoreMaxSizeBytes: "10000000000"
+    platformOverride: {}
+Manifests:
+- Platform:
+    os: "linux"
+  Lifecycle:
+    bootstrap:
+      requiresPrivilege: true
+      script: "\nset -eu\nKERNEL_ROOT=\"{kernel:rootPath}\"\nUNPACK_DIR=\"{artifacts:decompressedPath}/aws.greengrass.nucleus\"\
+        \nrm -r \"$KERNEL_ROOT\"/alts/current/*\necho \"{configuration:/jvmOptions}\"\
+        \ > \"$KERNEL_ROOT/alts/current/launch.params\"\nln -sf \"$UNPACK_DIR\" \"\
+        $KERNEL_ROOT/alts/current/distro\"\nexit 100"
+  Artifacts: []
+- Platform:
+    os: "darwin"
+  Lifecycle:
+    bootstrap:
+      requiresPrivilege: true
+      script: "\nset -eu\nKERNEL_ROOT=\"{kernel:rootPath}\"\nUNPACK_DIR=\"{artifacts:decompressedPath}/aws.greengrass.nucleus\"\
+        \nrm -r \"$KERNEL_ROOT\"/alts/current/*\necho \"{configuration:/jvmOptions}\"\
+        \ > \"$KERNEL_ROOT/alts/current/launch.params\"\nln -sf \"$UNPACK_DIR\" \"\
+        $KERNEL_ROOT/alts/current/distro\"\nexit 100"
+  Artifacts: []
+- Platform:
+    os: "windows"
+  Lifecycle:
+    bootstrap:
+      requiresPrivilege: true
+      script: "copy {kernel:rootPath}\\alts\\current\\distro\\bin\\greengrass.xml\
+        \ {artifacts:decompressedPath}\\aws.greengrass.nucleus\\bin\\greengrass.xml&\
+        \ del /q {kernel:rootPath}\\alts\\current\\*&& for /d %x in ({kernel:rootPath}\\\
+        alts\\current\\*) do @rd /s /q \"%x\"&& echo {configuration:/jvmOptions} >\
+        \ {kernel:rootPath}\\alts\\current\\launch.params&& mklink /d {kernel:rootPath}\\\
+        alts\\current\\distro {artifacts:decompressedPath}\\aws.greengrass.nucleus&&\
+        \ exit 100"
+  Artifacts: []
+Lifecycle: {}
+```
+
 
 ## Reference 
 
