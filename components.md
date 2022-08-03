@@ -54,40 +54,65 @@ Manifests:
 
 ```java
 {
-	"RecipeFormatVersion": "2020-01-25",
-	"ComponentName": "com.example.HelloMqtt",
-	"ComponentVersion": "1.0.0",
-	"ComponentDescription": "My first AWS IoT Greengrass component.",
-	"ComponentPublisher": "Amazon",
-	"ComponentConfiguration": {
-		"DefaultConfiguration": {
-			"accessControl": {
-				"aws.greengrass.ipc.mqttproxy": {
-					"com.example.HelloMqtt:mqttproxy:1": {
-						"policyDescription": "Allows access to publish to all AWS IoT Core topics.",
-						"operations": [
-							"aws.greengrass#PublishToIoTCore"
-						],
-						"resources": [
-							"*"
-						]
-					}
-				}
-			}
-		}
-	},
-	"Manifests": [{
-		"Platform": {
-			"os": "linux"
-		},
-		"Lifecycle": {
-			"Install": {
-				"RequiresPrivilege": true,
-				"Script": "sudo pip3 install awsiotsdk"
-			},
-			"Run": "python3 {artifacts:path}/hello_mqtt.py"
-		}
-	}]
+  "RecipeFormatVersion": "2020-01-25",
+  "ComponentName": "com.example.ImgClassification",
+  "ComponentVersion": "1.0.0",
+  "ComponentType": "aws.greengrass.generic",
+  "ComponentDescription": "Custom Image classification inference component using DLR.",
+  "ComponentPublisher": "AWS",
+  "ComponentConfiguration": {
+    "DefaultConfiguration": {
+      "accessControl": {
+        "aws.greengrass.ipc.mqttproxy": {
+          "com.example.Pub:publisher:1": {
+            "policyDescription": "Allows access to publish to ml/example/imgclassification topic.",
+            "operations": [
+              "aws.greengrass#PublishToIoTCore"
+            ],
+            "resources": [
+              "ml/example/imgclassification"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "Manifests": [
+    {
+      "Platform": {
+        "os": "linux"
+      },
+      "Lifecycle": {
+        "Install": {
+          "RequiresPrivilege": true,
+          "Script": "/bin/bash {artifacts:decompressedPath}/my-model/install.sh",
+          "timeout": "900"
+        },
+        "setEnv": {
+          "MODEL_CPU_DIR": "{artifacts:decompressedPath}/my-model/model_cpu",
+          "MODEL_GPU_DIR": "{artifacts:decompressedPath}/my-model/model_gpu",
+          "SAMPLE_IMAGE_DIR": "{artifacts:decompressedPath}/my-model/sample_images"
+        },
+        "Run": {
+          "RequiresPrivilege": true,
+          "script": "/bin/bash {artifacts:decompressedPath}/my-model/run.sh"
+        }
+      },
+      "Artifacts": [
+        {
+          "Uri": "s3://greengrass-abc/ggv2/artifacts/my-model.zip",
+          "Digest": "Sample4YJ2HLCBPcVZFMFBmsHBLm9E4dX8neLXS3mVCA=",
+          "Algorithm": "SHA-256",
+          "Unarchive": "ZIP",
+          "Permission": {
+            "Read": "OWNER",
+            "Execute": "NONE"
+          }
+        }
+      ]
+    }
+  ],
+  "Lifecycle": {}
 }
 ```
 
