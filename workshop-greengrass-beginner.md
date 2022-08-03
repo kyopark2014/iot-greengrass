@@ -72,6 +72,28 @@ Added ggc_user to ggc_group
 Successfully set up Nucleus as a system service
 ```
 
+GreengrassV2TokenExchangeRoleAccess인 policy 내용은 아래와 같습니다. 
+
+```java
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents",
+                "logs:DescribeLogStreams",
+                "s3:GetBucketLocation"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+```
+
+
 3) Local deployment를 위해 Receipe와 Artifact를 생성합니다.
 
 - Recipe 생성
