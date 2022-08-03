@@ -24,6 +24,12 @@ curl -s https://d2s8p88vqu9w66.cloudfront.net/releases/greengrass-nucleus-latest
 unzip greengrass-nucleus-latest.zip -d GreengrassCore
 ```
 
+다운로드한 Greengrass에는 아래와 같은 파일들이 있습니다. 
+
+![noname](https://user-images.githubusercontent.com/52392004/182630425-c4e9efa3-f6b2-4665-ac7f-d1cd30b17736.png)
+
+
+
 2) 아래 명령어로 IoT Core에 thing을 생성하고, greengrass에 등록합니다. 이때 생성되는 Core device name은 GreengrassQuickStartCore-18163f7ac3e이고, Thing group name은 GreengrassQuickStartGroup
 
 ```c
