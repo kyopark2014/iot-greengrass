@@ -76,6 +76,8 @@ Greengrass 사용시 보안을 위하여 기능이 제한된 계정을 사용하
 
 ## Reference
 
+[AWS IoT Greengrass](https://github.com/aws-greengrass/)
+
 [Troubleshooting identity and access issues for AWS IoT Greengrass](https://docs.aws.amazon.com/greengrass/v1/developerguide/security_iam_troubleshoot.html)
 
 [Troubleshooting AWS IoT Greengrass V2](https://docs.aws.amazon.com/greengrass/v2/developerguide/troubleshooting.html)
