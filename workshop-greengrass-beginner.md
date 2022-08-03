@@ -124,7 +124,6 @@ GreengrassV2TokenExchangeRoleAccess인 policy 내용은 아래와 같습니다.
 
 <img width="1106" alt="image" src="https://user-images.githubusercontent.com/52392004/182634546-20bfe9f5-9c6b-4074-bf9b-9d72d2b7a340.png">
 
-#### Greengrass CLI
 
 Greengrass-cli가 설치되어 있는지 확인합니다. 
 
