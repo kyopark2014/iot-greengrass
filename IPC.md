@@ -96,6 +96,25 @@ IPC service identifier는 aws.greengrass.ipc.mqttproxy 입니다. 이를 위해 
 
 ![image](https://user-images.githubusercontent.com/52392004/182856688-2c9ffc38-5ceb-4ea7-b919-f95111663f94.png)
 
+```java
+---
+RecipeFormatVersion: 2020-01-25
+ComponentName: com.example.HelloWorld
+ComponentVersion: '1.1.0'
+ComponentDescription: My first AWS IoT Greengrass component.
+ComponentPublisher: Michael
+ComponentConfiguration:
+  DefaultConfiguration: {}
+Manifests:
+  - Platform:
+      os: '*'
+    Lifecycle:
+      Run: |
+        PYTHONPATH="{artifacts:decompressedPath}/helloWorld/dependencies" python3 -u {artifacts:decompressedPath}/helloWorld/hello_world.py
+     Artifacts:
+       - URI: s3://BUCKET/artifacts/com.example.HelloWorld.zip
+        Unarchive: ZIP
+	
 
 ## Reference
 
