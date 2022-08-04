@@ -89,3 +89,7 @@ IPC service identifier는 aws.greengrass.ipc.mqttproxy 입니다. 이를 위해 
   }]
 }
 ```
+
+## Reference
+
+[AWS IoT Greengrass V2 | MQTT Applications ](https://www.youtube.com/watch?v=hAZ-nlAaSvw)
