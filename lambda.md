@@ -48,8 +48,15 @@ zip -r deploy.zip *
 
 7) 상단 오른쪽의 [Upload from]에서 [.zip]을 선택한 후에 "deploy.zip"을 선택하여 업로드 합니다. 
 
+8) 아래처럼 [Versions]에서 버전을 정의 합니다. 
 
+![image](https://user-images.githubusercontent.com/52392004/182875433-879f8e0a-331b-4435-ae31-3d13061bed88.png)
 
+9) Alias를 선택하여 아래처럼 [Name]으로 "v1"을 지정하고, [Version]은 1을 선택합니다. 
+
+![image](https://user-images.githubusercontent.com/52392004/182875925-48bdff5a-9d72-4ec0-9847-a5e77ee0821a.png)
+
+10) 
 
 ## Reference
 
