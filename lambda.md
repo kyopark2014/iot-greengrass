@@ -44,7 +44,10 @@ cd example-lambda-python
 zip -r deploy.zip *
 ```
 
-6) f
+6) [[AWS Lambda] - [Functions]](https://ap-northeast-2.console.aws.amazon.com/lambda/home?region=ap-northeast-2#/functions)에서 [Create function]을 선택하고, [function name]에 "example-lambda-python"을 입력하고 [Runtime]으로 적절한 Python 라이브러리를 선택한 후에 [Create function]을 선택합니다. 
+
+7) 상단 오른쪽의 [Upload from]에서 [.zip]을 선택한 후에 "deploy.zip"을 선택하여 업로드 합니다. 
+
 
 
 
