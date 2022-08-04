@@ -114,7 +114,7 @@ Manifests:
      Artifacts:
        - URI: s3://BUCKET/artifacts/com.example.HelloWorld.zip
         Unarchive: ZIP
-	
+```
 
 ## Reference
 
