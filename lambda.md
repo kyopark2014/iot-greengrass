@@ -24,3 +24,6 @@ aws greengrassv2 create-component-version --lambda-arn
 [Tutorial creating hello world greengrass Lambda (in Python)](https://www.youtube.com/watch?v=jvQsygmzov0)
 
 [rpi-greengrass](https://github.com/miman/rpi-greengrass/blob/master/hello-world/README.md)
+
+[2020 Greengrass Demo | Person recognition & counting project using AWS Lambda](https://www.youtube.com/watch?v=bRWT_sbzGds)
+[PersonCountingRaspberry on the Edge using AWS Greengrass](https://github.com/Rauchdimehdi/PersonCountingRaspberry)
