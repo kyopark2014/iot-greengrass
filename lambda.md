@@ -27,8 +27,10 @@ aws greengrassv2 create-component-version --lambda-arn
 
 3) greengrasssdk를 다운로드하여 설치 합니다.
 
-[Greengrass Core Python SDK](https://github.com/aws/aws-greengrass-core-sdk-python)를 다운로드 합니다. 
-
+```c
+git clone https://github.com/aws/aws-greengrass-core-sdk-python 
+cp -R aws-greengrass-core-sdk-python/greengrasssdk example-lambda-python/
+```
 
 
 
