@@ -23,7 +23,7 @@ aws greengrassv2 create-component-version --lambda-arn
 
 1) "example-lambda-python" 폴더를 생성합니다.
 
-2) [hello-world-python](https://github.com/aws-samples/aws-greengrass-samples/blob/master/hello-world-python/greengrassHelloWorld.py)을 다운로드 합니다. 
+2) [hello-world-python](https://github.com/aws-samples/aws-greengrass-samples/blob/master/hello-world-python/greengrassHelloWorld.py)에서 "greengrassHelloWorld.py"를 다운로드 합니다. 
 
 3) greengrasssdk를 다운로드합니다.
 
