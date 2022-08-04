@@ -125,6 +125,30 @@ GreengrassV2TokenExchangeRoleAccess인 policy 내용은 아래와 같습니다.
 <img width="1106" alt="image" src="https://user-images.githubusercontent.com/52392004/182634546-20bfe9f5-9c6b-4074-bf9b-9d72d2b7a340.png">
 
 
+아래와 같이 greengrass service가 설치되어 있는것을 확인 할 수 있습니다. 
+
+```c
+$ sudo systemctl status greengrass.service
+```
+
+```c
+● greengrass.service - Greengrass Core
+   Loaded: loaded (/etc/systemd/system/greengrass.service; enabled; vendor preset: enabled)
+   Active: active (running) since Thu 2022-08-04 14:24:11 UTC; 10s ago
+ Main PID: 970 (sh)
+    Tasks: 22 (limit: 4915)
+   CGroup: /system.slice/greengrass.service
+           ├─970 /bin/sh /greengrass/v2/alts/current/distro/bin/loader
+           └─988 java -Dlog.store=FILE -Dlog.store=FILE -Droot=/greengrass/v2 -jar /greengrass/v2/alts/current/distro/lib/Greengrass.jar --setup-system-servic
+Aug 04 14:24:11 ip-172-31-19-59 systemd[1]: Started Greengrass Core.
+Aug 04 14:24:11 ip-172-31-19-59 sh[970]: Greengrass root: /greengrass/v2
+Aug 04 14:24:11 ip-172-31-19-59 sh[970]: JVM options: -Dlog.store=FILE -Droot=/greengrass/v2
+Aug 04 14:24:11 ip-172-31-19-59 sh[970]: Nucleus options: --setup-system-service false
+Aug 04 14:24:21 ip-172-31-19-59 sh[970]: Launching Nucleus...
+```
+
+
+
 Greengrass-cli가 설치되어 있는지 확인합니다. 
 
 ```c
