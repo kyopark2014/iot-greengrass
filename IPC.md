@@ -90,7 +90,7 @@ IPC service identifier는 aws.greengrass.ipc.mqttproxy 입니다. 이를 위해 
 }
 ```
 
-## IPC 통신
+## Local IPC connection 예
 
 [AWS IoT Greengrass V2 | MQTT Applications ](https://www.youtube.com/watch?v=hAZ-nlAaSvw)와 같이 IPC sdk를 이용하여 IPC 연결 할 수 있습니다. 
 
