@@ -30,5 +30,7 @@ aws greengrassv2 create-component-version --lambda-arn
 [rpi-greengrass](https://github.com/miman/rpi-greengrass/blob/master/hello-world/README.md)
 
 [2020 Greengrass Demo | Person recognition & counting project using AWS Lambda](https://www.youtube.com/watch?v=bRWT_sbzGds)
+
 [PersonCountingRaspberry on the Edge using AWS Greengrass](https://github.com/Rauchdimehdi/PersonCountingRaspberry)
 
+[Install the AWS IoT Device SDK for Python](https://docs.aws.amazon.com/greengrass/v1/developerguide/IoT-SDK.html)
