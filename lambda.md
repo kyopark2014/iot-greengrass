@@ -25,14 +25,26 @@ aws greengrassv2 create-component-version --lambda-arn
 
 2) [hello-world-python](https://github.com/aws-samples/aws-greengrass-samples/blob/master/hello-world-python/greengrassHelloWorld.py)을 다운로드 합니다. 
 
-3) greengrasssdk를 다운로드하여 설치 합니다.
+3) greengrasssdk를 다운로드합니다.
 
 ```c
 git clone https://github.com/aws/aws-greengrass-core-sdk-python 
+```
+
+4) "example-lambda-python"에 greengrasssdk를 아래처럼 복사를 합니다. 
+
+```c
 cp -R aws-greengrass-core-sdk-python/greengrasssdk example-lambda-python/
 ```
 
+5) lambda 함수에 업로드하기 위하여 압축을 합니다. 
 
+```c
+cd example-lambda-python
+zip -r deploy.zip *
+```
+
+6) f
 
 
 
