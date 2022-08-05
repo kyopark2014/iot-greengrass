@@ -49,17 +49,17 @@ sudo -E java -Droot="/greengrass/v2" -Dlog.store=FILE -jar ./GreengrassCore/lib/
 ```	
 
 ```c
-Provisioning AWS IoT resources for the device with IoT Thing Name: [GreengrassQuickStartCore-18163f7ac3e]...
-Found IoT policy "GreengrassV2IoTThingPolicy", reusing it
+Provisioning AWS IoT resources for the device with IoT Thing Name: [GreengrassCore-18163f7ac3e]...
+Creating new IoT policy "GreengrassV2IoTThingPolicy"
 Creating keys and certificate...
 Attaching policy to certificate...
-Creating IoT Thing "GreengrassQuickStartCore-18163f7ac3e"...
+Creating IoT Thing "GreengrassCore-18163f7ac3e"...
 Attaching certificate to IoT thing...
-Successfully provisioned AWS IoT resources for the device with IoT Thing Name: [GreengrassQuickStartCore-18163f7ac3e]!
-Adding IoT Thing [GreengrassQuickStartCore-18163f7ac3e] into Thing Group: [GreengrassQuickStartGroup]...
-IoT Thing Group "GreengrassQuickStartGroup" already existed, reusing it
-Successfully added Thing into Thing Group: [GreengrassQuickStartGroup]
+Successfully provisioned AWS IoT resources for the device with IoT Thing Name: [GreengrassCore-18163f7ac3e]!
+Adding IoT Thing [GreengrassCore-18163f7ac3e] into Thing Group: [GreengrassGroup]...
+Successfully added Thing into Thing Group: [GreengrassGroup]
 Setting up resources for aws.greengrass.TokenExchangeService ... 
+IoT role policy "GreengrassTESCertificatePolicyGreengrassV2TokenExchangeRoleAlias" for TES Role alias not exist, creating policy...
 Attaching TES role policy to IoT thing...
 No managed IAM policy found, looking for user defined policy...
 IAM policy named "GreengrassV2TokenExchangeRoleAccess" already exists. Please attach it to the IAM role if not already
@@ -67,7 +67,8 @@ Configuring Nucleus with provisioned resource details...
 Downloading Root CA from "https://www.amazontrust.com/repository/AmazonRootCA1.pem"
 Created device configuration
 Successfully configured Nucleus with provisioned resource details!
-Thing group exists, it could have existing deployment and devices, hence NOT creating deployment for Greengrass first party dev tools, please manually create a deployment if you wish to
+Creating a deployment for Greengrass first party components to the thing group
+Configured Nucleus to deploy aws.greengrass.Cli component
 Creating user ggc_user 
 ggc_user created 
 Creating group ggc_group 
@@ -79,24 +80,24 @@ Successfully set up Nucleus as a system service
 이때 /greengrass/v2 폴더에는 아래와 같은 파일들이 생성됩니다. 
 
 ```c
-$ ls -al
+$ $ ls /greengrass/v2/ -al
 total 60
-drwxr-xr-x 12 root root 4096 Aug  3 14:25 .
-drwxr-xr-x  3 root root 4096 Aug  3 14:25 ..
-drwx------  3 root root 4096 Aug  3 14:25 alts
-drwxr-xr-x  2 root root 4096 Aug  3 14:25 bin
-drwxr-xr-x  2 root root 4096 Aug  3 14:25 cli_ipc_info
-drwx------  2 root root 4096 Aug  3 14:25 config
-drwx------  2 root root 4096 Aug  3 14:25 deployments
-srw-rw-rw-  1 root root    0 Aug  3 14:25 ipc.socket
-drwx------  2 root root 4096 Aug  3 14:25 logs
-drwxr-xr-x  5 root root 4096 Aug  3 14:25 packages
-drwx------  4 root root 4096 Aug  3 14:25 plugins
--rw-r--r--  1 root root 1679 Aug  3 14:25 privKey.key
--rw-r--r--  1 root root 1188 Aug  3 14:25 rootCA.pem
-drwxr-xr-x  2 root root 4096 Aug  3 14:25 telemetry
--rw-r--r--  1 root root 1220 Aug  3 14:25 thingCert.crt
-drwxr-xr-x  2 root root 4096 Aug  3 14:25 work
+drwxr-xr-x 12 root root 4096 Aug  5 02:42 .
+drwxr-xr-x  3 root root 4096 Aug  5 02:42 ..
+drwx------  3 root root 4096 Aug  5 02:42 alts
+drwxr-xr-x  2 root root 4096 Aug  5 02:43 bin
+drwxr-xr-x  2 root root 4096 Aug  5 02:43 cli_ipc_info
+drwx------  2 root root 4096 Aug  5 02:42 config
+drwx------  3 root root 4096 Aug  5 02:43 deployments
+srw-rw-rw-  1 root root    0 Aug  5 02:42 ipc.socket
+drwx------  2 root root 4096 Aug  5 02:42 logs
+drwxr-xr-x  5 root root 4096 Aug  5 02:42 packages
+drwx------  4 root root 4096 Aug  5 02:42 plugins
+-rw-r--r--  1 root root 1679 Aug  5 02:42 privKey.key
+-rw-r--r--  1 root root 1188 Aug  5 02:42 rootCA.pem
+drwxr-xr-x  2 root root 4096 Aug  5 02:42 telemetry
+-rw-r--r--  1 root root 1224 Aug  5 02:42 thingCert.crt
+drwxr-xr-x  2 root root 4096 Aug  5 02:42 work
 ```
 
 GreengrassV2TokenExchangeRoleAccess인 policy 내용은 아래와 같습니다. 
