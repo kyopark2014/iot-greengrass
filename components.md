@@ -1,5 +1,7 @@
 # Greengrass Component
 
+Greengrass component는 Greengrass core device를 설치(deploy)하는 소프트웨어 모듈입니다. Application, runtime installer 또는 device에서 실행되는 코드들은 모두 component로 표현됩니다. component들 사이에는 dependency가 있을 수 있습니다. 
+
 ## Component의 특징
 
 - 하나의 Component는 Recipe file과 Artifacts로 구성됩니다. 
@@ -13,6 +15,16 @@
 - AWS에서 제공하는 Components: Nucleus, Greengrass CLI, Log manager, Stream manager, Local debug console, Secret manager, Secure tunneling 등이 있습니다. 
 
 <img width="929" alt="image" src="https://user-images.githubusercontent.com/52392004/181392075-43f385db-222d-4506-9727-5f0aa7211619.png">
+
+
+### Recipe
+
+모든 component는 메타데이터를 정의하는 recipe를 가지고 있습니다. recipe는 compenent의 환경변수를 가지고 있고, 다른 component들과의 dependency와 lifecycle 및 platform 호환성을 기술합니다. 여기서 lifecycle은 component를 설치, 실행 및 종료(shot down)할때의 명령어를 정의 합니다. recipe는 json, yaml 파일포맷으로 정의되며, [AWS IoT Greengrass component recipe reference](https://docs.aws.amazon.com/greengrass/v2/developerguide/component-recipe-reference.html)에 상세하게 설명되어 있습니다. 
+
+## Artifacts
+
+component는 여러개의 artifacts를 가질수 있습니다. Artifacts에는 스크립트, 컴파일된 코드, 정적 리소스 등이 포함합니다. Component는 종속적으로 관계를 가지고 있는 다른 component의 artifacts도 사용할 수 있습니다. 
+
 
 
 ## Component types
@@ -65,9 +77,6 @@ Component는 아래와 같은 Type을 가지고 있습니다.
 - IoT SiteWise processor: Processes data on the Greengrass core devices.
 
 
-## Artifacts
-
-component를 통해서 실행될 코드 부분인 Artifacts에는 스크립트, 컴파일된 코드, 정적 리소스등이 포함합니다. Component는 종속적으로 지정된 구성요소의 다른 artifacts도 사용할 수 있습니다. 
 
 
 ## Recipe 예제
@@ -232,6 +241,8 @@ Lifecycle: {}
 
 
 ## Reference 
+
+[Develop AWS IoT Greengrass components](https://docs.aws.amazon.com/greengrass/v2/developerguide/develop-greengrass-components.html#component-types)
 
 [AWS re:Invent 2020: Dive deep and accelerate your implementation of AWS IoT Greengrass 2.0](https://www.youtube.com/watch?v=t2x49uZuTwE)
 
