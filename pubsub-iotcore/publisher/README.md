@@ -69,10 +69,10 @@ Component Name: com.iotcore.Publisher
 
 ## Subscriber 설치 
 
-[subscriber.sh](https://github.com/kyopark2014/iot-greengrass/blob/main/pubsub-ipc/subsriber/subscriber.sh)를 이용하여 Subscriber를 설치합니다. 
+[subscriber.sh](https://github.com/kyopark2014/iot-greengrass/blob/main/pubsub-iotcore/subsriber/subscriber.sh)를 이용하여 Subscriber를 설치합니다. 
 
 ```java
-cd iot-greengrass/pubsub-ipc/subscriber/
+cd iot-greengrass/pubsub-iotcore/subscriber/
 ./subscriber.sh 
 ```
 
@@ -87,24 +87,26 @@ Local deployment submitted! Deployment Id: b4db7ef8-f98d-44d9-9fe2-9573b97c7ae1
 로그로 설치 상태를 확인합니다. 
 
 ```java
-cat com.example.Subscriber.log 
+sudo tail logs/com.iotcore.Subscriber.log 
 ```
 
 ```java
-2022-08-05T09:33:20.896Z [INFO] (pool-2-thread-34) com.example.Subscriber: shell-runner-start. {scriptName=services.com.example.Subscriber.lifecycle.Install, serviceName=com.example.Subscriber, currentState=NEW, command=["pip3 install awsiotsdk"]}
-2022-08-05T09:33:21.828Z [INFO] (Copier) com.example.Subscriber: stdout. Collecting awsiotsdk. {scriptName=services.com.example.Subscriber.lifecycle.Install, serviceName=com.example.Subscriber, currentState=NEW}
-2022-08-05T09:33:22.104Z [INFO] (Copier) com.example.Subscriber: stdout. Using cached https://files.pythonhosted.org/packages/0a/f0/3bb81c3c53bb5fb30a694ce72e64c4c04d327015d263a2f5309c43eca510/awsiotsdk-1.11.3-py3-none-any.whl. {scriptName=services.com.example.Subscriber.lifecycle.Install, serviceName=com.example.Subscriber, currentState=NEW}
-2022-08-05T09:33:22.111Z [INFO] (Copier) com.example.Subscriber: stdout. Collecting awscrt==0.13.13 (from awsiotsdk). {scriptName=services.com.example.Subscriber.lifecycle.Install, serviceName=com.example.Subscriber, currentState=NEW}
-2022-08-05T09:33:22.958Z [INFO] (Copier) com.example.Subscriber: stdout. Using cached https://files.pythonhosted.org/packages/3a/56/f830ec0dda86a1c4736ea8554d8a59c3c9102aaa565bcfcdbc8b5be65c53/awscrt-0.13.13-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.whl. {scriptName=services.com.example.Subscriber.lifecycle.Install, serviceName=com.example.Subscriber, currentState=NEW}
-2022-08-05T09:33:23.122Z [INFO] (Copier) com.example.Subscriber: stdout. Installing collected packages: awscrt, awsiotsdk. {scriptName=services.com.example.Subscriber.lifecycle.Install, serviceName=com.example.Subscriber, currentState=NEW}
-2022-08-05T09:33:23.264Z [INFO] (Copier) com.example.Subscriber: stdout. Successfully installed awscrt-0.13.13 awsiotsdk-1.11.3. {scriptName=services.com.example.Subscriber.lifecycle.Install, serviceName=com.example.Subscriber, currentState=NEW}
-2022-08-05T09:33:23.334Z [INFO] (pool-2-thread-34) com.example.Subscriber: shell-runner-start. {scriptName=services.com.example.Subscriber.lifecycle.Run, serviceName=com.example.Subscriber, currentState=STARTING, command=["python3 -u /greengrass/v2/packages/artifacts/com.example.Subscriber/1.0.0/exam..."]}
+2022-08-05T14:34:33.676Z [WARN] (Copier) com.iotcore.Subscriber: stderr. File "/greengrass/v2/packages/artifacts/com.iotcore.Subscriber/1.0.0/iotcore_subscriber.py", line 47, in <module>. {scriptName=services.com.iotcore.Subscriber.lifecycle.Run, serviceName=com.iotcore.Subscriber, currentState=RUNNING}
+2022-08-05T14:34:33.676Z [WARN] (Copier) com.iotcore.Subscriber: stderr. future_response.result(TIMEOUT). {scriptName=services.com.iotcore.Subscriber.lifecycle.Run, serviceName=com.iotcore.Subscriber, currentState=RUNNING}
+2022-08-05T14:34:33.676Z [WARN] (Copier) com.iotcore.Subscriber: stderr. File "/usr/lib/python3.6/concurrent/futures/_base.py", line 432, in result. {scriptName=services.com.iotcore.Subscriber.lifecycle.Run, serviceName=com.iotcore.Subscriber, currentState=RUNNING}
+2022-08-05T14:34:33.676Z [WARN] (Copier) com.iotcore.Subscriber: stderr. return self.__get_result(). {scriptName=services.com.iotcore.Subscriber.lifecycle.Run, serviceName=com.iotcore.Subscriber, currentState=RUNNING}
+2022-08-05T14:34:33.676Z [WARN] (Copier) com.iotcore.Subscriber: stderr. File "/usr/lib/python3.6/concurrent/futures/_base.py", line 384, in __get_result. {scriptName=services.com.iotcore.Subscriber.lifecycle.Run, serviceName=com.iotcore.Subscriber, currentState=RUNNING}
+2022-08-05T14:34:33.676Z [WARN] (Copier) com.iotcore.Subscriber: stderr. raise self._exception. {scriptName=services.com.iotcore.Subscriber.lifecycle.Run, serviceName=com.iotcore.Subscriber, currentState=RUNNING}
+2022-08-05T14:34:33.676Z [WARN] (Copier) com.iotcore.Subscriber: stderr. File "/home/ggc_user/.local/lib/python3.6/site-packages/awsiot/eventstreamrpc.py", line 723, in _on_continuation_message. {scriptName=services.com.iotcore.Subscriber.lifecycle.Run, serviceName=com.iotcore.Subscriber, currentState=RUNNING}
+2022-08-05T14:34:33.676Z [WARN] (Copier) com.iotcore.Subscriber: stderr. raise shape. {scriptName=services.com.iotcore.Subscriber.lifecycle.Run, serviceName=com.iotcore.Subscriber, currentState=RUNNING}
+2022-08-05T14:34:33.676Z [WARN] (Copier) com.iotcore.Subscriber: stderr. awsiot.greengrasscoreipc.model.UnauthorizedError. {scriptName=services.com.iotcore.Subscriber.lifecycle.Run, serviceName=com.iotcore.Subscriber, currentState=RUNNING}
+2022-08-05T14:34:33.693Z [INFO] (Copier) com.iotcore.Subscriber: Run script exited. {exitCode=1, serviceName=com.iotcore.Subscriber, currentState=RUNNING}
 ```
 
 Subscriber가 받은 메시지는 아래와 같습니다. 
 
 ```java
-tail -f /tmp/Greengrass_Subscriber.log
+tail -f /tmp/Greengrass_IoTSubscriber.log
 ```
 ```java
 {'timestamp': '2022-08-05 09:35:17.812991', 'value': 990.55}
