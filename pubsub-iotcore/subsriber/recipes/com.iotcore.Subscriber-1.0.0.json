@@ -9,7 +9,7 @@
         "accessControl": {
           "aws.greengrass.ipc.mqttproxy": {
             "com.iotcore.Subscriber:mqttproxy:1": {
-              "policyDescription": "Allows access to subscribe to all topics.",
+              "policyDescription": "Allows access to subscribe to all AWS IoT Core topics.",
               "operations": [
                 "aws.greengrass#SubscribeToIoTCore"
               ],
