@@ -12,6 +12,8 @@ Greengrass v2.0은 Java기반 Core를 사용하므로, 별도 컴파일 없이 �
 
 [Greengrass component](https://github.com/kyopark2014/iot-greengrass/blob/main/components.md)는 Greengrass core device를 구동하는 소프트웨어입니다. 이를 이용하여 local에서 core device를 개발하고 시험할 수 있습니다. Greengrass에서는 기본기능(basic feature)과 공통 라이브러리(common liabrary)를 비롯한 local 개발 툴을 components로 제공합니다. 
 
+생성된 Component는 cloud를 이용하여 다른 [device에 배포](https://github.com/kyopark2014/iot-greengrass/blob/main/deployment.md) 할 수 있습니다. 
+
 ### Component간 통신방법
 
 Greengrass의 Components들은 [IPC 통신](https://github.com/kyopark2014/iot-greengrass/blob/main/IPC.md)을 통해 Necleus와 연결되고, Components 사이는 [MQTT](https://github.com/kyopark2014/IoT-Core-Contents/blob/main/mqtt.md) PUBSUB으로 메시지를 교환할 수 있습니다. 
@@ -32,7 +34,7 @@ Greengrass의 Components들은 [IPC 통신](https://github.com/kyopark2014/iot-g
 
 ### Docker Component
 
-[Docker 이미지를 이용](https://github.com/kyopark2014/iot-greengrass/blob/main/docker-component.md)하여 Component를 생성할 수 있습니다. 생성된 Component는 cloud를 이용하여 다른 [device에 배포](https://github.com/kyopark2014/iot-greengrass/blob/main/deployment.md) 할 수 있습니다. 
+[Docker 이미지를 이용](https://github.com/kyopark2014/iot-greengrass/blob/main/docker-component.md)하여 Component를 생성할 수 있습니다. 
 
 
 
