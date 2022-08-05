@@ -27,13 +27,7 @@ INFO: Connection established with event stream RPC server
 Local deployment submitted! Deployment Id: d45850c6-5aa3-4f07-9717-31d199de1712
 ```
 
-설치가 잘 되었는지를 로그로 확인합니다. 
-
-```c
-sudo tail /greengrass/v2/logs/com.iotcore.Publisher.log
-```
-
-아래와 같이 Publisher의 로그를 확인합니다. 
+아래와 같이 Publisher의 로그를 확인하여 publish 동작을 확인합니다. 
 
 ```java
 sudo tail /greengrass/v2/logs/com.iotcore.Publisher.log 
@@ -65,6 +59,9 @@ Component Name: com.iotcore.Publisher
     Configuration: {"accessControl":{"aws.greengrass.ipc.mqttproxy":{"com.iotcore.Publisher:mqttproxy:1":{"operations":["aws.greengrass#PublishToIoTCore"],"policyDescription":"Allows access to publish to all AWS IoT Core topics.","resources":["*"]}}}}
 ```    
 
+[[AWS IoT] - [Test] - [MQTT test client]](https://ap-northeast-2.console.aws.amazon.com/iot/home?region=ap-northeast-2#/test)에서 아래와 같이 정상적으로 PUBLISH 된 데이터를 확인할 수 있습니다. 
+
+![image](https://user-images.githubusercontent.com/52392004/183092845-a6884506-998b-4f70-8f0a-1ebd0d68d5cc.png)
 
 
 
@@ -143,4 +140,3 @@ Component Name: com.example.Subscriber
 [AWS IoT Greengrass V2](https://catalog.us-east-1.prod.workshops.aws/workshops/5ecc2416-f956-4273-b729-d0d30556013f/en-US/chapter1-introduction)
 
 
-![image](https://user-images.githubusercontent.com/52392004/183092845-a6884506-998b-4f70-8f0a-1ebd0d68d5cc.png)
