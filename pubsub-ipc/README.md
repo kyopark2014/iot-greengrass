@@ -9,7 +9,7 @@ git clone https://github.com/kyopark2014/iot-greengrass
 cd iot-greengrass/pubsub-ipc/publisher/
 ```
 
-2. Greengrass CLI를 이용하여 publisher를 설치합니다. 
+2. Greengrass CLI를 이용하여 [publisher.sh](https://github.com/kyopark2014/iot-greengrass/blob/main/pubsub-ipc/publisher/publisher.sh)를 이용하여 Publisher를 설치합니다. 
 
 ```c
 chmod a+x publisher.sh
