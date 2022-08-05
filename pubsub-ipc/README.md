@@ -30,9 +30,7 @@ Local deployment submitted! Deployment Id: e40c64e4-6ab6-4eff-a0e6-989c4b0bbd3a
 설치가 잘 되었는지를 로그로 확인합니다. 
 
 ```c
-cd /greengrass/v2/
-sudo chmod +rx logs
-cat logs/com.example.Publisher.log
+sudo tail /greengrass/v2/logs/com.iotcore.Publisher.log
 ```
 
 아래처럼 publish의 값을 통해 정상적으로 동작함을 확인 할 수 있습니다. 
