@@ -75,7 +75,7 @@ Component Name: com.example.Publisher
 
 ## Subscriber 설치 
 
-1. [subscriber.sh](https://github.com/kyopark2014/iot-greengrass/blob/main/pubsub-ipc/subsriber/subscriber.sh)를 이용하여 Subscriber를 설치합니다. 
+[subscriber.sh](https://github.com/kyopark2014/iot-greengrass/blob/main/pubsub-ipc/subsriber/subscriber.sh)를 이용하여 Subscriber를 설치합니다. 
 
 ```java
 cd iot-greengrass/pubsub-ipc/subscriber/
