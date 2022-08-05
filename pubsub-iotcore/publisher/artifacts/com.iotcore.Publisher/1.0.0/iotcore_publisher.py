@@ -1,3 +1,7 @@
+import time
+import datetime
+import json
+
 import awsiot.greengrasscoreipc
 import awsiot.greengrasscoreipc.client as client
 from awsiot.greengrasscoreipc.model import (
@@ -6,13 +10,14 @@ from awsiot.greengrasscoreipc.model import (
 )
 
 TIMEOUT = 10
+publish_rate = 1.0
 
 ipc_client = awsiot.greengrasscoreipc.connect()
                     
 topic = "my/topic"
 
 while True:
-    message = "Hello, World"
+    message = str(datetime.datetime.now())
     qos = QOS.AT_LEAST_ONCE
 
     request = PublishToIoTCoreRequest()
@@ -25,3 +30,4 @@ while True:
     future_response.result(TIMEOUT)
 
     print(f"publish: {message}")
+    time.sleep(1/publish_rate)
