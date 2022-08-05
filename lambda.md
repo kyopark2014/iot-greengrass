@@ -15,11 +15,11 @@ You have AWS IoT Greengrass V1 applications that you want to run on AWS IoT Gree
 
 Lambda component를 사용하기 위해서는 아래 component들을 포함하여야 합니다. 
 
-- Lambda launcher component (aws.greengrass.LambdaLauncher): process들과 Environment configuration 관리
+- [Lambda launcher component (aws.greengrass.LambdaLauncher)](https://docs.aws.amazon.com/greengrass/v2/developerguide/lambda-launcher-component.html): process들과 Environment configuration 관리
 
-- Lambda manager component (aws.greengrass.LambdaManager): IPC(interprocess communication) and scaling을 관리
+- [Lambda manager component (aws.greengrass.LambdaManager)](https://docs.aws.amazon.com/greengrass/v2/developerguide/lambda-manager-component.html): IPC(interprocess communication) and scaling을 관리
 
-- Lambda runtimes component (aws.greengrass.LambdaRuntimes): Lambda runtime을 위한 artifacts
+- [Lambda runtimes component (aws.greengrass.LambdaRuntimes)](https://docs.aws.amazon.com/greengrass/v2/developerguide/lambda-runtimes-component.html): Lambda runtime을 위한 artifacts
 
 
 
