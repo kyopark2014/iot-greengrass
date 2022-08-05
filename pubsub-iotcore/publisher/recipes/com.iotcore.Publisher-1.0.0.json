@@ -8,7 +8,7 @@
 		"DefaultConfiguration": {
 			"accessControl": {
 				"aws.greengrass.ipc.mqttproxy": {
-					"com.example.HelloMqtt:mqttproxy:1": {
+					"com.iotcore.Publisher:mqttproxy:1": {
 						"policyDescription": "Allows access to publish to all AWS IoT Core topics.",
 						"operations": [
 							"aws.greengrass#PublishToIoTCore"
