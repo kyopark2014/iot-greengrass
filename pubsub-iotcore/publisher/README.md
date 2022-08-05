@@ -90,19 +90,6 @@ Local deployment submitted! Deployment Id: f017eaad-67b7-4ed2-91e7-e7fe1387f695
 sudo tail logs/com.iotcore.Subscriber.log 
 ```
 
-```java
-2022-08-05T14:34:33.676Z [WARN] (Copier) com.iotcore.Subscriber: stderr. File "/greengrass/v2/packages/artifacts/com.iotcore.Subscriber/1.0.0/iotcore_subscriber.py", line 47, in <module>. {scriptName=services.com.iotcore.Subscriber.lifecycle.Run, serviceName=com.iotcore.Subscriber, currentState=RUNNING}
-2022-08-05T14:34:33.676Z [WARN] (Copier) com.iotcore.Subscriber: stderr. future_response.result(TIMEOUT). {scriptName=services.com.iotcore.Subscriber.lifecycle.Run, serviceName=com.iotcore.Subscriber, currentState=RUNNING}
-2022-08-05T14:34:33.676Z [WARN] (Copier) com.iotcore.Subscriber: stderr. File "/usr/lib/python3.6/concurrent/futures/_base.py", line 432, in result. {scriptName=services.com.iotcore.Subscriber.lifecycle.Run, serviceName=com.iotcore.Subscriber, currentState=RUNNING}
-2022-08-05T14:34:33.676Z [WARN] (Copier) com.iotcore.Subscriber: stderr. return self.__get_result(). {scriptName=services.com.iotcore.Subscriber.lifecycle.Run, serviceName=com.iotcore.Subscriber, currentState=RUNNING}
-2022-08-05T14:34:33.676Z [WARN] (Copier) com.iotcore.Subscriber: stderr. File "/usr/lib/python3.6/concurrent/futures/_base.py", line 384, in __get_result. {scriptName=services.com.iotcore.Subscriber.lifecycle.Run, serviceName=com.iotcore.Subscriber, currentState=RUNNING}
-2022-08-05T14:34:33.676Z [WARN] (Copier) com.iotcore.Subscriber: stderr. raise self._exception. {scriptName=services.com.iotcore.Subscriber.lifecycle.Run, serviceName=com.iotcore.Subscriber, currentState=RUNNING}
-2022-08-05T14:34:33.676Z [WARN] (Copier) com.iotcore.Subscriber: stderr. File "/home/ggc_user/.local/lib/python3.6/site-packages/awsiot/eventstreamrpc.py", line 723, in _on_continuation_message. {scriptName=services.com.iotcore.Subscriber.lifecycle.Run, serviceName=com.iotcore.Subscriber, currentState=RUNNING}
-2022-08-05T14:34:33.676Z [WARN] (Copier) com.iotcore.Subscriber: stderr. raise shape. {scriptName=services.com.iotcore.Subscriber.lifecycle.Run, serviceName=com.iotcore.Subscriber, currentState=RUNNING}
-2022-08-05T14:34:33.676Z [WARN] (Copier) com.iotcore.Subscriber: stderr. awsiot.greengrasscoreipc.model.UnauthorizedError. {scriptName=services.com.iotcore.Subscriber.lifecycle.Run, serviceName=com.iotcore.Subscriber, currentState=RUNNING}
-2022-08-05T14:34:33.693Z [INFO] (Copier) com.iotcore.Subscriber: Run script exited. {exitCode=1, serviceName=com.iotcore.Subscriber, currentState=RUNNING}
-```
-
 Subscriber가 받은 메시지는 아래와 같습니다. 
 
 ```java
