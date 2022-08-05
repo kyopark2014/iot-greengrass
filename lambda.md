@@ -1,5 +1,28 @@
 # Lambda Component
 
+
+## Greengrass에서 Lambda component를 사용하는 경우
+
+1) Lambda 함수에 있는 코드를 써야 하는 경우 
+
+You have application code in Lambda functions that you want to deploy to core devices.
+
+2) Greengrass V1으로 개발한 App을 V2에서 사용하고 싶은 경우
+
+You have AWS IoT Greengrass V1 applications that you want to run on AWS IoT Greengrass V2 core devices.
+
+## Dependencies
+
+Lambda component를 사용하기 위해서는 아래 component들을 포함하여야 합니다. 
+
+- Lambda launcher component (aws.greengrass.LambdaLauncher): process들과 Environment configuration 관리
+
+- Lambda manager component (aws.greengrass.LambdaManager): IPC(interprocess communication) and scaling을 관리
+
+- Lambda runtimes component (aws.greengrass.LambdaRuntimes): Lambda runtime을 위한 artifacts
+
+
+
 ## Lambda 생성 
 
 #### AWS Lambda mappings
@@ -60,7 +83,7 @@ zip -r deploy.zip *
 
 ## Reference
 
-
+[Run AWS Lambda functions](https://docs.aws.amazon.com/greengrass/v2/developerguide/run-lambda-functions.html)
 
 [AWS re:Invent 2020: Dive deep and accelerate your implementation of AWS IoT Greengrass 2.0](https://www.youtube.com/watch?v=t2x49uZuTwE)
 
