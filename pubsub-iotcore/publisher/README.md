@@ -1,6 +1,6 @@
-# Pub / Sub IPC
+# Pub / Sub IoT Core 
 
-[AWS IoT Greengrass V2](https://catalog.us-east-1.prod.workshops.aws/workshops/5ecc2416-f956-4273-b729-d0d30556013f/en-US/chapter1-introduction)를 참조하여 IPC로 PUBSUB을 통해 edge안에서 메시지를 교환하는 방법에 대해 설명합니다. 
+[Use the AWS IoT Device SDK to communicate with the Greengrass nucleus, other components, and AWS IoT Core](https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-subscribe-operations)를 참조하여 AWS IoT Core를 이용하여, PUBSUB으로 메시지를 교환하는 방법에 대해 설명합니다. 
 
 ## 소스 다운로드 
 
@@ -8,49 +8,37 @@
 
 ```c
 git clone https://github.com/kyopark2014/iot-greengrass
-cd iot-greengrass/pubsub-ipc/publisher/
+cd iot-greengrass/pubsub-iotcore/publisher/
 ```
 
 ## Publisher 설치 
 
-[publisher.sh](https://github.com/kyopark2014/iot-greengrass/blob/main/pubsub-ipc/publisher/publisher.sh)를 이용하여 Publisher를 설치합니다. 
+[publisher.sh](https://github.com/kyopark2014/iot-greengrass/blob/main/pubsub-iotcore/publisher/publisher.sh)를 이용하여 Publisher를 설치합니다. 
 
 ```c
 chmod a+x publisher.sh
 ./publisher.sh
 ```
 ```c
-Aug 05, 2022 9:02:13 AM software.amazon.awssdk.eventstreamrpc.EventStreamRPCConnection$1 onConnectionSetup
+Aug 05, 2022 1:58:16 PM software.amazon.awssdk.eventstreamrpc.EventStreamRPCConnection$1 onConnectionSetup
 INFO: Socket connection /greengrass/v2/ipc.socket:8033 to server result [AWS_ERROR_SUCCESS]
-Aug 05, 2022 9:02:13 AM software.amazon.awssdk.eventstreamrpc.EventStreamRPCConnection$1 onProtocolMessage
+Aug 05, 2022 1:58:16 PM software.amazon.awssdk.eventstreamrpc.EventStreamRPCConnection$1 onProtocolMessage
 INFO: Connection established with event stream RPC server
-Local deployment submitted! Deployment Id: e40c64e4-6ab6-4eff-a0e6-989c4b0bbd3a
+Local deployment submitted! Deployment Id: d45850c6-5aa3-4f07-9717-31d199de1712
 ```
 
-설치가 잘 되었는지를 로그로 확인합니다. 
-
-```c
-sudo tail /greengrass/v2/logs/com.example.Publisher.log
-```
-
-아래처럼 publish의 값을 통해 정상적으로 동작함을 확인 할 수 있습니다. 
+아래와 같이 Publisher의 로그를 확인하여 publish 동작을 확인합니다. 
 
 ```java
-2022-08-05T09:13:18.495Z [INFO] (pool-2-thread-18) com.example.Publisher: shell-runner-start. {scriptName=services.com.example.Publisher.lifecycle.Install, serviceName=com.example.Publisher, currentState=NEW, command=["pip3 install awsiotsdk numpy"]}
-2022-08-05T09:13:20.192Z [INFO] (Copier) com.example.Publisher: stdout. Collecting awsiotsdk. {scriptName=services.com.example.Publisher.lifecycle.Install, serviceName=com.example.Publisher, currentState=NEW}
-2022-08-05T09:13:20.264Z [INFO] (Copier) com.example.Publisher: stdout. Using cached https://files.pythonhosted.org/packages/0a/f0/3bb81c3c53bb5fb30a694ce72e64c4c04d327015d263a2f5309c43eca510/awsiotsdk-1.11.3-py3-none-any.whl. {scriptName=services.com.example.Publisher.lifecycle.Install, serviceName=com.example.Publisher, currentState=NEW}
-2022-08-05T09:13:20.270Z [INFO] (Copier) com.example.Publisher: stdout. Collecting numpy. {scriptName=services.com.example.Publisher.lifecycle.Install, serviceName=com.example.Publisher, currentState=NEW}
-2022-08-05T09:13:20.955Z [INFO] (Copier) com.example.Publisher: stdout. Using cached https://files.pythonhosted.org/packages/45/b2/6c7545bb7a38754d63048c7696804a0d947328125d81bf12beaa692c3ae3/numpy-1.19.5-cp36-cp36m-manylinux1_x86_64.whl. {scriptName=services.com.example.Publisher.lifecycle.Install, serviceName=com.example.Publisher, currentState=NEW}
-2022-08-05T09:13:21.331Z [INFO] (Copier) com.example.Publisher: stdout. Collecting awscrt==0.13.13 (from awsiotsdk). {scriptName=services.com.example.Publisher.lifecycle.Install, serviceName=com.example.Publisher, currentState=NEW}
-2022-08-05T09:13:21.968Z [INFO] (Copier) com.example.Publisher: stdout. Using cached https://files.pythonhosted.org/packages/3a/56/f830ec0dda86a1c4736ea8554d8a59c3c9102aaa565bcfcdbc8b5be65c53/awscrt-0.13.13-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.whl. {scriptName=services.com.example.Publisher.lifecycle.Install, serviceName=com.example.Publisher, currentState=NEW}
-2022-08-05T09:13:22.125Z [INFO] (Copier) com.example.Publisher: stdout. Installing collected packages: awscrt, awsiotsdk, numpy. {scriptName=services.com.example.Publisher.lifecycle.Install, serviceName=com.example.Publisher, currentState=NEW}
-2022-08-05T09:13:23.753Z [INFO] (Copier) com.example.Publisher: stdout. Successfully installed awscrt-0.13.13 awsiotsdk-1.11.3 numpy-1.19.5. {scriptName=services.com.example.Publisher.lifecycle.Install, serviceName=com.example.Publisher, currentState=NEW}
-2022-08-05T09:13:23.832Z [INFO] (pool-2-thread-18) com.example.Publisher: shell-runner-start. {scriptName=services.com.example.Publisher.lifecycle.Run, serviceName=com.example.Publisher, currentState=STARTING, command=["python3 -u /greengrass/v2/packages/artifacts/com.example.Publisher/1.0.0/examp..."]}
-2022-08-05T09:13:23.947Z [INFO] (Copier) com.example.Publisher: stdout. publish: b'{"timestamp": "2022-08-05 09:13:23.929729", "value": 997.67}'. {scriptName=services.com.example.Publisher.lifecycle.Run, serviceName=com.example.Publisher, currentState=RUNNING}
-2022-08-05T09:13:24.950Z [INFO] (Copier) com.example.Publisher: stdout. publish: b'{"timestamp": "2022-08-05 09:13:24.948927", "value": 958.19}'. {scriptName=services.com.example.Publisher.lifecycle.Run, serviceName=com.example.Publisher, currentState=RUNNING}
-2022-08-05T09:13:25.952Z [INFO] (Copier) com.example.Publisher: stdout. publish: b'{"timestamp": "2022-08-05 09:13:25.951170", "value": 1011.79}'. {scriptName=services.com.example.Publisher.lifecycle.Run, serviceName=com.example.Publisher, currentState=RUNNING}
-2022-08-05T09:13:26.954Z [INFO] (Copier) com.example.Publisher: stdout. publish: b'{"timestamp": "2022-08-05 09:13:26.953454", "value": 985.02}'. {scriptName=services.com.example.Publisher.lifecycle.Run, serviceName=com.example.Publisher, currentState=RUNNING}
-2022-08-05T09:13:27.956Z [INFO] (Copier) com.example.Publisher: stdout. publish: b'{"timestamp": "2022-08-05 09:13:27.955693", "value": 1010.91}'. {scriptName=services.com.example.Publisher.lifecycle.Run, serviceName=com.example.Publisher, currentState=RUNNING}
+sudo tail /greengrass/v2/logs/com.iotcore.Publisher.log 
+```
+
+```java
+2022-08-05T14:07:53.230Z [INFO] (Copier) com.iotcore.Publisher: stdout. publish: b'{"msg": "hello.world", "date": "2022-08-05 14:07:03.167195"}'. {scriptName=services.com.iotcore.Publisher.lifecycle.Run, serviceName=com.iotcore.Publisher, currentState=RUNNING}
+2022-08-05T14:07:53.231Z [INFO] (Copier) com.iotcore.Publisher: stdout. publish: b'{"msg": "hello.world", "date": "2022-08-05 14:07:08.173429"}'. {scriptName=services.com.iotcore.Publisher.lifecycle.Run, serviceName=com.iotcore.Publisher, currentState=RUNNING}
+2022-08-05T14:07:53.231Z [INFO] (Copier) com.iotcore.Publisher: stdout. publish: b'{"msg": "hello.world", "date": "2022-08-05 14:07:13.179648"}'. {scriptName=services.com.iotcore.Publisher.lifecycle.Run, serviceName=com.iotcore.Publisher, currentState=RUNNING}
+2022-08-05T14:07:53.231Z [INFO] (Copier) com.iotcore.Publisher: stdout. publish: b'{"msg": "hello.world", "date": "2022-08-05 14:07:18.185660"}'. {scriptName=services.com.iotcore.Publisher.lifecycle.Run, serviceName=com.iotcore.Publisher, currentState=RUNNING}
+2022-08-05T14:07:53.231Z [INFO] (Copier) com.iotcore.Publisher: stdout. publish: b'{"msg": "hello.world", "date": "2022-08-05 14:07:23.187923"}'. {scriptName=services.com.iotcore.Publisher.lifecycle.Run, serviceName=com.iotcore.Publisher, currentState=RUNNING}
 ```
 
 동작을 확인하기 위하여 greengrass 재시작이 필요한 경우에 아래와 같이 재시작 합니다.
@@ -65,11 +53,19 @@ publisher 설치 상태는 아래와 같이 확인 할 수 있습니다.
 sudo /greengrass/v2/bin/greengrass-cli component list
 ```
 ```java
-Component Name: com.example.Publisher
+Component Name: com.iotcore.Publisher
     Version: 1.0.0
     State: RUNNING
-    Configuration: {"accessControl":{"aws.greengrass.ipc.pubsub":{"com.example.Publisher:pubsub:1":{"operations":["aws.greengrass#PublishToTopic"],"policyDescription":"Allows access to publish to all topics.","resources":["*"]}}}}
+    Configuration: {"accessControl":{"aws.greengrass.ipc.mqttproxy":{"com.iotcore.Publisher:mqttproxy:1":{"operations":["aws.greengrass#PublishToIoTCore"],"policyDescription":"Allows access to publish to all AWS IoT Core topics.","resources":["*"]}}}}
 ```    
+
+[[AWS IoT] - [Test] - [MQTT test client]](https://ap-northeast-2.console.aws.amazon.com/iot/home?region=ap-northeast-2#/test)에서 아래와 같이 정상적으로 PUBLISH 된 데이터를 확인할 수 있습니다. 
+
+![image](https://user-images.githubusercontent.com/52392004/183092845-a6884506-998b-4f70-8f0a-1ebd0d68d5cc.png)
+
+
+
+
 
 ## Subscriber 설치 
 
@@ -142,3 +138,5 @@ Component Name: com.example.Subscriber
 ## Reference
 
 [AWS IoT Greengrass V2](https://catalog.us-east-1.prod.workshops.aws/workshops/5ecc2416-f956-4273-b729-d0d30556013f/en-US/chapter1-introduction)
+
+
