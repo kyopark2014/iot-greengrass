@@ -1,5 +1,5 @@
 {
-	"RecipeFormatVersion": "2022-08-05",
+	"RecipeFormatVersion": "2020-01-25",
 	"ComponentName": "com.iotcore.Publisher",
 	"ComponentVersion": "1.0.0",
 	"ComponentDescription": "A component that publishes messages.",
