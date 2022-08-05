@@ -12,17 +12,28 @@ Greengrass v2.0은 Java기반 Core를 사용하므로, 별도 컴파일 없이 �
 
 [Greengrass component](https://github.com/kyopark2014/iot-greengrass/blob/main/components.md)는 Greengrass core device를 구동하는 소프트웨어입니다. 이를 이용하여 local에서 core device를 개발하고 시험할 수 있습니다. Greengrass에서는 기본기능(basic feature)과 공통 라이브러리(common liabrary)를 비롯한 local 개발 툴을 components로 제공합니다. 
 
-[Docker 이미지를 이용](https://github.com/kyopark2014/iot-greengrass/blob/main/docker-component.md)하여 Component를 생성할 수 있습니다. 생성된 Component는 cloud를 이용하여 다른 [device에 배포](https://github.com/kyopark2014/iot-greengrass/blob/main/deployment.md) 할 수 있습니다. 
-
-또한, [Lambda를 Component로 등록](https://github.com/kyopark2014/iot-greengrass/blob/main/lambda.md)하여 사용할 수 있습니다. 
-
 ### Component간 통신방법
 
 Greengrass의 Components들은 [IPC 통신](https://github.com/kyopark2014/iot-greengrass/blob/main/IPC.md)을 통해 Necleus와 연결되고, Components 사이는 [MQTT](https://github.com/kyopark2014/IoT-Core-Contents/blob/main/mqtt.md) PUBSUB으로 메시지를 교환할 수 있습니다. 
 
+[Pub/Sub IoT Core](https://github.com/kyopark2014/iot-greengrass/tree/main/pubsub-iotcore)에서는 edge에 설치된 component가 IoT Core와 PUBSUB을 이용하여 MQTT로 통신하는 방법을 보여줍니다. 
+
+[Pub/Sub IPC](https://github.com/kyopark2014/iot-greengrass/tree/main/pubsub-ipc)에서는 edge에 설치된 component들 끼리, PUBSUB을 이용하여 IPC로 통신하는 방법을 보여줍니다.
+
 ### Component examples
 
 [Component 예제](https://github.com/kyopark2014/iot-greengrass/blob/main/component-examples.md)에서는 component를 위한 예제를 보여줍니다. 
+
+
+### Lambda Component
+
+[Lambda를 Component로 등록](https://github.com/kyopark2014/iot-greengrass/blob/main/lambda.md)하여 사용할 수 있습니다. 
+
+
+### Docker Component
+
+[Docker 이미지를 이용](https://github.com/kyopark2014/iot-greengrass/blob/main/docker-component.md)하여 Component를 생성할 수 있습니다. 생성된 Component는 cloud를 이용하여 다른 [device에 배포](https://github.com/kyopark2014/iot-greengrass/blob/main/deployment.md) 할 수 있습니다. 
+
 
 
 ### Credentials Provider Workflow
