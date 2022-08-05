@@ -1,6 +1,8 @@
 # PUBSUB in IPC
 
-## Publisher
+[AWS IoT Greengrass V2](https://catalog.us-east-1.prod.workshops.aws/workshops/5ecc2416-f956-4273-b729-d0d30556013f/en-US/chapter1-introduction)를 참조하여 IPC로 PUBSUB을 통해 edge안에서 메시지를 교환하는 방법에 대해 설명합니다. 
+
+## Publisher 설치 
 
 1. 소스를 다운로드 합니다.
 
@@ -56,6 +58,24 @@ cat logs/com.example.Publisher.log
 ```java
 sudo systemctl restart greengrass.service
 ```
+
+publisher 설치 상태는 아래와 같이 확인 할 수 있습니다.
+
+```java
+sudo /greengrass/v2/bin/greengrass-cli component list
+```
+```java
+Component Name: com.example.Publisher
+    Version: 1.0.0
+    State: RUNNING
+    Configuration: {"accessControl":{"aws.greengrass.ipc.pubsub":{"com.example.Publisher:pubsub:1":{"operations":["aws.greengrass#PublishToTopic"],"policyDescription":"Allows access to publish to all topics.","resources":["*"]}}}}
+```    
+
+## Subscriber 설치 
+
+1. [publisher.sh](https://github.com/kyopark2014/iot-greengrass/blob/main/pubsub-ipc/publisher/publisher.sh)를 이용하여 Publisher를 설치합니다. 
+
+
 
 ## Reference
 
