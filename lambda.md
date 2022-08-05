@@ -76,3 +76,11 @@ zip -r deploy.zip *
 [PersonCountingRaspberry on the Edge using AWS Greengrass](https://github.com/Rauchdimehdi/PersonCountingRaspberry)
 
 [AWS Greengrass Core SDK for JavaScript](https://github.com/aws/aws-greengrass-core-sdk-js)
+
+
+## Troubleshooting
+
+```java
+2022-08-05T02:47:17.288Z [ERROR] (pool-2-thread-24) example-lambda-python: ipc_client.py:64,HTTP Error 400:Bad Request, b'No subscription exists for the source arn:aws:lambda:ap-northeast-2:677146750822:function:example-lambda-python:2 and subject hello/world. Deploy and configure aws.greengrass.LegacySubscriptionRouter component to support publishing from Lambdas.'. {serviceInstance=0, serviceName=example-lambda-python, currentState=RUNNING}
+````
+
