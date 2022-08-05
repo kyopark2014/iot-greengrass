@@ -77,11 +77,11 @@ cd iot-greengrass/pubsub-iotcore/subscriber/
 ```
 
 ```java
-Aug 05, 2022 9:33:08 AM software.amazon.awssdk.eventstreamrpc.EventStreamRPCConnection$1 onConnectionSetup
+Aug 05, 2022 2:59:43 PM software.amazon.awssdk.eventstreamrpc.EventStreamRPCConnection$1 onConnectionSetup
 INFO: Socket connection /greengrass/v2/ipc.socket:8033 to server result [AWS_ERROR_SUCCESS]
-Aug 05, 2022 9:33:08 AM software.amazon.awssdk.eventstreamrpc.EventStreamRPCConnection$1 onProtocolMessage
+Aug 05, 2022 2:59:43 PM software.amazon.awssdk.eventstreamrpc.EventStreamRPCConnection$1 onProtocolMessage
 INFO: Connection established with event stream RPC server
-Local deployment submitted! Deployment Id: b4db7ef8-f98d-44d9-9fe2-9573b97c7ae1
+Local deployment submitted! Deployment Id: f017eaad-67b7-4ed2-91e7-e7fe1387f695
 ```
 
 로그로 설치 상태를 확인합니다. 
