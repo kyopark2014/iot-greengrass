@@ -1,5 +1,6 @@
 # AWS IoT Greengrass
 
+AWS IoT Greengrass는 IoT를 위한 오픈소스 edge runtime으로서, 디바이스를 build하여, deploy하고 manage하는 cloud 서비스입니다. 이를 이용하여 수백만개의 디바이스를 집, 공장, 자동차와 비지니스에서 이용할 수 있습니다. 
 
 ## Greengrass 특징 
 
