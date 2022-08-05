@@ -40,8 +40,8 @@ unzip greengrass-nucleus-latest.zip -d GreengrassCore
 ```c
 sudo -E java -Droot="/greengrass/v2" -Dlog.store=FILE -jar ./GreengrassCore/lib/Greengrass.jar \
 	--aws-region ap-northeast-2 \
-	--thing-name GreengrassQuickStartCore-18163f7ac3e \
-	--thing-group-name GreengrassQuickStartGroup \
+	--thing-name GreengrassCore-18163f7ac3e \
+	--thing-group-name GreengrassGroup \
 	--component-default-user ggc_user:ggc_group \
 	--provision true \
 	--setup-system-service true \
