@@ -25,7 +25,7 @@ Lambda component를 사용하기 위해서는 아래 component들을 포함하�
 ## Lambda 함수 Lifecycle
 
 - On-demand lifecycle: Invoke 될때마다 sandbox로 불리우는 다른 container를 생성하고 reuse 하지 않으며, task가 끝나면 종료합니다. 
-- Long-lived (or pinned) lifecycle: Greengrass core software가 시작할때 single container로 시작하고 하나의 컨테이너가 모든 데이터를 처리합니다. 여러개의 invocation이 발생하면 queuing 하면서 순차적으로 처리합니다. Long-lived lambda 함수는 디바이스 데이터를 받기 시작할때 machine learning model을 로드하거나 시작할 수 있습니다. Long-lived인 Lambda 함수는 Greengrass core가 deployment나 reboot으로 재시작하더라도 계속 실행됩니다. [Understanding Container Reuse in AWS Lambda](https://aws.amazon.com/ko/blogs/compute/container-reuse-in-lambda/)에 좀더 상세한 정보가 있습니다. 
+- Long-lived (or pinned) lifecycle: Greengrass core software가 시작할때 single container로 시작하고 하나의 컨테이너가 모든 데이터를 처리합니다. 여러개의 invocation이 발생하면 queuing 하면서 순차적으로 처리합니다. Long-lived lambda 함수는 constantly running하는 경우에 유용하며, 디바이스가 데이터를 받기 시작할때 machine learning model을 로드하거나 시작할 수 있습니다. Long-lived인 Lambda 함수는 Greengrass core가 deployment나 reboot으로 재시작하더라도 계속 실행됩니다. [Understanding Container Reuse in AWS Lambda](https://aws.amazon.com/ko/blogs/compute/container-reuse-in-lambda/)에 좀더 상세한 정보가 있습니다. 
 
 
 ## Lambda 생성 
