@@ -78,8 +78,8 @@ Component Name: com.example.Publisher
 1. [subscriber.sh](https://github.com/kyopark2014/iot-greengrass/blob/main/pubsub-ipc/subsriber/subscriber.sh)를 이용하여 Subscriber를 설치합니다. 
 
 ```java
-$ cd iot-greengrass/pubsub-ipc/subscriber/
-$ ./subscriber.sh 
+cd iot-greengrass/pubsub-ipc/subscriber/
+./subscriber.sh 
 ```
 
 ```java
@@ -110,7 +110,7 @@ cat com.example.Subscriber.log
 Subscriber가 받은 메시지는 아래와 같습니다. 
 
 ```java
-$ tail -f /tmp/Greengrass_Subscriber.log
+tail -f /tmp/Greengrass_Subscriber.log
 ```
 ```java
 {'timestamp': '2022-08-05 09:35:17.812991', 'value': 990.55}
