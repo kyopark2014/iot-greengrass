@@ -80,7 +80,7 @@ Successfully set up Nucleus as a system service
 이때 /greengrass/v2 폴더에는 아래와 같은 파일들이 생성됩니다. 
 
 ```c
-$ $ ls /greengrass/v2/ -al
+$ ls /greengrass/v2/ -al
 total 60
 drwxr-xr-x 12 root root 4096 Aug  5 02:42 .
 drwxr-xr-x  3 root root 4096 Aug  5 02:42 ..
