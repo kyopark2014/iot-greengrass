@@ -38,5 +38,5 @@ while True:
     future = operation.get_response()
     future.result(TIMEOUT)
 
-    print(message)
+    print("publish: "+message_json)
     time.sleep(1/publish_rate)
