@@ -26,7 +26,7 @@ while True:
 
     request = PublishToIoTCoreRequest()
     request.topic_name = topic
-    request.payload = bytes(message, "utf-8")
+    request.payload = bytes(message_json, "utf-8")
     request.qos = qos
     operation = ipc_client.new_publish_to_iot_core()
     operation.activate(request)
