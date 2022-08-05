@@ -19,7 +19,7 @@ Greengrass component는 Greengrass core device를 설치(deploy)하는 소프트
 
 ### Recipe
 
-모든 component는 메타데이터를 정의하는 recipe를 가지고 있습니다. recipe는 compenent의 환경변수를 가지고 있고, 다른 component들과의 dependency와 lifecycle 및 platform 호환성을 기술합니다. 여기서 lifecycle은 component를 설치, 실행 및 종료(shot down)할때의 명령어를 정의 합니다. recipe는 json, yaml 파일포맷으로 정의되며, [AWS IoT Greengrass component recipe reference](https://docs.aws.amazon.com/greengrass/v2/developerguide/component-recipe-reference.html)에 상세하게 설명되어 있습니다. 
+모든 component는 메타데이터를 정의하는 recipe를 가지고 있습니다. recipe는 compenent의 환경변수를 가지고 있고, 다른 component들과의 dependency와 lifecycle 및 platform 호환성을 기술합니다. 여기서 lifecycle은 component를 설치, 실행 및 종료(shot down)할때의 명령어를 정의 합니다. recipe는 json, yaml 파일포맷으로 정의되며, [AWS IoT Greengrass component recipe reference](https://docs.aws.amazon.com/greengrass/v2/developerguide/component-recipe-reference.html)에 상세하게 설명하고 있습니다. 
 
 ## Artifacts
 
