@@ -84,3 +84,6 @@ zip -r deploy.zip *
 2022-08-05T02:47:17.288Z [ERROR] (pool-2-thread-24) example-lambda-python: ipc_client.py:64,HTTP Error 400:Bad Request, b'No subscription exists for the source arn:aws:lambda:ap-northeast-2:677146750822:function:example-lambda-python:2 and subject hello/world. Deploy and configure aws.greengrass.LegacySubscriptionRouter component to support publishing from Lambdas.'. {serviceInstance=0, serviceName=example-lambda-python, currentState=RUNNING}
 ````
 
+아래와 같이 사용한 코드가 IPC를 사용하지 않았기 때문에 발생한 문제점입니다. 
+
+The legacy subscription router component is required only if your Lambda function uses the publish() function in the AWS IoT Greengrass Core SDK. If you update your Lambda function code to use the interprocess communication (IPC) interface in the AWS IoT Device SDK V2, you don't need to deploy the legacy subscription router component. For more information, see the following interprocess
