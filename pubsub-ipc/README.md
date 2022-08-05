@@ -1,4 +1,4 @@
-# PUBSUB in IPC
+# Pub / Sub IPC
 
 [AWS IoT Greengrass V2](https://catalog.us-east-1.prod.workshops.aws/workshops/5ecc2416-f956-4273-b729-d0d30556013f/en-US/chapter1-introduction)를 참조하여 IPC로 PUBSUB을 통해 edge안에서 메시지를 교환하는 방법에 대해 설명합니다. 
 
