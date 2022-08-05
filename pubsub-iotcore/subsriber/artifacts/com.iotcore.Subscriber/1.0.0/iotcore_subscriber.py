@@ -41,7 +41,7 @@ topic = "core/topic"
 request = SubscribeToTopicRequest()
 request.topic = topic
 handler = StreamHandler()
-operation = ipc_client.new_publish_to_iot_core(handler) 
+operation = ipc_client.new_subscribe_to_iot_core(handler) 
 operation.activate(request)
 future_response = operation.get_response()
 future_response.result(TIMEOUT)
