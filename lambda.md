@@ -120,6 +120,7 @@ zip -r deploy.zip *
 
 [What I  learned after a couple of weeks of using AWS IoT Greengrass](https://www.proud2becloud.com/what-i-learned-after-a-couple-of-weeks-of-using-aws-iot-greengrass/)
 
+[AWS IoT Greengrass V2](https://catalog.us-east-1.prod.workshops.aws/workshops/5ecc2416-f956-4273-b729-d0d30556013f/en-US/chapter1-introduction)
 
 ## Troubleshooting
 
