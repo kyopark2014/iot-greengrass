@@ -24,7 +24,11 @@ $ ssh ec2-user@150.223.112.443 -i ssh-seoul.cer
 1) 설치 파일을 다운로드 합니다. 
 
 ```c
-$ curl -s https://d2s8p88vqu9w66.cloudfront.net/releases/greengrass-nucleus-latest.zip > greengrass-nucleus-latest.zip && unzip greengrass-nucleus-latest.zip -d GreengrassCore
+curl -s https://d2s8p88vqu9w66.cloudfront.net/releases/greengrass-nucleus-latest.zip > greengrass-nucleus-latest.zip 
+unzip greengrass-nucleus-latest.zip -d GreengrassCore
+```
+
+```c
 Archive:  greengrass-nucleus-latest.zip
   inflating: GreengrassCore/LICENSE
   inflating: GreengrassCore/NOTICE
