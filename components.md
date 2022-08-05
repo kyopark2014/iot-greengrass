@@ -6,7 +6,7 @@ Greengrass component는 Greengrass core device를 설치(deploy)하는 소프트
 
 - 하나의 Component는 Recipe file과 Artifacts로 구성됩니다. 
 
-- Component의 dependency를 yaml 파일 안에 ComponentDependencies에 정의 할 수 있습니다. 
+- Component의 dependency를 json 또는 yaml 파일 안에 ComponentDependencies에 정의 할 수 있습니다. 
 
 - Component는 ComponentName과 ComponentVersion으로 구분합니다.
 
