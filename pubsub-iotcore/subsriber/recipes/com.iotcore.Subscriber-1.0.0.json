@@ -11,7 +11,7 @@
             "com.iotcore.Subscriber:mqttproxy:1": {
               "policyDescription": "Allows access to subscribe to all topics.",
               "operations": [
-                "aws.greengrass#SubscribeToTopic"
+                "aws.greengrass#SubscribeToIoTCore"
               ],
               "resources": [
                 "*"
