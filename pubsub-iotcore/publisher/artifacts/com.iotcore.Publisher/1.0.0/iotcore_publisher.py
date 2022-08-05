@@ -13,7 +13,7 @@ TIMEOUT = 10
 
 ipc_client = awsiot.greengrasscoreipc.connect()
                     
-topic = "my/topic"
+topic = "core/topic"
 
 while True:
     message = {
