@@ -25,6 +25,7 @@ topic = "my/topic"
 while True:
     message = {"timestamp": str(datetime.datetime.now()),
                "value": sensor.read_value()}
+    message_json = json.dumps(message).encode('utf-8')
 
     request = PublishToTopicRequest()
     request.topic = topic
@@ -37,5 +38,5 @@ while True:
     future = operation.get_response()
     future.result(TIMEOUT)
 
-    print("publish: {message_json}")
+    print(f"publish: {message_json}")
     time.sleep(1/publish_rate)
