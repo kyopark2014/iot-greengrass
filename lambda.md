@@ -118,6 +118,8 @@ zip -r deploy.zip *
 
 [AWS Greengrass Core SDK for JavaScript](https://github.com/aws/aws-greengrass-core-sdk-js)
 
+[What I  learned after a couple of weeks of using AWS IoT Greengrass](https://www.proud2becloud.com/what-i-learned-after-a-couple-of-weeks-of-using-aws-iot-greengrass/)
+
 
 ## Troubleshooting
 
