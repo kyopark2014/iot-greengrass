@@ -23,7 +23,7 @@ Greengrass의 Components들은 [IPC 통신](https://github.com/kyopark2014/iot-g
 
 ![image](https://user-images.githubusercontent.com/52392004/181382025-d2a786dd-b2f1-46a7-9cc5-065ae749c54d.png)
 
-그림의 IoTMQTTClient의 [IPC service identifier](https://docs.aws.amazon.com/greengrass/v2/developerguide/ipc-iot-core-mqtt.html)는 aws.greengrass.ipc.mqttproxy 입니다. 
+그림의 [local PubSub](https://docs.aws.amazon.com/greengrass/v2/developerguide/ipc-publish-subscribe.html)의 IPC service identifier은 "aws.greengrass.ipc.pubsub"이고, [IoTMQTTClient](https://docs.aws.amazon.com/greengrass/v2/developerguide/ipc-iot-core-mqtt.html)는 "aws.greengrass.ipc.mqttproxy" 입니다. 
 
 
 ### Lambda Component
