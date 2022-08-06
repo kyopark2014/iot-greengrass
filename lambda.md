@@ -30,16 +30,11 @@ Lambda component를 사용하기 위해서는 아래 component들을 포함하�
 
 ## Lambda 생성 
 
-#### AWS Lambda mappings
+[Lambda Component 생성하기](https://github.com/kyopark2014/iot-greengrass/blob/main/lambda/README.md)를 참조하여, Python이나 Node.JS로 Lambda component를 생성 
+할수 
+할수 있스빈다.
+ 
 
-- One Lambda to one component
-- Refactor single AWS Lambda functions to multiple, dependent components
-
-#### Import AWS Lambda functions to components
-
-```c
-aws greengrassv2 create-component-version --lambda-arn 
-```
 
 #### Map subscriptions to component via authorization templates
 
