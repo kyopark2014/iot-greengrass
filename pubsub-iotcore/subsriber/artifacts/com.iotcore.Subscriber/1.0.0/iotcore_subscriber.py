@@ -38,7 +38,6 @@ class StreamHandler(client.SubscribeToIoTCoreStreamHandler):
         # Handle close.
         pass
 
-
 topic = "core/topic"
 qos = QOS.AT_MOST_ONCE
 
