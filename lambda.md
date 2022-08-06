@@ -137,7 +137,7 @@ Lambda의 event source로 local publish/subscribe 메시지들과 IoT Core MQTT 
     },
     "setenv": {
       "AWS_GREENGRASS_LAMBDA_CONTAINER_MODE": "{configuration:/containerMode}",
-      "AWS_GREENGRASS_LAMBDA_ARN": "arn:aws:lambda:ap-northeast-2:677146750822:function:example-lambda-python:8",
+      "AWS_GREENGRASS_LAMBDA_ARN": "arn:aws:lambda:ap-northeast-2:123456789012:function:example-lambda-python:8",
       "AWS_GREENGRASS_LAMBDA_FUNCTION_HANDLER": "lambda_function.lambda_handler",
       "AWS_GREENGRASS_LAMBDA_ARTIFACT_PATH": "{artifacts:decompressedPath}/lambda-artifact",
       "AWS_GREENGRASS_LAMBDA_CONTAINER_PARAMS": "{configuration:/containerParams}",
