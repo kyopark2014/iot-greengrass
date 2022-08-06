@@ -8,11 +8,18 @@ AWS Greengrass는 아래와 같은 효과를 줄 수 있습니다.
 - AWS Cloud와 연결하여 다양한 서비스를 이용할 수 있습니다.
 - 원격에서 모니터링을 할 수 있습니다. 
 
-
-
-
 <img width="905" alt="image" src="https://user-images.githubusercontent.com/52392004/182485948-796b6423-8cff-4e91-a89b-2aec21be86e5.png">
+
+Greengrass Core는 local device와 OPC-UA, LoRA, Zigbee를 통해 연결될 수 있습니다. Data는 MQTT를 이용해 AWS IoT Core를 통해 라우팅되며, AWS Managed service에 의해 cloud와 device의 연결이 관리됩니다. 이렇게 함으로써 AWS 서비스인 S3, EC2, Sagemaker와 쉽게 연결할 수 있습니다. 
+
+## AI with AWS Greengrass
+
+Greengrass와 연결된 local camera는 실시간으로 물체를 인식하도록 할 수 있습니다. 이렇게 함으로써 사용자의 경험을 향상시키고, 새로운 가치를 제공 할 수 있습니다. 이러한 데이터는 AWS cloud의 machine learning model을 이용해 training되고 디바이스의 기능을 향상시킬 수 있습니다. 
+
+네트워크가 오프라인이어도 local device에서 AI/ML model에 기반한 예측이 가능하며, 네트워크가 다시 연결되었을때 AWS Cloud로 데이터를 보내서 알고리즘을 향상 시킬 수 있습니다. 
 
 ## Reference
 
 [AWS Greengrass Hardware Enables Connectivity for IoT Edge Devices](https://www.onlogic.com/company/io-hub/iot-edge-devices/amp/)
+
+[AWS Announces a New Version of AWS Iot Greengrass](https://www.infoq.com/news/2020/12/aws-iot-greengrass-2-0/)
