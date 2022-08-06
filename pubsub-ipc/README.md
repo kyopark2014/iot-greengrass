@@ -2,7 +2,191 @@
 
 [Publish/subscribe local messages](https://docs.aws.amazon.com/greengrass/v2/developerguide/ipc-publish-subscribe.html)와 [AWS IoT Greengrass V2](https://catalog.us-east-1.prod.workshops.aws/workshops/5ecc2416-f956-4273-b729-d0d30556013f/en-US/chapter1-introduction)를 참조하여 IPC로 PUBSUB을 통해 edge안에서 Local 메시지를 교환하는 방법에 대해 설명합니다. 
 
-## 소스 다운로드 
+
+
+## Publish To IPC PUBSUB
+
+IPC로 [MQTT 메시지를 PUBLISH 하는 예제](https://github.com/kyopark2014/iot-greengrass/blob/main/pubsub-ipc/publisher/artifacts/com.example.Publisher/1.0.0/example_publisher.py)입니다. 5초에 한번씩 메시지를 IoT Core로 전송합니다. 
+
+```python
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+import time
+import datetime
+import json
+import awsiot.greengrasscoreipc
+from awsiot.greengrasscoreipc.model import (
+    PublishToTopicRequest,
+    PublishMessage,
+    JsonMessage
+)
+from dummy_sensor import DummySensor
+
+TIMEOUT = 10
+
+ipc_client = awsiot.greengrasscoreipc.connect()
+
+sensor = DummySensor()
+
+topic = "local/topic"
+
+while True:
+    message = {"timestamp": str(datetime.datetime.now()),
+               "value": sensor.read_value()}
+    message_json = json.dumps(message).encode('utf-8')
+
+    request = PublishToTopicRequest()
+    request.topic = topic
+    publish_message = PublishMessage()
+    publish_message.json_message = JsonMessage()
+    publish_message.json_message.message = message
+    request.publish_message = publish_message
+    operation = ipc_client.new_publish_to_topic()
+    operation.activate(request)
+    future = operation.get_response()
+    future.result(TIMEOUT)
+
+    print(f"publish: {message_json}")
+    time.sleep(5)
+```
+
+이때의 [Publisher에 대한 recipe](https://github.com/kyopark2014/iot-greengrass/blob/main/pubsub-iotcore/publisher/recipes/com.iotcore.Publisher-1.0.0.json)는 아래와 같습니다.
+
+```java
+{
+    "RecipeFormatVersion": "2020-01-25",
+    "ComponentName": "com.example.Publisher",
+    "ComponentVersion": "1.0.0",
+    "ComponentDescription": "A component that publishes messages.",
+    "ComponentPublisher": "Amazon",
+    "ComponentConfiguration": {
+      "DefaultConfiguration": {
+        "accessControl": {
+          "aws.greengrass.ipc.pubsub": {
+            "com.example.Publisher:pubsub:1": {
+              "policyDescription": "Allows access to publish to all topics.",
+              "operations": [
+                "aws.greengrass#PublishToTopic"
+              ],
+              "resources": [
+                "*"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "Manifests": [
+      {
+        "Lifecycle": {
+          "Install": "pip3 install awsiotsdk numpy",
+          "Run": "python3 -u {artifacts:path}/example_publisher.py"
+        }
+      }
+    ]
+}
+```
+
+## Subscribe To IPC PUBSUB
+
+lifecycle이 끝나도 subscribe 할수 있도록 [IPC event stream](https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-subscribe-operations)으로 정의합니다. 아래는 [local 메시지를 위하여 IPC를 Subscribe하는 예제](https://github.com/kyopark2014/iot-greengrass/blob/main/pubsub-ipc/subsriber/artifacts/com.example.Subscriber/1.0.0/example_subscriber.py)입니다
+
+```python
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+import time
+import json
+import awsiot.greengrasscoreipc
+import awsiot.greengrasscoreipc.client as client
+from awsiot.greengrasscoreipc.model import (
+    SubscribeToTopicRequest,
+    SubscriptionResponseMessage
+)
+
+TIMEOUT = 10
+
+ipc_client = awsiot.greengrasscoreipc.connect()
+
+class StreamHandler(client.SubscribeToTopicStreamHandler):
+    def __init__(self):
+        super().__init__()
+
+    def on_stream_event(self, event: SubscriptionResponseMessage) -> None:
+        message_string = event.json_message.message
+
+        # Handle message.
+        with open('/tmp/Greengrass_Local_Subscriber.log', 'a') as f:
+            print(message_string, file=f)
+
+    def on_stream_error(self, error: Exception) -> bool:
+        # Handle error.
+        return True # Return True to close stream, False to keep stream open.
+
+    def on_stream_closed(self) -> None:
+        # Handle close.
+        pass
+
+topic = "local/topic"
+
+request = SubscribeToTopicRequest()
+request.topic = topic
+handler = StreamHandler()
+operation = ipc_client.new_subscribe_to_topic(handler)
+operation.activate(request)
+
+future_response = operation.get_response()
+future_response.result(TIMEOUT)
+
+# Keep the main thread alive, or the process will exit.
+while True:
+    time.sleep(10)
+
+operation.close()
+```
+
+
+이때의 [Subscriber에 대한 recipe](https://github.com/kyopark2014/iot-greengrass/blob/main/pubsub-ipc/subsriber/recipes/com.example.Subscriber-1.0.0.json)는 아래와 같습니다.
+
+```java
+{
+    "RecipeFormatVersion": "2020-01-25",
+    "ComponentName": "com.example.Subscriber",
+    "ComponentVersion": "1.0.0",
+    "ComponentDescription": "A component that subscribes to messages.",
+    "ComponentPublisher": "Amazon",
+    "ComponentConfiguration": {
+      "DefaultConfiguration": {
+        "accessControl": {
+          "aws.greengrass.ipc.pubsub": {
+            "com.example.Subscriber:pubsub:1": {
+              "policyDescription": "Allows access to publish to all topics.",
+              "operations": [
+                "aws.greengrass#SubscribeToTopic"
+              ],
+              "resources": [
+                "*"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "Manifests": [
+      {
+        "Lifecycle": {
+          "Install": "pip3 install awsiotsdk",
+          "Run": "python3 -u {artifacts:path}/example_subscriber.py"
+        }
+      }
+    ]
+}
+```  
+
+
+## 설치 및 시험
+
+
+### 소스 다운로드 
 
 소스를 다운로드 합니다.
 
@@ -11,7 +195,7 @@ git clone https://github.com/kyopark2014/iot-greengrass
 cd iot-greengrass/pubsub-ipc/publisher/
 ```
 
-## Publisher 설치 
+### Publisher 설치 
 
 [publisher.sh](https://github.com/kyopark2014/iot-greengrass/blob/main/pubsub-ipc/publisher/publisher.sh)를 이용하여 Publisher를 설치합니다. 
 
@@ -60,7 +244,7 @@ Component Name: com.example.Publisher
     Configuration: {"accessControl":{"aws.greengrass.ipc.pubsub":{"com.example.Publisher:pubsub:1":{"operations":["aws.greengrass#PublishToTopic"],"policyDescription":"Allows access to publish to all topics.","resources":["*"]}}}}
 ```    
 
-## Subscriber 설치 
+### Subscriber 설치 
 
 [subscriber.sh](https://github.com/kyopark2014/iot-greengrass/blob/main/pubsub-ipc/subsriber/subscriber.sh)를 이용하여 Subscriber를 설치합니다. 
 
