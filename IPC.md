@@ -9,7 +9,7 @@ Recipy의 "accessControl"를 이용하여 Autorization policies를 정의 할 �
 
 ### IPC service identifier
 
-IPC service identifier는 aws.greengrass.ipc.mqttproxy 입니다. 이를 위해 아래와 같이 policy를 정의 할 수 있습니다. 
+IPC service identifier는 aws.greengrass.ipc.mqttproxy 입니다. 이를 위해 아래와 같이 policy를 정의 할 수 있습니다. Policy이름은 유일하여야 하므로, application 이름(예: com.example.MyIoTCorePubSubComponent)에 IPC componen 이름(예: mqttproxy)와 버전을 이용하여 아래처럼 정의 할 수 있습니다. 
 
 [Example authorization policy with limited access](https://docs.aws.amazon.com/greengrass/v2/developerguide/ipc-iot-core-mqtt.html)
 
@@ -34,7 +34,7 @@ IPC service identifier는 aws.greengrass.ipc.mqttproxy 입니다. 이를 위해 
 ```
 
 
-### 동작 프로세스
+### PUBSUB 동작 프로세스
 
 1) Component1과 Component2가 Necleus에 IPC로 연결됩니다.
 

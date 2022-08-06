@@ -1,6 +1,158 @@
 # Pub / Sub IoT Core 
 
-[Use the AWS IoT Device SDK to communicate with the Greengrass nucleus, other components, and AWS IoT Core](https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-subscribe-operations)를 참조하여 AWS IoT Core를 이용하여, PUBSUB으로 메시지를 교환하는 방법에 대해 설명합니다. 
+[Publish/subscribe AWS IoT Core MQTT messages](https://docs.aws.amazon.com/greengrass/v2/developerguide/ipc-iot-core-mqtt.html)를 참조하여 AWS IoT Core를 이용하여, PUBSUB으로 메시지를 교환하는 방법에 대해 설명합니다. 
+
+## QOS 
+
+QoS는 아래와 같이 정의 할 수 있습니다.
+
+- AT_MOST_ONCE – QoS 0. The MQTT message is delivered at most once.
+- AT_LEAST_ONCE – QoS 1. The MQTT message is delivered at least once.
+
+## Publish To IoT Core
+
+IoT Core로 [MQTT 메시지를 PUBLISH 하는 예제](https://github.com/kyopark2014/iot-greengrass/blob/main/pubsub-iotcore/publisher/artifacts/com.iotcore.Publisher/1.0.0/iotcore_publisher.py)입니다. 5초에 한번씩 메시지를 IoT Core로 전송합니다. 
+
+```python
+import time
+import datetime
+import json
+
+import awsiot.greengrasscoreipc
+import awsiot.greengrasscoreipc.client as client
+from awsiot.greengrasscoreipc.model import (
+    QOS,
+    PublishToIoTCoreRequest
+)
+
+TIMEOUT = 10
+
+ipc_client = awsiot.greengrasscoreipc.connect()
+                    
+topic = "core/topic"
+
+while True:
+    message = {
+        "msg": "hello.world",
+        "date": str(datetime.datetime.now()),
+    }
+    message_json = json.dumps(message).encode('utf-8')
+
+    qos = QOS.AT_LEAST_ONCE
+    request = PublishToIoTCoreRequest()
+    request.topic_name = topic
+    request.payload = message_json
+    request.qos = qos
+
+    operation = ipc_client.new_publish_to_iot_core()
+    operation.activate(request)
+    future_response = operation.get_response()
+    future_response.result(TIMEOUT)
+
+    print(f"publish: {message_json}")
+    time.sleep(5)
+```
+
+
+## Subscribe To IoT Core
+
+lifecycle이 끝나도 subscribe 할수 있도록 [IPC event stream](https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-subscribe-operations)으로 정의합니다. 아래는 [IoT Core를 Subscribe하는 예제](https://github.com/kyopark2014/iot-greengrass/blob/main/pubsub-iotcore/subsriber/artifacts/com.iotcore.Subscriber/1.0.0/iotcore_subscriber.py)입니다
+
+```python
+import time
+import traceback
+
+import awsiot.greengrasscoreipc
+import awsiot.greengrasscoreipc.client as client
+from awsiot.greengrasscoreipc.model import (
+    SubscribeToTopicRequest,
+    SubscriptionResponseMessage
+)
+
+TIMEOUT = 10
+
+ipc_client = awsiot.greengrasscoreipc.connect()
+                    
+class StreamHandler(client.SubscribeToTopicStreamHandler):
+    def __init__(self):
+        super().__init__()
+
+    def on_stream_event(self, event: SubscriptionResponseMessage) -> None:
+        try:
+            message_string = str(event.binary_message.message, "utf-8")
+            # Handle message.
+        except:
+            traceback.print_exc()
+
+    def on_stream_error(self, error: Exception) -> bool:
+        # Handle error.
+        return True  # Return True to close stream, False to keep stream open.
+
+    def on_stream_closed(self) -> None:
+        # Handle close.
+        pass
+
+
+topic = "my/topic"
+
+request = SubscribeToTopicRequest()
+request.topic = topic
+handler = StreamHandler()
+operation = ipc_client.new_subscribe_to_topic(handler) 
+operation.activate(request)
+future_response = operation.get_response()
+future_response.result(TIMEOUT)
+
+# Keep the main thread alive, or the process will exit.
+while True:
+    time.sleep(10)
+    
+# To stop subscribing, close the operation stream.
+operation.close()
+```
+
+
+## hello_mqtt.py
+
+```python
+import json
+import time
+import os
+import random
+
+import awsiot.greengrasscoreipc
+import awsiot.greengrasscoreipc.model as model
+
+if __name__ == '__main__':
+    ipc_client = awsiot.greengrasscoreipc.connect()
+
+    while True:
+        telemetry_data = {
+            "timestamp": int(round(time.time() * 1000)),
+            "battery_level": random.randrange(98, 101),
+            "location": {
+                "longitude": round(random.uniform(101.0, 120.0),2),
+                "latitude": round(random.uniform(30.0, 40.0),2),
+            },
+        }
+
+        op = ipc_client.new_publish_to_iot_core()
+        op.activate(model.PublishToIoTCoreRequest(
+            topic_name="ggv2/{}/telemetry".format(os.getenv("AWS_IOT_THING_NAME")),
+            qos=model.QOS.AT_LEAST_ONCE,
+            payload=json.dumps(telemetry_data).encode(),
+        ))
+        try:
+            result = op.get_response().result(timeout=1.0)
+            print("successfully published message:", result)
+        except Exception as e:
+            print("failed to publish message:", e)
+
+        time.sleep(5)
+```        
+
+
+
 
 ## 소스 다운로드 
 
@@ -120,14 +272,27 @@ Subscriber의 상태는 아래와 같이 확인할 수 있습니다.
 sudo /greengrass/v2/bin/greengrass-cli component list
 ```
 ```java
-Component Name: com.example.Subscriber
+Component Name: com.iotcore.Subscriber
     Version: 1.0.0
     State: RUNNING
-    Configuration: {"accessControl":{"aws.greengrass.ipc.pubsub":{"com.example.Subscriber:pubsub:1":{"operations":["aws.greengrass#SubscribeToTopic"],"policyDescription":"Allows access to publish to all topics.","resources":["*"]}}}}
+    Configuration: {"accessControl":{"aws.greengrass.ipc.mqttproxy":{"com.iotcore.Subscriber:mqttproxy:1":{"operations":["aws.greengrass#PublishToIoTCore","aws.greengrass#SubscribeToIoTCore"],"policyDescription":"Allows access to subscribe to all AWS IoT Core topics.","resources":["*"]}}}}
 ```    
+
+
+## component 삭제 명령어
+
+com.iotcore.Subscriber를 아래와 같이 삭제할 수 있습니다. 
+
+```c
+sudo /greengrass/v2/bin/greengrass-cli deployment create --remove="com.iotcore.Subscriber"
+```
+
+
 
 ## Reference
 
 [Publish/subscribe AWS IoT Core MQTT messages](https://docs.aws.amazon.com/greengrass/v2/developerguide/ipc-iot-core-mqtt.html)
 
 [Use the AWS IoT Device SDK to communicate with the Greengrass nucleus, other components, and AWS IoT Core](https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-subscribe-operations)
+
+[AWS IoT Greengrass Subscribe/Publish Component](https://velog.io/@markyang92/AWS-IoT-Greengrass-SubscribePublish-Component)

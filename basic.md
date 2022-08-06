@@ -1,4 +1,4 @@
-# AWS IoT Greengrass
+# IoT Greengrass Basic
 
 Edge에서 사용되어지는 IoT 디바이스들이 많아지면서, IT 담당자들은 수천개 또는 수백만개의 network endpoint를 개발 및 관리하여야 합니다. AWS Greengrass를 이용하면 Edge에 있는 IoT 디바이스들를 scalable 방법으로 효과적으로 관리할 수 있습니다. 
 
