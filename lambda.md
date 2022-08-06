@@ -35,9 +35,9 @@ Lambda component를 사용하기 위해서는 아래 component들을 포함하�
 
 ## Event source
 
-Lambda의 event source로 local publish/subscribe 메시지들과 IoT Core MQTT 메시지들를 이용할 수 있습니다. 다른 Lambda 함수나 component들과 메시지를 주고 받기 위해서는 [legacy subscription router component](https://docs.aws.amazon.com/greengrass/v2/developerguide/legacy-subscription-router-component.html)를 설치하여야 합니다. 
+Lambda의 event source로 local publish/subscribe 메시지들과 IoT Core MQTT 메시지들를 이용할 수 있습니다. 이를 위해 Topic Type을 설정하여야 하는데, Type에는 "Local publish/subscribe"와 "AWS IoT Core MQTT"가 있습니다. 
 
-이를 위해 Topic, Type을 설정하여야 하는데, Type에는 "Local publish/subscribe"와 "AWS IoT Core MQTT"가 있습니다. 
+## 각종 옵션 
 
 - Timeout: non-pinned lambda가 실행하는 시간, 기본 3초
 - Status timeout: pinned일때 lambda manager component에 status를 업데이트하는 간격, 기본 60초
