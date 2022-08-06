@@ -1,27 +1,25 @@
-# AWS IoT Greengrass
+# IoT Greengrass
 
-AWS IoT Greengrass는 IoT를 위한 오픈소스 edge runtime으로서, Edge 디바이스의 Component를 build하고 deploy하며, manage하는 cloud 서비스입니다. 이를 이용하여 수백만개의 디바이스를 집, 공장, 자동차와 비지니스에서 활용할 수 있습니다. 
+IoT Greengrass는 IoT를 위한 오픈소스 edge runtime으로서, Edge 디바이스의 Component를 build하고 deploy하며, manage하는 cloud 서비스입니다. 이를 이용하여 수백만개의 디바이스를 집, 공장, 자동차와 비지니스에서 활용할 수 있습니다. [IoT Greengrass Basic](https://github.com/kyopark2014/iot-greengrass/blob/main/basic.md)에서 Greengress에 대해 설명합니다.
 
 ## Greengrass 특징 
 
-Greengrass v2.0은 Java기반 Core를 사용하므로, 별도 컴파일 없이 구동 가능합니다. [Greengrass](https://github.com/kyopark2014/iot-greengrass/blob/main/basic.md)는 Greengrass.jar와 [components](https://github.com/kyopark2014/iot-greengrass/blob/main/components.md)로 구성되는데, component에는 AWS가 제공하는 necleus, streammanger 등이 있으며, 사용자가 compoenent를 recipt를 이용해 직접 정의 할 수 있습니다. 
+Greengrass V2는 Java기반 Core를 사용하므로, 별도 컴파일 없이 구동 가능합니다. [Greengrass](https://github.com/kyopark2014/iot-greengrass/blob/main/basic.md)는 Greengrass.jar와 [components](https://github.com/kyopark2014/iot-greengrass/blob/main/components.md)로 구성되는데, component에는 AWS가 제공하는 necleus, streammanger 등이 있으며, 사용자가 compoenent를 recipe를 이용해 직접 정의 할 수 있습니다. 
 
 ![image](https://user-images.githubusercontent.com/52392004/181129624-d2a73168-5a8d-4336-be98-1815664a6bff.png)
 
 ### Components
 
-[Greengrass component](https://github.com/kyopark2014/iot-greengrass/blob/main/components.md)는 Greengrass core device를 구동하는 소프트웨어입니다. 이를 이용하여 local에서 core device를 개발하고 시험할 수 있습니다. Greengrass에서는 기본기능(basic feature)과 공통 라이브러리(common liabrary)를 비롯한 local 개발 툴을 components로 제공합니다. 
-
-생성된 Component는 cloud를 이용하여 다른 [device에 배포](https://github.com/kyopark2014/iot-greengrass/blob/main/deployment.md) 할 수 있습니다. 
+[Greengrass component](https://github.com/kyopark2014/iot-greengrass/blob/main/components.md)는 Greengrass core device를 구동하는 소프트웨어입니다. Greengrass에서는 기본기능(basic feature)과 공통 라이브러리(common liabrary)를 비롯한 local 개발 툴을 components로 제공하며, Greengrass CLI를 이용하여 Local에서 core device를 개발하고 시험할 수 있습니다. Component는 cloud를 이용하여 다른 [device에 배포](https://github.com/kyopark2014/iot-greengrass/blob/main/deployment.md) 할 수 있습니다. 
 
 ### Component간 통신방법
+
+Greengrass의 Components들은 [IPC 통신](https://github.com/kyopark2014/iot-greengrass/blob/main/IPC.md)을 통해 Necleus와 연결되고, Components 사이는 [MQTT](https://github.com/kyopark2014/IoT-Core-Contents/blob/main/mqtt.md) PUBSUB으로 메시지를 교환할 수 있습니다. 
 
 Component들은 아래의 1,2,3과 같이 Greengrass 내부의 component들간에 PUBSUSB을 이용하여 [local message를 교환](https://docs.aws.amazon.com/greengrass/v2/developerguide/ipc-publish-subscribe.html) 할수 있고, 1,2,4와 같이 
 
 ![image](https://user-images.githubusercontent.com/52392004/181382025-d2a786dd-b2f1-46a7-9cc5-065ae749c54d.png)
 
-
-Greengrass의 Components들은 [IPC 통신](https://github.com/kyopark2014/iot-greengrass/blob/main/IPC.md)을 통해 Necleus와 연결되고, Components 사이는 [MQTT](https://github.com/kyopark2014/IoT-Core-Contents/blob/main/mqtt.md) PUBSUB으로 메시지를 교환할 수 있습니다. 
 
 [Pub/Sub IoT Core](https://github.com/kyopark2014/iot-greengrass/tree/main/pubsub-iotcore)에서는 edge에 설치된 component가 IoT Core와 PUBSUB을 이용하여 MQTT로 통신하는 방법을 보여줍니다. 
 
