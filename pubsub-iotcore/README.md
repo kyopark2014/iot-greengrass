@@ -152,9 +152,9 @@ if __name__ == '__main__':
 ```        
 
 
+## 설치 및 시험
 
-
-## 소스 다운로드 
+### 소스 다운로드 
 
 소스를 다운로드 합니다.
 
@@ -163,7 +163,7 @@ git clone https://github.com/kyopark2014/iot-greengrass
 cd iot-greengrass/pubsub-iotcore/publisher/
 ```
 
-## Publisher 설치 
+### Publisher 설치 
 
 [publisher.sh](https://github.com/kyopark2014/iot-greengrass/blob/main/pubsub-iotcore/publisher/publisher.sh)를 이용하여 Publisher를 설치합니다. 
 
@@ -219,7 +219,7 @@ Component Name: com.iotcore.Publisher
 
 
 
-## Subscriber 설치 
+### Subscriber 설치 
 
 Component의 lifecycle이 끝나면 subscription이 remove되므로, Component는 event 메시지 streamdm으로 subscription을 하여야 합니다. 
 
@@ -231,11 +231,11 @@ cd iot-greengrass/pubsub-iotcore/subscriber/
 ```
 
 ```java
-Aug 05, 2022 2:59:43 PM software.amazon.awssdk.eventstreamrpc.EventStreamRPCConnection$1 onConnectionSetup
+Aug 06, 2022 6:40:52 AM software.amazon.awssdk.eventstreamrpc.EventStreamRPCConnection$1 onConnectionSetup
 INFO: Socket connection /greengrass/v2/ipc.socket:8033 to server result [AWS_ERROR_SUCCESS]
-Aug 05, 2022 2:59:43 PM software.amazon.awssdk.eventstreamrpc.EventStreamRPCConnection$1 onProtocolMessage
+Aug 06, 2022 6:40:52 AM software.amazon.awssdk.eventstreamrpc.EventStreamRPCConnection$1 onProtocolMessage
 INFO: Connection established with event stream RPC server
-Local deployment submitted! Deployment Id: f017eaad-67b7-4ed2-91e7-e7fe1387f695
+Local deployment submitted! Deployment Id: cc0a922b-a339-4af9-8534-d88756930c04
 ```
 
 로그로 설치 상태를 확인합니다. 
@@ -279,7 +279,7 @@ Component Name: com.iotcore.Subscriber
 ```    
 
 
-## component 삭제 명령어
+### component 삭제 명령어
 
 com.iotcore.Subscriber를 아래와 같이 삭제할 수 있습니다. 
 
