@@ -1,7 +1,7 @@
 
 ## Hello World
 
-[Tutorial creating hello world greengrass Lambda (in Python)](https://www.youtube.com/watch?v=jvQsygmzov0)을 참조하여 Hello World component를 생성하여 봅니다. 
+을 참조하여 Hello World component를 생성하여 봅니다. 
 
 1) "example-lambda-python" 폴더를 생성합니다.
 
@@ -39,3 +39,8 @@ zip -r deploy.zip *
 ![image](https://user-images.githubusercontent.com/52392004/182875925-48bdff5a-9d72-4ec0-9847-a5e77ee0821a.png)
 
 10) 
+
+
+## Reference
+
+[Tutorial creating hello world greengrass Lambda (in Python)](https://www.youtube.com/watch?v=jvQsygmzov0) - V1.0
