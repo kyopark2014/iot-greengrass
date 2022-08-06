@@ -18,8 +18,8 @@ class StreamHandler(client.SubscribeToTopicStreamHandler):
 
     def on_stream_event(self, event: SubscriptionResponseMessage) -> None:
         try:
-            # message_string = str(event.binary_message.message, "utf-8")
-            message_string = event.json_message.message
+            message_string = str(event.binary_message.message, "utf-8")
+            #message_string = event.json_message.message
             
             # Handle message.
             with open('/tmp/Greengrass_IoTCore_Subscriber.log', 'a') as f:
