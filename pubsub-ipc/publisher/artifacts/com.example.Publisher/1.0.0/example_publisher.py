@@ -11,16 +11,13 @@ from awsiot.greengrasscoreipc.model import (
 )
 from dummy_sensor import DummySensor
 
-
 TIMEOUT = 10
-publish_rate = 1.0
 
 ipc_client = awsiot.greengrasscoreipc.connect()
 
 sensor = DummySensor()
 
-topic = "my/topic"
-
+topic = "local/topic"
 
 while True:
     message = {"timestamp": str(datetime.datetime.now()),
@@ -39,4 +36,4 @@ while True:
     future.result(TIMEOUT)
 
     print(f"publish: {message_json}")
-    time.sleep(1/publish_rate)
+    time.sleep(5)
