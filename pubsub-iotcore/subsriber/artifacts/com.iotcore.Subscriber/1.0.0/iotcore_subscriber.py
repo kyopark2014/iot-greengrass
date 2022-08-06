@@ -22,8 +22,8 @@ class StreamHandler(client.SubscribeToTopicStreamHandler):
             #message_string = event.json_message.message
             
             # Handle message.
-            with open('/tmp/Greengrass_IoTCore_Subscriber.log', 'a') as f:
-                print(message_string, file=f)
+         #   with open('/tmp/Greengrass_IoTCore_Subscriber.log', 'a') as f:
+         #       print(message_string, file=f)
 
         except:
             traceback.print_exc()
