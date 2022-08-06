@@ -2,7 +2,7 @@
 
 여기서는 python과 node.js로 lambda component를 만드는 방법에 대해 설명합니다. 
 
-## Python을 생성하기 
+## Python으로 Lambda Component 생성하기
 
 1) [[AWS Lambda] - [Functions]](https://ap-northeast-2.console.aws.amazon.com/lambda/home?region=ap-northeast-2#/functions)에서 [Create function]을 선택하고, [function name]에 "example-lambda-python"을 입력하고 [Runtime]으로 적절한 Python 라이브러리를 선택한 후에 [Create function]을 선택합니다. 
 
