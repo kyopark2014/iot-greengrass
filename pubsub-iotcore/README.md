@@ -53,6 +53,46 @@ while True:
     time.sleep(5)
 ```
 
+이때의 [Publisher에 대한 recipe](https://github.com/kyopark2014/iot-greengrass/blob/main/pubsub-iotcore/publisher/recipes/com.iotcore.Publisher-1.0.0.json)는 아래와 같습니다.
+
+```java
+{
+	"RecipeFormatVersion": "2020-01-25",
+	"ComponentName": "com.iotcore.Publisher",
+	"ComponentVersion": "1.0.0",
+	"ComponentDescription": "A component that publishes messages.",
+	"ComponentPublisher": "Amazon",
+	"ComponentConfiguration": {
+		"DefaultConfiguration": {
+			"accessControl": {
+				"aws.greengrass.ipc.mqttproxy": {
+					"com.iotcore.Publisher:mqttproxy:1": {
+						"policyDescription": "Allows access to publish to all AWS IoT Core topics.",
+						"operations": [
+							"aws.greengrass#PublishToIoTCore"
+						],
+						"resources": [
+							"*"
+						]
+					}
+				}
+			}
+		}
+	},
+	"Manifests": [{
+		"Platform": {
+			"os": "linux"
+		},
+		"Lifecycle": {
+			"Install": {
+				"RequiresPrivilege": true,
+				"Script": "sudo pip3 install awsiotsdk"
+			},
+			"Run": "python3 {artifacts:path}/iotcore_publisher.py"
+		}
+	}]
+}
+```
 
 ## Subscribe To IoT Core
 
@@ -111,6 +151,8 @@ while True:
 operation.close()
 ```
 
+
+이때의 [Subscriber에 대한 recipe](https://github.com/kyopark2014/iot-greengrass/blob/main/pubsub-iotcore/subsriber/recipes/com.iotcore.Subscriber-1.0.0.json)는 아래와 같습니다.
       
 
 
