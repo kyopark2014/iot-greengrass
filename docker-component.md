@@ -4,10 +4,11 @@
 
 ![image](https://user-images.githubusercontent.com/52392004/181383024-b5a23ef4-8b56-4d41-b4c9-6d7256c02081.png)
 
-Greengrass V1.x에서는 Docker connector를 이용하였고 V2.0에서는 Component의 Recipy의 environment variable에 정의된 registry에서 Docker Component를 생성하게 됩니다. 이때 
+Greengrass V1.x에서는 Docker connector를 이용하였고 V2.0에서는 Component의 Recipy의 environment variable에 정의된 registry에서 Docker Component를 생성하게 됩니다. 
 
-여기서 Docker Compoent간 dependency를 가지므로 orchestration이 필요하다라고 함 (좀더 확인 필요)
+추후 추가 예정 
 
-```c
-docker run -e AWS_REGION -e SVCUID...
-```
+## Reference
+
+[Workshop - AWS IoT Greengrass V2](https://catalog.us-east-1.prod.workshops.aws/workshops/5ecc2416-f956-4273-b729-d0d30556013f/en-US)
+
