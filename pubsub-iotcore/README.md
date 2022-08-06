@@ -232,11 +232,7 @@ sudo tail /greengrass/v2/logs/com.iotcore.Publisher.log
 2022-08-05T14:07:53.231Z [INFO] (Copier) com.iotcore.Publisher: stdout. publish: b'{"msg": "hello.world", "date": "2022-08-05 14:07:23.187923"}'. {scriptName=services.com.iotcore.Publisher.lifecycle.Run, serviceName=com.iotcore.Publisher, currentState=RUNNING}
 ```
 
-동작을 확인하기 위하여 greengrass 재시작이 필요한 경우에 아래와 같이 재시작 합니다.
 
-```java
-sudo systemctl restart greengrass.service
-```
 
 publisher 설치 상태는 아래와 같이 확인 할 수 있습니다.
 
@@ -318,15 +314,19 @@ Component Name: com.iotcore.Subscriber
 ```    
 
 
-### component 삭제 명령어
+### Component 명령어
 
-com.iotcore.Subscriber를 아래와 같이 삭제할 수 있습니다. 
+Component(예: com.iotcore.Subscriber)를 아래와 같이 삭제할 수 있습니다. 
 
 ```c
 sudo /greengrass/v2/bin/greengrass-cli deployment create --remove="com.iotcore.Subscriber"
 ```
 
+Greengrass 재시작이 필요한 경우에 아래와 같이 재시작 합니다.
 
+```java
+sudo systemctl restart greengrass.service
+```
 
 ## Reference
 
