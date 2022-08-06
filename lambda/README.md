@@ -1,4 +1,4 @@
-# Lambda Component 만들기
+# Lambda Component 생성하기 
 
 여기서는 python과 node.js로 lambda component를 만드는 방법에 대해 설명합니다. 
 
