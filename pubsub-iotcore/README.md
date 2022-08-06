@@ -2,7 +2,7 @@
 
 [Publish/subscribe AWS IoT Core MQTT messages](https://docs.aws.amazon.com/greengrass/v2/developerguide/ipc-iot-core-mqtt.html)를 참조하여 AWS IoT Core를 이용하여, PUBSUB으로 메시지를 교환하는 방법에 대해 설명합니다. 
 
-## QOS 정이
+## QOS 
 
 QoS는 아래와 같이 정의 할 수 있습니다.
 
