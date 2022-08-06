@@ -195,7 +195,7 @@ operation.close()
 
 ### 소스 다운로드 
 
-소스를 다운로드 합니다.
+소스를 아래와 같이 다운로드 합니다.
 
 ```c
 git clone https://github.com/kyopark2014/iot-greengrass
