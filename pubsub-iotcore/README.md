@@ -2,14 +2,22 @@
 
 [Publish/subscribe AWS IoT Core MQTT messages](https://docs.aws.amazon.com/greengrass/v2/developerguide/ipc-iot-core-mqtt.html)를 참조하여 AWS IoT Core를 이용하여, PUBSUB으로 메시지를 교환하는 방법에 대해 설명합니다. 
 
-## Publish To IoT Core
+## QOS 정이
 
-IoT Core로 MQTT 메시지를 PUBLISH 하는 예제입니다. 여기서 QoS는 아래와 같이 정의 할 수 있습니다.
+QoS는 아래와 같이 정의 할 수 있습니다.
 
 - AT_MOST_ONCE – QoS 0. The MQTT message is delivered at most once.
 - AT_LEAST_ONCE – QoS 1. The MQTT message is delivered at least once.
 
+## Publish To IoT Core
+
+IoT Core로 [MQTT 메시지를 PUBLISH 하는 예제](https://github.com/kyopark2014/iot-greengrass/blob/main/pubsub-iotcore/publisher/artifacts/com.iotcore.Publisher/1.0.0/iotcore_publisher.py)입니다. 5초에 한번씩 메시지를 IoT Core로 전송합니다. 
+
 ```python
+import time
+import datetime
+import json
+
 import awsiot.greengrasscoreipc
 import awsiot.greengrasscoreipc.client as client
 from awsiot.greengrasscoreipc.model import (
@@ -21,18 +29,28 @@ TIMEOUT = 10
 
 ipc_client = awsiot.greengrasscoreipc.connect()
                     
-topic = "my/topic"
-message = "Hello, World"
-qos = QOS.AT_LEAST_ONCE
+topic = "core/topic"
 
-request = PublishToIoTCoreRequest()
-request.topic_name = topic
-request.payload = bytes(message, "utf-8")
-request.qos = qos
-operation = ipc_client.new_publish_to_iot_core()
-operation.activate(request)
-future_response = operation.get_response()
-future_response.result(TIMEOUT)
+while True:
+    message = {
+        "msg": "hello.world",
+        "date": str(datetime.datetime.now()),
+    }
+    message_json = json.dumps(message).encode('utf-8')
+
+    qos = QOS.AT_LEAST_ONCE
+    request = PublishToIoTCoreRequest()
+    request.topic_name = topic
+    request.payload = message_json
+    request.qos = qos
+
+    operation = ipc_client.new_publish_to_iot_core()
+    operation.activate(request)
+    future_response = operation.get_response()
+    future_response.result(TIMEOUT)
+
+    print(f"publish: {message_json}")
+    time.sleep(5)
 ```
 
 
