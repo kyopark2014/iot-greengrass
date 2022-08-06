@@ -214,8 +214,20 @@ Node.JS의 경우에 아래와 같은 "exec: "nodejs14.x": executable file not f
 2022-08-06T10:16:13.857Z [WARN] (Copier) example-lambda-nodejs: stderr. 2022/08/06 10:16:13 unable to create start process: failed to run container sandbox: container_linux.go:380: starting container process caused: exec: "nodejs14.x": executable file not found in $PATH. {scriptName=services.example-lambda-nodejs.lifecycle.startup.script, serviceInstance=0, serviceName=example-lambda-nodejs, currentState=STARTING}
 
 이때, [NodeJS 12.x: Not found Error in AWS Greengrass](https://stackoverflow.com/questions/64861329/nodejs-12-x-not-found-error-in-aws-greengrass)을 
-이때, exec: "nodejs14.x": executable file not foundㅊㅏㅁ조하여 
-이때, exec: "nodejs14.x": executable file not fou
+참조하여 아래와 같이 nodejs14.x을 /usr/bin에 복사합니다. 
+
+```c
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+sudo apt-get install -y nodejs
+cp /usr/bin/nodejs nodejs14.x
+sudo cp nodejs14.x /usr/bin
+```
+
+이후, 아래와 같이 greengrass를 재시작합니다. 
+
+```c
+sudo systemctl restart greengrass.service
+```
 
 ## Reference
 
