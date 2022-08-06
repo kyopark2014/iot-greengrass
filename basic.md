@@ -2,11 +2,12 @@
 
 Edge에서 사용되어지는 IoT 디바이스들이 많아지면서, IT 담당자들은 수천개의 network endpoint를 개발 및 관리하여야 합니다. AWS Greengrass를 이용하면 Edge에 있는 IoT 디바이스들를 scalability한 방법으로 효과적으로 관리할 수 있습니다. 
 
-AWS Greengrass는 아래와 같은 효과를 줄 수 있습니다.
+AWS Greengrass V2는 오픈소스 edge runtime으로 2022년에 re-invtent에서 소개되었습니다. AWS Greengrass를 통해 아래와 같은 효과를 볼 수 있습니다.
 - 실시간으로 local event에 응답할 수 있습니다. 
 - 네트워크 연결과 독립적으로 운영할 수 있습니다.
 - AWS Cloud와 연결하여 다양한 서비스를 이용할 수 있습니다.
 - 원격에서 모니터링을 할 수 있습니다. 
+- IoT thing group를 화면 디바이스를 그룹으로 쉽게 organiza할 수 있고, 배포시 rollout/rollback등을 쉽게 할 수 있습니다. 
 
 <img width="905" alt="image" src="https://user-images.githubusercontent.com/52392004/182485948-796b6423-8cff-4e91-a89b-2aec21be86e5.png">
 
@@ -23,3 +24,5 @@ Greengrass와 연결된 local camera는 실시간으로 물체를 인식하도�
 [AWS Greengrass Hardware Enables Connectivity for IoT Edge Devices](https://www.onlogic.com/company/io-hub/iot-edge-devices/amp/)
 
 [AWS Announces a New Version of AWS Iot Greengrass](https://www.infoq.com/news/2020/12/aws-iot-greengrass-2-0/)
+
+[AWS IoT Greengrass - Github](https://github.com/aws-greengrass)
