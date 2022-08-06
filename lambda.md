@@ -1,10 +1,10 @@
 # Lambda Component 
 
-Lambda 함수는 AWS의 대표적인 서버리스 서비스입니다. IoT Greengrass는 AWS Lambda를 Edge device에서 실행할 수 있는 환경을 제공함으로, S3와 같은 저장소나 DynamoDB/Timestream 같은 데이터베이스를 Greengrass에서 Lambda를 통해 편리하게 할용할 수 있습니다. Generic Component들도 AWS SDK를 이용해 같은 동작을 수행할 수 있지만, 기존 Lambda 함수를 그대로 사용할 수 있다는 장점이 있습니다. 
+Lambda 함수는 AWS의 대표적인 서버리스 서비스입니다. IoT Greengrass는 AWS Lambda를 Edge device에서 실행할 수 있는 환경을 제공함으로, S3와 같은 저장소나 DynamoDB/Timestream 같은 데이터베이스를 Greengrass에서 Lambda를 통해 편리하게 활용할 수 있습니다. Generic Component들도 AWS SDK를 이용해 같은 동작을 수행할 수 있지만, 기존 Lambda 함수를 그대로 사용할 수 있다는 장점이 있습니다. 
 
-Greengrass의 lambda component는 AWS cloud에 deploy된 Lambda 함수를 Local에서 실행할 수 있도록 해주는데, 이때 event sources로는 topic을 통해서 local component가 전달하는 메시지나 IoT Core에서 전달되는 메시지를 event로 사용할 수 있습니다. event를 받으면 on-demend moded일때는 multi thread로 동작하고, long-lived 일때는 queue에 저장하였다가 순차적으로 실행하게 됩니다. 
+Greengrass의 lambda component는 AWS cloud에 deploy된 Lambda 함수를 Local에서 실행할 수 있도록 해주는데, 이때 event sources로는 topic을 통해서 local component가 전달하는 메시지나 IoT Core에서 전달되는 메시지를 event로 사용할 수 있습니다. event를 받으면 on-demend mode 일때는 multi thread로 동작하고, long-lived mode 일때는 queue에 저장하였다가 순차적으로 실행하게 됩니다. 
 
-Lambda component는 독립적으로 greengrass에서 정의되는것이 아니라, AWS Cloud에 있는 Lambda를 local에서 가져와서 이용하는것이므로, AWS Cloud에 있는 lambda의 Role과 같은 permission이 동일하게 적용됩니다. 또한, AWS Cloud의 Lambda 처럼 Environment variables을 지정하거나, memory size를 조정하거나, Disk를 Volume으로 등록하여 사용할 수 있습니다.  
+Lambda component는 독립적으로 greengrass에서 정의되는것이 아니라, AWS Cloud에 있는 Lambda를 local에서 가져와서 이용하는것이므로, AWS Cloud에 있는 lambda의 Role과 같은 permission이 동일하게 적용됩니다. 또한, AWS Cloud의 Lambda 처럼 Environment variables을 지정하거나, memory size를 조정하거나, Volume을 등록하여 사용할 수 있습니다.  
 
 
 ## Greengrass에서 Lambda component를 사용하는 경우
