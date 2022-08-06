@@ -80,6 +80,13 @@ $ sudo /greengrass/v2/bin/greengrass-cli component restart --names "com.example.
 $ sudo /greengrass/v2/bin/greengrass-cli deployment create --remove="com.example.HelloMqtt"
 ```
 
+
+- Greengrass 재시작
+
+```java
+sudo systemctl restart greengrass.service
+```
+
 ## 중요한 메모
 
 - Receipe 예제 
