@@ -124,6 +124,10 @@ zip -r deploy.zip *
 
 [AWS IoT Core Lambda](https://velog.io/@markyang92/AWS-IoT-Core-Lambda)
 
+[AWS Edge computing example with Lambda and IoT Greengrass (version 2)](https://medium.com/@rostyslav.myronenko/aws-edge-computing-example-with-lambda-and-iot-greengrass-version-2-aa68f2cc246)
+
+[aws-iot-greengrass-project](https://github.com/rimironenko/aws-iot-greengrass-project)
+
 ## Troubleshooting
 
 ```java
