@@ -308,6 +308,21 @@ Component Name: com.example.Subscriber
     Configuration: {"accessControl":{"aws.greengrass.ipc.pubsub":{"com.example.Subscriber:pubsub:1":{"operations":["aws.greengrass#SubscribeToTopic"],"policyDescription":"Allows access to publish to all topics.","resources":["*"]}}}}
 ```    
 
+### 유용한 명령어들
+
+Component(예: com.iotcore.Subscriber)를 아래와 같이 삭제할 수 있습니다. 
+
+```c
+sudo /greengrass/v2/bin/greengrass-cli deployment create --remove="com.iotcore.Subscriber"
+```
+
+Greengrass 재시작이 필요한 경우에 아래와 같이 재시작 합니다.
+
+```java
+sudo systemctl restart greengrass.service
+```
+
+
 ## Reference
 
 [Publish/subscribe local messages](https://docs.aws.amazon.com/greengrass/v2/developerguide/ipc-publish-subscribe.html)
