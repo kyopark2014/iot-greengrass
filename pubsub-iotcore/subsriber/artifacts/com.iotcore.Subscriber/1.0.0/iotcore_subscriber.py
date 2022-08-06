@@ -21,6 +21,8 @@ class StreamHandler(client.SubscribeToIoTCoreStreamHandler):
         try:
             message = str(event.message.payload, "utf-8")
             topic_name = event.message.topic_name
+
+            print(f"publish({topic_name}): {message}")
             
             # Handle message.
             with open('/tmp/Greengrass_IoTCore_Subscriber.log', 'a') as f:
