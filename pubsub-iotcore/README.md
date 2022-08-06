@@ -56,7 +56,7 @@ while True:
 
 ## Subscribe To IoT Core
 
-lifecycle이 끝나도 subscribe 할수 있도록 [IPC event stream](https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-subscribe-operations)으로 정의합니다.
+lifecycle이 끝나도 subscribe 할수 있도록 [IPC event stream](https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-subscribe-operations)으로 정의합니다. 아래는 [IoT Core를 Subscribe하는 예제](https://github.com/kyopark2014/iot-greengrass/blob/main/pubsub-iotcore/subsriber/artifacts/com.iotcore.Subscriber/1.0.0/iotcore_subscriber.py)입니다
 
 ```python
 import time
