@@ -314,7 +314,7 @@ Component Name: com.iotcore.Subscriber
 ```    
 
 
-### 재시작 및 삭제관련한 유용한 명령어들
+### 유용한 명령어들
 
 Component(예: com.iotcore.Subscriber)를 아래와 같이 삭제할 수 있습니다. 
 
