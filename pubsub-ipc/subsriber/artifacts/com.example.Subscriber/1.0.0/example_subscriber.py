@@ -21,7 +21,7 @@ class StreamHandler(client.SubscribeToTopicStreamHandler):
         message_string = event.json_message.message
 
         # Handle message.
-        with open('/tmp/Greengrass_Subscriber.log', 'a') as f:
+        with open('/tmp/Greengrass_Local_Subscriber.log', 'a') as f:
             print(message_string, file=f)
 
     def on_stream_error(self, error: Exception) -> bool:
