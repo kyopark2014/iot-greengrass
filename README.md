@@ -96,10 +96,11 @@ Greengrass 사용시 보안을 위하여 기능이 제한된 계정을 사용하
 
 [Workshop - AWS IoT Greengrass V2 for beginners](https://catalog.us-east-1.prod.workshops.aws/workshops/0b21ceb7-2108-4a82-9e76-4c56d4b52db5/ko-KR)
 
-[AWS IoT Greengrass](https://github.com/aws-greengrass/)
+[Github - AWS IoT Greengrass](https://github.com/aws-greengrass/)
+
+[AWS re:Invent 2020: Dive deep and accelerate your implementation of AWS IoT Greengrass 2.0](https://www.youtube.com/watch?v=t2x49uZuTwE)
 
 [Troubleshooting identity and access issues for AWS IoT Greengrass](https://docs.aws.amazon.com/greengrass/v1/developerguide/security_iam_troubleshoot.html)
 
 [Troubleshooting AWS IoT Greengrass V2](https://docs.aws.amazon.com/greengrass/v2/developerguide/troubleshooting.html)
 
-[AWS re:Invent 2020: Dive deep and accelerate your implementation of AWS IoT Greengrass 2.0](https://www.youtube.com/watch?v=t2x49uZuTwE)
