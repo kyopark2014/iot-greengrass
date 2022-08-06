@@ -25,11 +25,6 @@ Greengrass의 Components들은 [IPC 통신](https://github.com/kyopark2014/iot-g
 
 
 
-### Component examples
-
-[Component 예제](https://github.com/kyopark2014/iot-greengrass/blob/main/component-examples.md)에서는 component를 위한 예제를 보여줍니다. 
-
-
 ### Lambda Component
 
 [Lambda를 Component로 등록](https://github.com/kyopark2014/iot-greengrass/blob/main/lambda.md)하여 사용할 수 있습니다. 
