@@ -120,11 +120,22 @@ Subscriber의 상태는 아래와 같이 확인할 수 있습니다.
 sudo /greengrass/v2/bin/greengrass-cli component list
 ```
 ```java
-Component Name: com.example.Subscriber
+Component Name: com.iotcore.Subscriber
     Version: 1.0.0
     State: RUNNING
-    Configuration: {"accessControl":{"aws.greengrass.ipc.pubsub":{"com.example.Subscriber:pubsub:1":{"operations":["aws.greengrass#SubscribeToTopic"],"policyDescription":"Allows access to publish to all topics.","resources":["*"]}}}}
+    Configuration: {"accessControl":{"aws.greengrass.ipc.mqttproxy":{"com.iotcore.Subscriber:mqttproxy:1":{"operations":["aws.greengrass#PublishToIoTCore","aws.greengrass#SubscribeToIoTCore"],"policyDescription":"Allows access to subscribe to all AWS IoT Core topics.","resources":["*"]}}}}
 ```    
+
+
+## component 삭제 명령어
+
+com.iotcore.Subscriber를 아래와 같이 삭제할 수 있습니다. 
+
+```c
+sudo /greengrass/v2/bin/greengrass-cli deployment create --remove="com.iotcore.Subscriber"
+```
+
+
 
 ## Reference
 
