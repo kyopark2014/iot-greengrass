@@ -1,4 +1,4 @@
-# Lambda Component
+# Lambda Component 
 
 
 ## Greengrass에서 Lambda component를 사용하는 경우
