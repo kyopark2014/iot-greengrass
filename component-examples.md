@@ -135,3 +135,5 @@ if __name__ == '__main__':
 ## Referece
 
 [Use the AWS IoT Device SDK to communicate with the Greengrass nucleus, other components, and AWS IoT Core](https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-subscribe-operations)
+
+[AWS IoT Greengrass Subscribe/Publish Component](https://velog.io/@markyang92/AWS-IoT-Greengrass-SubscribePublish-Component)
