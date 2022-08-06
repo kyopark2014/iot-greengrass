@@ -69,6 +69,8 @@ Component Name: com.iotcore.Publisher
 
 ## Subscriber 설치 
 
+Component의 lifecycle이 끝나면 subscription이 remove되므로, Component는 event 메시지 streamdm으로 subscription을 하여야 합니다. 
+
 [subscriber.sh](https://github.com/kyopark2014/iot-greengrass/blob/main/pubsub-iotcore/subsriber/subscriber.sh)를 이용하여 Subscriber를 설치합니다. 
 
 ```java
