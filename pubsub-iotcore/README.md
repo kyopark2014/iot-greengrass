@@ -234,7 +234,7 @@ sudo tail /greengrass/v2/logs/com.iotcore.Publisher.log
 
 
 
-publisher 설치 상태는 아래와 같이 확인 할 수 있습니다.
+Publisher component의 상태는 아래와 같이 확인 할 수 있습니다.
 
 ```java
 sudo /greengrass/v2/bin/greengrass-cli component list
@@ -278,30 +278,37 @@ Local deployment submitted! Deployment Id: cc0a922b-a339-4af9-8534-d88756930c04
 ```java
 sudo tail logs/com.iotcore.Subscriber.log 
 ```
+```java
+2022-08-06T06:55:57.188Z [INFO] (Copier) com.iotcore.Subscriber: stdout. Installing collected packages: awscrt, awsiotsdk. {scriptName=services.com.iotcore.Subscriber.lifecycle.Install, serviceName=com.iotcore.Subscriber, currentState=NEW}
+2022-08-06T06:55:57.361Z [INFO] (Copier) com.iotcore.Subscriber: stdout. Successfully installed awscrt-0.13.13 awsiotsdk-1.11.3. {scriptName=services.com.iotcore.Subscriber.lifecycle.Install, serviceName=com.iotcore.Subscriber, currentState=NEW}
+2022-08-06T06:55:57.448Z [INFO] (pool-2-thread-26) com.iotcore.Subscriber: shell-runner-start. {scriptName=services.com.iotcore.Subscriber.lifecycle.Run, serviceName=com.iotcore.Subscriber, currentState=STARTING, command=["python3 -u /greengrass/v2/packages/artifacts/com.iotcore.Subscriber/1.0.0/iotc..."]}
+2022-08-06T06:56:02.553Z [INFO] (Copier) com.iotcore.Subscriber: stdout. publish(core/topic): {"msg": "hello.world", "date": "2022-08-06 06:56:02.542674"}. {scriptName=services.com.iotcore.Subscriber.lifecycle.Run, serviceName=com.iotcore.Subscriber, currentState=RUNNING}
+2022-08-06T06:56:07.559Z [INFO] (Copier) com.iotcore.Subscriber: stdout. publish(core/topic): {"msg": "hello.world", "date": "2022-08-06 06:56:07.548553"}. {scriptName=services.com.iotcore.Subscriber.lifecycle.Run, serviceName=com.iotcore.Subscriber, currentState=RUNNING}
+2022-08-06T06:56:12.565Z [INFO] (Copier) com.iotcore.Subscriber: stdout. publish(core/topic): {"msg": "hello.world", "date": "2022-08-06 06:56:12.554378"}. {scriptName=services.com.iotcore.Subscriber.lifecycle.Run, serviceName=com.iotcore.Subscriber, currentState=RUNNING}
+2022-08-06T06:56:17.571Z [INFO] (Copier) com.iotcore.Subscriber: stdout. publish(core/topic): {"msg": "hello.world", "date": "2022-08-06 06:56:17.560211"}. {scriptName=services.com.iotcore.Subscriber.lifecycle.Run, serviceName=com.iotcore.Subscriber, currentState=RUNNING}
+2022-08-06T06:56:22.578Z [INFO] (Copier) com.iotcore.Subscriber: stdout. publish(core/topic): {"msg": "hello.world", "date": "2022-08-06 06:56:22.566034"}. {scriptName=services.com.iotcore.Subscriber.lifecycle.Run, serviceName=com.iotcore.Subscriber, currentState=RUNNING}
+```
 
 Subscriber가 받은 메시지는 아래와 같습니다. 
 
 ```java
-tail -f /tmp/Greengrass_IoTSubscriber.log
-```
-```java
-{'timestamp': '2022-08-05 09:35:17.812991', 'value': 990.55}
-{'timestamp': '2022-08-05 09:35:18.815012', 'value': 984.51}
-{'timestamp': '2022-08-05 09:35:19.817427', 'value': 994.84}
-{'timestamp': '2022-08-05 09:35:20.819438', 'value': 1053.51}
-{'timestamp': '2022-08-05 09:35:21.821950', 'value': 993.75}
-{'timestamp': '2022-08-05 09:35:22.823961', 'value': 1026.83}
-{'timestamp': '2022-08-05 09:35:23.825978', 'value': 962.5}
-{'timestamp': '2022-08-05 09:35:24.828401', 'value': 984.66}
-{'timestamp': '2022-08-05 09:35:25.830793', 'value': 987.71}
-{'timestamp': '2022-08-05 09:35:26.832824', 'value': 1036.2}
-{'timestamp': '2022-08-05 09:35:27.834464', 'value': 1045.2}
-{'timestamp': '2022-08-05 09:35:28.835756', 'value': 967.77}
-{'timestamp': '2022-08-05 09:35:29.837057', 'value': 1011.77}
-{'timestamp': '2022-08-05 09:35:30.839504', 'value': 987.94}
+tail -f /tmp/Greengrass_IoTCore_Subscriber.log
 ```
 
-Subscriber의 상태는 아래와 같이 확인할 수 있습니다. 
+```java
+{"msg": "hello.world", "date": "2022-08-06 06:58:42.712367"}
+{"msg": "hello.world", "date": "2022-08-06 06:58:47.718273"}
+{"msg": "hello.world", "date": "2022-08-06 06:58:52.724113"}
+{"msg": "hello.world", "date": "2022-08-06 06:58:57.729954"}
+{"msg": "hello.world", "date": "2022-08-06 06:59:02.735777"}
+{"msg": "hello.world", "date": "2022-08-06 06:59:07.741631"}
+{"msg": "hello.world", "date": "2022-08-06 06:59:12.745860"}
+{"msg": "hello.world", "date": "2022-08-06 06:59:17.751731"}
+{"msg": "hello.world", "date": "2022-08-06 06:59:22.756376"}
+{"msg": "hello.world", "date": "2022-08-06 06:59:27.758600"}
+```
+
+Subscriber Component의 상태는 아래와 같이 확인할 수 있습니다. 
 
 ```java
 sudo /greengrass/v2/bin/greengrass-cli component list
