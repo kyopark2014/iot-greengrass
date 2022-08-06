@@ -87,6 +87,9 @@ Greengrass 사용시 보안을 위하여 기능이 제한된 계정을 사용하
 
 [디바이스에서의 ML Inference](https://github.com/kyopark2014/iot-greengrass/blob/main/ML-inference.md)을 이용하여 ML을 실행할 수 있습니다.
 
+## Raspberry Pi에 Greengrass 설치 및 배포
+
+[Raspberry Pi](https://github.com/kyopark2014/iot-greengrass/blob/main/raspberry-pi.md)에 Greengrass를 설치합니다. 
 
 ## Reference
 
