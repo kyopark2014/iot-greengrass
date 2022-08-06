@@ -105,22 +105,29 @@ import traceback
 import awsiot.greengrasscoreipc
 import awsiot.greengrasscoreipc.client as client
 from awsiot.greengrasscoreipc.model import (
-    SubscribeToTopicRequest,
-    SubscriptionResponseMessage
+    IoTCoreMessage,
+    QOS,
+    SubscribeToIoTCoreRequest
 )
 
 TIMEOUT = 10
 
 ipc_client = awsiot.greengrasscoreipc.connect()
-                    
-class StreamHandler(client.SubscribeToTopicStreamHandler):
+
+class StreamHandler(client.SubscribeToIoTCoreStreamHandler):
     def __init__(self):
         super().__init__()
 
-    def on_stream_event(self, event: SubscriptionResponseMessage) -> None:
+    def on_stream_event(self, event: IoTCoreMessage) -> None:
         try:
-            message_string = str(event.binary_message.message, "utf-8")
+            message = str(event.message.payload, "utf-8")
+            topic_name = event.message.topic_name
+
+            print(f"publish({topic_name}): {message}")
+            
             # Handle message.
+            with open('/tmp/Greengrass_IoTCore_Subscriber.log', 'a') as f:
+                print(message, file=f)
         except:
             traceback.print_exc()
 
@@ -132,21 +139,22 @@ class StreamHandler(client.SubscribeToTopicStreamHandler):
         # Handle close.
         pass
 
+topic = "core/topic"
+qos = QOS.AT_MOST_ONCE
 
-topic = "my/topic"
-
-request = SubscribeToTopicRequest()
-request.topic = topic
+request = SubscribeToIoTCoreRequest()
+request.topic_name = topic
+request.qos = qos
 handler = StreamHandler()
-operation = ipc_client.new_subscribe_to_topic(handler) 
+operation = ipc_client.new_subscribe_to_iot_core(handler)
 operation.activate(request)
-future_response = operation.get_response()
+future_response = operation.get_response() 
 future_response.result(TIMEOUT)
 
 # Keep the main thread alive, or the process will exit.
 while True:
     time.sleep(10)
-    
+                  
 # To stop subscribing, close the operation stream.
 operation.close()
 ```
@@ -168,7 +176,6 @@ operation.close()
             "com.iotcore.Subscriber:mqttproxy:1": {
               "policyDescription": "Allows access to subscribe to all AWS IoT Core topics.",
               "operations": [
-                "aws.greengrass#PublishToIoTCore",
                 "aws.greengrass#SubscribeToIoTCore"
               ],
               "resources": [
