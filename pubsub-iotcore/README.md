@@ -176,7 +176,6 @@ operation.close()
             "com.iotcore.Subscriber:mqttproxy:1": {
               "policyDescription": "Allows access to subscribe to all AWS IoT Core topics.",
               "operations": [
-                "aws.greengrass#PublishToIoTCore",
                 "aws.greengrass#SubscribeToIoTCore"
               ],
               "resources": [
