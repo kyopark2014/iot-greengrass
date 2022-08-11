@@ -4,7 +4,7 @@ IoT Greengrass는 IoT를 위한 오픈소스 edge runtime으로서, Edge 디바�
 
 ## Greengrass 특징 
 
-Greengrass V2는 Java기반 Core를 사용하므로, 별도 컴파일 없이 구동 가능합니다. Greengrass는 Greengrass.jar와 [components](https://github.com/kyopark2014/iot-greengrass/blob/main/components.md)로 구성되는데, component에는 AWS가 제공하는 necleus, streammanger 등이 있으며, 사용자가 compoenent를 recipe를 이용해 직접 정의 할 수 있습니다. 
+Greengrass V2는 Java기반 Core를 사용하므로, 별도 컴파일 없이 구동 가능합니다. Greengrass는 Greengrass.jar와 [components](https://github.com/kyopark2014/iot-greengrass/blob/main/components.md)로 구성되는데, component에는 AWS가 제공하는 nucleus, streammanger 등이 있으며, 사용자가 compoenent를 recipe를 이용해 직접 정의 할 수 있습니다. 
 
 ![image](https://user-images.githubusercontent.com/52392004/181129624-d2a73168-5a8d-4336-be98-1815664a6bff.png)
 
