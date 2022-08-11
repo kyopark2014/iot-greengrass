@@ -14,7 +14,7 @@ Greengrass V2는 Java기반 Core를 사용하므로, 별도 컴파일 없이 구
 
 ### Component간 통신방법
 
-Greengrass의 Components들은 [IPC 통신](https://github.com/kyopark2014/iot-greengrass/blob/main/IPC.md)을 통해 Necleus와 연결되고, Components 사이는 [MQTT](https://github.com/kyopark2014/IoT-Core-Contents/blob/main/mqtt.md) PUBSUB으로 메시지를 교환할 수 있습니다. Component들은 아래의 1,2,3과 같이 Greengrass 내부의 component들간에 [local message를 교환](https://docs.aws.amazon.com/greengrass/v2/developerguide/ipc-publish-subscribe.html)할 수 있고, 1,2,4와 같이 [IoT Core를 통해 메시지를 교환](https://docs.aws.amazon.com/greengrass/v2/developerguide/ipc-iot-core-mqtt.html)할 수 있습니다. 
+Greengrass의 Components들은 [IPC 통신](https://github.com/kyopark2014/iot-greengrass/blob/main/IPC.md)을 통해 Nucleus와 연결되고, Components 사이는 [MQTT](https://github.com/kyopark2014/IoT-Core-Contents/blob/main/mqtt.md) PUBSUB으로 메시지를 교환할 수 있습니다. Component들은 아래의 1,2,3과 같이 Greengrass 내부의 component들간에 [local message를 교환](https://docs.aws.amazon.com/greengrass/v2/developerguide/ipc-publish-subscribe.html)할 수 있고, 1,2,4와 같이 [IoT Core를 통해 메시지를 교환](https://docs.aws.amazon.com/greengrass/v2/developerguide/ipc-iot-core-mqtt.html)할 수 있습니다. 
 
 - [Pub/Sub IPC](https://github.com/kyopark2014/iot-greengrass/tree/main/pubsub-ipc)에서는 edge에 설치된 component들 끼리, PUBSUB을 이용하여 IPC로 통신하는 방법을 보여줍니다.  
 
