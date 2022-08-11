@@ -8,9 +8,6 @@ IoT의 데이터를 안전하게 모으고 제어하기 위하여 VPN 또는 Dir
 
 상세한 동작은 [Creating static IP addresses and custom domains for AWS IoT Core endpoints](https://aws.amazon.com/ko/blogs/iot/creating-static-ip-addresses-and-custom-domains-for-aws-iot-core-endpoints/)를 참조하고 [CDK 코드](https://github.com/aws-samples/aws-iot-endpoint-with-static-ips/blob/main/cdk/index.ts)를 통해 상세 동작을 확인 할 수 있습니다. 
 
-## Reference 
-
-Creating static IP addresses and custom domains for AWS IoT Core endpoints
 
 ## Nucleus security
 
@@ -53,5 +50,8 @@ ComponentConfiguration:
 ## Reference 
 
 [Dive deep and accelerate your implementation of AWS IoT Greengrass 2.0](https://www.youtube.com/watch?v=t2x49uZuTwE)
+
+
+[Creating static IP addresses and custom domains for AWS IoT Core endpoints](https://aws.amazon.com/ko/blogs/iot/creating-static-ip-addresses-and-custom-domains-for-aws-iot-core-endpoints/)
 
               
