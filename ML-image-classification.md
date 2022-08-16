@@ -6,7 +6,7 @@
 
 [DLRImageClassification](https://docs.aws.amazon.com/greengrass/v2/developerguide/dlr-image-classification-component.html?icmpid=docs_gg_console)은 [Deep Learning Runtime](https://github.com/neo-ai/neo-ai-dlr)을 이용한 inference를 제공합니다. 
 
-#### DLR 사용 방법
+#### DLR 사용 예제 
 
 ```python
 import dlr
