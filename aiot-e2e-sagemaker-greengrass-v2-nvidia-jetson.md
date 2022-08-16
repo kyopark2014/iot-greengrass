@@ -195,5 +195,17 @@ upload: ./my-model.zip to s3://mybucket-123456789012/ggv2/artifacts/my-model.zip
     }
 }
 .
-```
 echo .
+```
+
+관련로그는 아래와 같습니다. 
+
+```java
+$ S3_PREFIX=$(cat config.json | jq -r '.Artifacts.S3Prefix')
+$ S3_PREFIX2=${S3_PREFIX//\//\\/}
+$ echo $S3_PREFIX
+ggv2/artifacts
+$ echo $S3_PREFIX2
+ggv2\/artifacts
+```
+$ S3_PREFIX2=${S3_PREFIX//\//\\/}
