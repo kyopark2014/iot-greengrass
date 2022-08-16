@@ -11,8 +11,23 @@
 $ git clone https://github.com/aws-samples/aiot-e2e-sagemaker-greengrass-v2-nvidia-jetson
 ```
 
-ggv2-deploy-cloud 디렉토리 아래에 있는 config.json을 편집합니다. 여기서, Account에는 AWS 사용자 ID를 넣고, S3Bucket에 적당한 이름을 부여합니다. 
 
+
+"greengrass-bucket" 버킷이 없는 경우에 아래 명령어로 생성합니다.
+
+```c
+$ aws s3 mb s3://greengrass-bucket
+```
+
+생성되었는지 아래와 같이 확인합니다. 
+
+```c
+$ aws s3 ls
+2022-08-16 00:58:05 mybucket-677146750822
+```
+
+
+ggv2-deploy-cloud 디렉토리 아래에 있는 [config.json](https://github.com/aws-samples/aiot-e2e-sagemaker-greengrass-v2-nvidia-jetson/blob/main/ggv2-deploy-cloud/config.json)을 편집합니다. 여기서, Account에는 AWS 사용자 ID를 넣고, S3Bucket에 적당한 이름을 부여합니다. 여기서는 "greengrass-bucket"로 이름을 붙였습니다. 
 
 ```c
 {
@@ -44,6 +59,7 @@ ggv2-deploy-cloud 디렉토리 아래에 있는 config.json을 편집합니다. 
 }
 ```
 
+
 아래와 같이 "ggv2-deploy-cloud" 폴더의 "create_gg_component.sh"을 실행합니다. 
 
 ```c
@@ -53,6 +69,8 @@ sudo chmod +x create_gg_component.sh
 
 ./create_gg_component.sh
 ```
+
+create_gg_component.sh의 
 
 상기와 같이 shell script를 실행하면 아래와 같은 결과를 얻을 수 있습니ㅏ다. 
 
