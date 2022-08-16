@@ -50,9 +50,7 @@ y = model.run(x)
 
 수정훈 결과를 [MQTT test client](https://ap-northeast-2.console.aws.amazon.com/iot/home?region=ap-northeast-2#/test)로 이동하여 [Subscribe to a topic]에서 "ml/example/imgclassification"을 입력하여 확인합니다. 이때의 결과는 아래와 같습니다. 
 
-![image](https://user-images.githubusercontent.com/52392004/184887802-1a336929-9f4a-4c9b-acc3-99e4c2a88b9c.png)
-
-
+- 작업중 
 
 
 ## Reference
