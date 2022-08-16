@@ -10,7 +10,61 @@ This policy doesn't include access to files in S3 buckets. You must add permissi
 
 AWS IoT role alias: GreengrassV2TokenExchangeRoleAlias
 This role alias refers to the IAM role.
- 
+
+GreengrassV2TokenExchangeRoleAccess에 대한 policy는 아래와 같습니다. 
+
+```java
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents",
+                "logs:DescribeLogStreams",
+                "s3:GetBucketLocation"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+```
+
+아래와 같이 S3에 대한 권한을 설정할 수 있습니다. 단, 상용시에서는 Resouces는 해당 bucket이름으로 제한하여야 합니다. 
+
+```java
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject"
+            ],
+            "Resource": "arn:aws:s3:::*"
+        }
+    ]
+}
+```
+
+참고로 이것에 대한 trusted entries는 아래와 같습니다. 
+
+```java
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "Service": "credentials.iot.amazonaws.com"
+            },
+            "Action": "sts:AssumeRole"
+        }
+    ]
+}
+``` 
 
 ## Credentials provider workflow
 
