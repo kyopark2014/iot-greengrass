@@ -27,8 +27,7 @@ y = model.run(x)
 
 ## DLRImageClassification의 config 수정 
 
-아래와 
-아래와 같이 
+아래와 같이 Public Component의 config를 수정할 수 있습니다. 
 
 
 1) [[Greengrass devices] - [Components] - [Public components]](https://ap-northeast-2.console.aws.amazon.com/iot/home?region=ap-northeast-2#/greengrass/v2/components/public)로 진입하여 "aws.greengrass.DLRImageClassification"을 선택합니다. 
@@ -48,6 +47,10 @@ y = model.run(x)
 ![image](https://user-images.githubusercontent.com/52392004/184886451-9e51a7e7-c769-47a5-9027-448517e197b8.png)
 
 7) 이후로 수정없이 [Next]를 선택하다가 [Deploy]를 수행합니다. 
+
+수정훈 결과를 [MQTT test client](https://ap-northeast-2.console.aws.amazon.com/iot/home?region=ap-northeast-2#/test)로 이동하여 [Subscribe to a topic]에서 "ml/example/imgclassification"을 입력하여 확인합니다. 이때의 결과는 아래와 같습니다. 
+
+![image](https://user-images.githubusercontent.com/52392004/184887802-1a336929-9f4a-4c9b-acc3-99e4c2a88b9c.png)
 
 
 
