@@ -70,7 +70,10 @@ sudo chmod +x create_gg_component.sh
 ./create_gg_component.sh
 ```
 
-create_gg_component.sh의 
+[create_gg_component.sh](https://github.com/aws-samples/aiot-e2e-sagemaker-greengrass-v2-nvidia-jetson/blob/main/ggv2-deploy-cloud/create_gg_component.sh)에 대한 상세 내용은 [aiot-e2e-sagemaker-greengrass-v2-nvidia-jetson](https://github.com/kyopark2014/iot-greengrass/blob/main/aiot-e2e-sagemaker-greengrass-v2-nvidia-jetson.md)을 통해 이해합니다. 
+
+
+
 
 상기와 같이 shell script를 실행하면 아래와 같은 결과를 얻을 수 있습니ㅏ다. 
 
