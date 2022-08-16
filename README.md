@@ -72,6 +72,7 @@ Greengrass 사용시 보안을 위하여 기능이 제한된 계정을 사용하
 
 3) [Greengrass device에서 ML Inference](https://github.com/kyopark2014/iot-greengrass/blob/main/workshop-ml.md)에 따라, ML source를 다운로드하여 Greengrass component로 배포할 수 있습니다. 
 
+4) [ML Component를 이용한 이미지 처리](https://github.com/kyopark2014/iot-greengrass/blob/main/ML-image-classification.md)에서는 AWS Greengrass public component인 "DLRImageClassification"을 이용하여 이미지를 classification 하는 방법을 보여주고 있습니다. 
 
 ## EC2(Linux)에서 Greengrass 설치 및 배포
 
