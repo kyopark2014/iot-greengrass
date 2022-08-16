@@ -208,4 +208,3 @@ ggv2/artifacts
 $ echo $S3_PREFIX2
 ggv2\/artifacts
 ```
-$ S3_PREFIX2=${S3_PREFIX//\//\\/}
