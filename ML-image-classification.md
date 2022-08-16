@@ -27,13 +27,21 @@ y = model.run(x)
 
 1) [[Greengrass devices] - [Components] - [Public components]](https://ap-northeast-2.console.aws.amazon.com/iot/home?region=ap-northeast-2#/greengrass/v2/components/public)로 진입하여 "aws.greengrass.DLRImageClassification"을 선택합니다. 
 
-2) 우측
+2) 우측 상단의 "Deploy"를 선택한 후에 현재 작업중인 deployment를 선택하고 [Next]를 선택합니다. 
 
-1) [aws.greengrass.DLRImageClassification](https://ap-northeast-2.console.aws.amazon.com/iot/home?region=ap-northeast-2#/greengrass/v2/components/public/aws.greengrass.DLRImageClassification/versions/2.1.8)을 deploy 합니다. 
+3) [Specify target]에서 수정없이 [Next]를 선택합니다. 
 
-2) [Greengrass Deployment](https://ap-northeast-2.console.aws.amazon.com/iot/home?region=ap-northeast-2#/greengrass/v2/deployments)로 진입하여 현재 작업중인 deployment를 선택합니다.
+4) [Select components]에서 [Public components]에 "aws.greengrass.DLRImageClassification"이 선택된지 확인후에 [Next]를 선택합니다. 
 
-3) [Components]에서 "aws.greengrass.DLRImageClassification"을 선택하고, [View configure]를 선택한 후에 
+5) [Selected components]에서 "aws.greengrass.DLRImageClassification"을 선택후에 [Configure component]를 선택합니다. 
+
+![noname](https://user-images.githubusercontent.com/52392004/184886249-4870bebf-c8f0-42fc-82e8-79f8585e979d.png)
+
+6) 아래처럼 [Configure to merge]를 수정후에 하단으로 이동하여 [Confirm]을 선택합니다. 
+
+![image](https://user-images.githubusercontent.com/52392004/184886451-9e51a7e7-c769-47a5-9027-448517e197b8.png)
+
+7) 이후로 수정없이 [Next]를 선택하다가 [Deploy]를 수행합니다. 
 
 
 
