@@ -75,7 +75,7 @@ sudo chmod +x create_gg_component.sh
 
 
 
-상기와 같이 shell script를 실행하면 아래와 같은 결과를 얻을 수 있습니ㅏ다. 
+상기와 같이 shell script를 실행하면 아래와 같은 결과를 얻을 수 있습니다. 
 
 ```c
 $ aws greengrassv2 list-components
@@ -103,4 +103,57 @@ $ aws greengrassv2 list-components
 }
 ```
 
+component 등록 현황은 아래와 같이 확인 할 수 있습니다. 
+
+```java
+$ aws greengrassv2 list-components
+{
+    "components": [
+        {
+            "arn": "arn:aws:greengrass:ap-northeast-2:123456789012:components:com.example.ImgClassification",
+            "componentName": "com.example.ImgClassification",
+            "latestVersion": {
+                "arn": "arn:aws:greengrass:ap-northeast-2:123456789012:components:com.example.ImgClassification:versions:1.0.0",
+                "componentVersion": "1.0.0",
+                "creationTimestamp": 1660620526.199,
+                "description": "Custom Image classification inference component using DLR.",
+                "publisher": "AWS",
+                "platforms": [
+                    {
+                        "attributes": {
+                            "os": "linux"
+                        }
+                    }
+                ]
+            }
+        },
+    ]
+}
+```
+
+로그는 아래와 같이 확인합니다. 
+
+```java
+$ sudo /greengrass/v2/logs $ cat com.example.ImgClassification.log 
+
+2022-08-16T03:39:23.730Z [INFO] (Copier) com.example.ImgClassification: stdout. {scriptName=services.com.example.ImgClassification.lifecycle.Run.script, serviceName=com.example.ImgClassification, currentState=RUNNING}
+2022-08-16T03:39:23.730Z [INFO] (Copier) com.example.ImgClassification: stdout. image path = /greengrass/v2/packages/artifacts-unarchived/com.example.ImgClassification/1.0.0/my-model/sample_images/red_abnormal.jpg. {scriptName=services.com.example.ImgClassification.lifecycle.Run.script, serviceName=com.example.ImgClassification, currentState=RUNNING}
+2022-08-16T03:39:23.765Z [INFO] (Copier) com.example.ImgClassification: stdout. {'message': '{"class_id":"5","class":"red_abnormal","score":"0.933888"}', 'timestamp': '2022-08-16T03:39:23'}. {scriptName=services.com.example.ImgClassification.lifecycle.Run.script, serviceName=com.example.ImgClassification, currentState=RUNNING}
+2022-08-16T03:39:23.766Z [INFO] (Copier) com.example.ImgClassification: stdout. Publishing results to the IoT core.... {scriptName=services.com.example.ImgClassification.lifecycle.Run.script, serviceName=com.example.ImgClassification, currentState=RUNNING}
+```
+
+Deploy후에 아래와 같이 확인할 수 있습니다. 
+
+```java
+$ sudo /greengrass/v2/bin/greengrass-cli component list
+
+Component Name: com.example.ImgClassification
+    Version: 1.0.0
+    State: RUNNING
+    Configuration: {"accessControl":{"aws.greengrass.ipc.mqttproxy":{"com.example.Pub:publisher:1":{"operations":["aws.greengrass#PublishToIoTCore"],"policyDescription":"Allows access to publish to ml/example/imgclassification topic.","resources":["ml/example/imgclassification"]}}}}
+```
+
+이것을 [IoT Core의 Test Client](https://ap-northeast-2.console.aws.amazon.com/iot/home?region=ap-northeast-2#/test)에서 "ml/example/imgclassification"로 subscribe시에 아래와 같이 결과를 확인 할 수 있습니다. 
+
+<img width="1095" alt="image" src="https://user-images.githubusercontent.com/52392004/184795584-b2227fe3-8659-4348-a3b1-fc1a686257d2.png">
 
