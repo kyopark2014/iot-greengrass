@@ -77,25 +77,7 @@ $ aws greengrassv2 list-components
                 "arn": "arn:aws:greengrass:ap-northeast-2:123456789012:components:com.example.ImgClassification:versions:1.0.0"
             }, 
             "arn": "arn:aws:greengrass:ap-northeast-2:123456789012:components:com.example.ImgClassification"
-        }, 
-        {
-            "componentName": "com.example.HelloMqtt", 
-            "latestVersion": {
-                "publisher": "Amazon", 
-                "description": "My first AWS IoT Greengrass component.", 
-                "componentVersion": "1.0.0", 
-                "platforms": [
-                    {
-                        "attributes": {
-                            "os": "linux"
-                        }
-                    }
-                ], 
-                "creationTimestamp": 1655242730.65, 
-                "arn": "arn:aws:greengrass:ap-northeast-2:123456789012:components:com.example.HelloMqtt:versions:1.0.0"
-            }, 
-            "arn": "arn:aws:greengrass:ap-northeast-2:123456789012:components:com.example.HelloMqtt"
-        }
+        },
     ]
 }
 ```
