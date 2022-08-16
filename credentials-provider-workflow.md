@@ -1,5 +1,7 @@
 # Credentials Provider Workflow
 
+AWS IoT Core credential provider 기능 사용을 위해서 IAM Role을 설정하여야 합니다. 이를 통해 디바이스 인증서를 이용하여 보안 토큰을 발급할 수 있는데, 이 토큰으로 Core device는 AWS 서비스 접근 권한을 획득 할 수 있습니다. 
+
 ## IAM role: GreengrassV2TokenExchangeRole
 
 This role has a policy named GreengrassV2TokenExchangeRoleAccess and a trust relationship that allows credentials.iot.amazonaws.com to assume the role. The policy includes the minimum permissions for the core device.
