@@ -35,3 +35,6 @@ component의 요청에 대한 Endpoint와 Port는 아래와 같습니다.
 ## Reference
 
 [Log manager](https://docs.aws.amazon.com/greengrass/v2/developerguide/log-manager-component.html)
+
+[Monitor AWS IoT Greengrass logs](https://docs.aws.amazon.com/greengrass/v2/developerguide/monitor-logs.html#access-local-logs)
+
