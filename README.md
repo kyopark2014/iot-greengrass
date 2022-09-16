@@ -95,6 +95,10 @@ Greengrass 사용시 보안을 위하여 기능이 제한된 계정을 사용하
 
 [Raspberry Pi](https://github.com/kyopark2014/iot-greengrass/blob/main/raspberry-pi.md)에 Greengrass를 설치합니다. 
 
+## Log Manager
+
+[Log Manager](https://github.com/kyopark2014/iot-greengrass/blob/main/log-manager.md)에 대해 설명합니다. 
+
 ## Reference
 
 [Workshop - AWS IoT Greengrass V2](https://catalog.us-east-1.prod.workshops.aws/workshops/5ecc2416-f956-4273-b729-d0d30556013f/en-US)
