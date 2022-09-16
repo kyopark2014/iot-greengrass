@@ -1,10 +1,10 @@
 # Log Manager
 
-Log manager의 component (aws.greengrass.LogManager)는 Greengress core device의 로그를 업로드하여 CloudWatch에서 조회 할수 있도록 해줍니다. 이때 전달할 수 있는 로그에는 nucleus와 Component에 대한 로그뿐 아니라 다른 application과 
+Log manager component (aws.greengrass.LogManager)는 Greengress core device의 로그를 업로드하여 CloudWatch에서 조회 할수 있도록 해줍니다. 이때 전달할 수 있는 로그에는 nucleus와 Component에 대한 로그뿐 아니라, greengrass 이외의 다른 application과 service의 로그까지 전송 가능합니다. 
+
+[Necleus와 component에서 생성하는 Log](https://docs.aws.amazon.com/greengrass/v2/developerguide/monitor-logs.html#access-local-logs)는 매시간 또는 로그 크기가 일정크기(default: 1024KB)보다 커지면 다른 이름으로 저장하는데, 이때 log manager가 변경된 파일을 확인하여, 일정시간(기본값: 5분)마다 로그를 업로드 할 수 있습니다. 
 
 ## Required Policy
-
-
 
 ```java
 {
