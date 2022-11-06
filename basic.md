@@ -2,7 +2,7 @@
 
 Edge에서 사용되어지는 IoT 디바이스들이 많아지면서, IT 담당자들은 수천개 또는 수백만개의 network endpoint를 개발 및 관리하여야 합니다. AWS Greengrass를 이용하면 Edge에 있는 IoT 디바이스들를 scalable 방법으로 효과적으로 관리할 수 있습니다. 
 
-AWS Greengrass V2는 오픈소스 edge runtime으로 2022년에 re-invtent에서 소개되었습니다. AWS Greengrass를 통해 아래와 같은 효과를 볼 수 있습니다.
+AWS Greengrass V2는 오픈소스 edge runtime으로 2020년에 re-invtent에서 소개되었습니다. AWS Greengrass를 통해 아래와 같은 효과를 볼 수 있습니다.
 - 실시간으로 local event에 응답할 수 있습니다. 
 - 네트워크 연결과 독립적으로 운영할 수 있습니다.
 - AWS Cloud와 연결하여 다양한 서비스를 이용할 수 있습니다.
