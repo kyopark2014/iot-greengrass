@@ -33,7 +33,7 @@ Component는 아래와 같은 Type을 가지고 있습니다.
 
 - Nucleus (aws.greengrass.nucleus): IoT Greengrass Core softweare를 구동하는 최소한의 기능을 제공합니다.
 
-- Plugin (aws.greengrass.plugin): Nuclus가 JVM에서 plugin을 구동하는데, plugin component의 버전이 바뀔때마다 재실행됩니다. plugin component를 설치하거나 실행하려면 nucleus의 configure 하여야 합니다. AWS에서는 necleus와 직접적인 interface를 할 수 있도록 여러가지의 plugin component들을 제공하고 있습니다. plugin component는 neclues와 로그를 공유합니다. 
+- Plugin (aws.greengrass.plugin): Nucleus가 JVM에서 plugin을 구동합니다. plugin component는 버전이 바뀔때마다 재실행됩니다. plugin component를 설치하거나 실행하려면 nucleus의 configure을 수정하여야 합니다. AWS에서는 necleus와 직접적으로 interface를 할 수 있도록 여러가지의 plugin component들을 제공하고 있습니다. 또한, plugin component는 neclues와 로그를 공유합니다. 
 
 - Generic (aws.greengrass.generic): component의 기본 type으로 lifecycle scripts로 정의되고, neclues가 실행합니다. 
 
