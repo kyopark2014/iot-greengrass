@@ -7,7 +7,7 @@ AWS Greengrass V2는 오픈소스 edge runtime으로 2020년에 re-invtent에서
 - 네트워크 연결과 독립적으로 운영할 수 있습니다.
 - AWS Cloud와 연결하여 다양한 서비스를 이용할 수 있습니다.
 - 원격에서 모니터링을 할 수 있습니다. 
-- IoT thing group를 화면 디바이스를 그룹으로 쉽게 organiza할 수 있고, 배포시 rollout/rollback등을 쉽게 할 수 있습니다. 
+- IoT thing group를 화면 디바이스를 그룹으로 쉽게 organize할 수 있고, 배포시 rollout/rollback등을 쉽게 할 수 있습니다. 
 - 다양한 pre-built된 software component들을 사용 목적에 맞게 더하거나 삭제할 수 있습니다. 예) Stream manager
 - Greengrass CLI를 이용하여 local 디바이스에서 어플리케이션을 개발하거나 디버깅 할 수 있습니다. 
 
