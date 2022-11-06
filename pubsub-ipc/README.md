@@ -6,7 +6,7 @@
 
 ## Publish To IPC PUBSUB
 
-IPC로 [MQTT 메시지를 PUBLISH 하는 예제](https://github.com/kyopark2014/iot-greengrass/blob/main/pubsub-ipc/publisher/artifacts/com.example.Publisher/1.0.0/example_publisher.py)입니다. 5초에 한번씩 메시지를 IoT Core로 전송합니다. 
+IPC로 [MQTT 메시지를 PUBLISH 하는 예제](https://github.com/kyopark2014/iot-greengrass/blob/main/pubsub-ipc/publisher/artifacts/com.example.Publisher/1.0.0/example_publisher.py)입니다. 5초에 한번씩 메시지를 다른 compnent들에게 전송합니다. 
 
 ```python
 # Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
