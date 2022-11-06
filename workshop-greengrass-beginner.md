@@ -26,7 +26,7 @@ curl -s https://d2s8p88vqu9w66.cloudfront.net/releases/greengrass-nucleus-latest
 unzip greengrass-nucleus-latest.zip -d GreengrassCore
 ```
 
-다운로드한 Greengrass에는 아래와 같은 파일들이 있습니다. 
+상기 명령어로 다운로드할 경우에 GreengrassCore 폴더에는 아래와 같은 파일들이 있습니다. 
 
 ![noname](https://user-images.githubusercontent.com/52392004/182630947-38690340-239d-43a6-b9a6-cfbfb1ce7a94.png)
 
