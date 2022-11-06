@@ -15,7 +15,7 @@ IoT의 데이터를 안전하게 모으고 제어하기 위하여 VPN 또는 Dir
 
 #### RunAs ggc_user or privileged account (root)
 
-Component들은 Necleus 또는 OS에 등록된 user에 의해 실행됩니다. 
+Component들은 Nucleus 또는 OS에 등록된 user에 의해 실행됩니다. 
 
 만약 향상된 privileges를 사용해야 할경우에는 RequiresPrivilege을 true로 설정합니다. 
 
