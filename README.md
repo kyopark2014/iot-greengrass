@@ -35,23 +35,13 @@ Greengrass의 Components들은 [IPC 통신](https://github.com/kyopark2014/iot-g
 
 [Docker 이미지를 이용](https://github.com/kyopark2014/iot-greengrass/blob/main/docker-component.md)하여 Component를 생성할 수 있습니다. 
 
-
-
 ### Credentials Provider Workflow
 
 [Credentials Provider Workflow](https://github.com/kyopark2014/iot-greengrass/blob/main/credentials-provider-workflow.md)
 
-## Greengrass Security
+### Greengrass Security
 
 [Security](https://github.com/kyopark2014/iot-greengrass/blob/main/security.md)에서는 Nucleus와 고정 IP 사용과 같은 Greengrass의 Security 이슈에 대해 설명합니다.  
-
-## Greengrass 계정 생성
-
-Greengrass 사용시 보안을 위하여 기능이 제한된 계정을 사용하여야 합니다. 이를 위해 [Greengrass를 위한 계정 등록](https://github.com/kyopark2014/iot-greengrass/blob/main/greengrass-user-registration.md)에 따라 계정을 생성합니다. 
-
-## Greengrass Commands와 Memo
-
-유용한 [Greengrass 명령어와 중요한 메모들](https://github.com/kyopark2014/iot-greengrass/blob/main/greengrass-commands.md)를 정리하였습니다.
 
 ### v2.0과 v1.0의 차이점 
 
@@ -63,6 +53,44 @@ Greengrass 사용시 보안을 위하여 기능이 제한된 계정을 사용하
 - Docker containers
 - Nucleus and component security
 - Operating system integration and interaction
+
+
+## Greengrass 실행
+
+### Greengrass 계정 생성
+
+Greengrass 사용시 보안을 위하여 기능이 제한된 계정을 사용하여야 합니다. 이를 위해 [Greengrass를 위한 계정 등록](https://github.com/kyopark2014/iot-greengrass/blob/main/greengrass-user-registration.md)에 따라 계정을 생성합니다. 
+
+### Greengrass 설치
+
+[Workshop Greengrass](https://github.com/kyopark2014/iot-greengrass/blob/main/workshop-greengrass-beginner.md)을 참조하여 아래와 같이 Greengrass를 설치할 수 있습니다. 
+
+1) Greengrass 다운로드합니다. 
+
+```java
+curl -s https://d2s8p88vqu9w66.cloudfront.net/releases/greengrass-nucleus-latest.zip > greengrass-nucleus-latest.zip 
+unzip greengrass-nucleus-latest.zip -d GreengrassCore
+```
+
+2)  IoT Core에 thing을 생성하고, greengrass에 등록합니다. thing-nam과 thing-group-name 용도에 맞게 설정하여야 합니다. 
+
+```java
+sudo -E java -Droot="/greengrass/v2" -Dlog.store=FILE -jar ./GreengrassCore/lib/Greengrass.jar \
+	--aws-region ap-northeast-2 \
+	--thing-name GreengrassCore-18163f7ac3e \
+	--thing-group-name GreengrassGroup \
+	--component-default-user ggc_user:ggc_group \
+	--provision true \
+	--setup-system-service true \
+	--deploy-dev-tools true
+```
+
+### Greengrass Commands와 Memo
+
+유용한 [Greengrass 명령어와 중요한 메모들](https://github.com/kyopark2014/iot-greengrass/blob/main/greengrass-commands.md)를 정리하였습니다.
+
+
+
 
 ## Greengress Workshop
 
