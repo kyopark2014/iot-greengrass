@@ -55,7 +55,7 @@ Greengrass의 Components들은 [IPC 통신](https://github.com/kyopark2014/iot-g
 - Operating system integration and interaction
 
 
-## Greengrass 실행
+## Greengrass Initialization
 
 ### Greengrass 계정 생성
 
