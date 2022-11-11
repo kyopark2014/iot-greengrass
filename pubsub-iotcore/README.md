@@ -57,41 +57,41 @@ while True:
 
 ```java
 {
-      "RecipeFormatVersion": "2020-01-25",
-      "ComponentName": "com.iotcore.Publisher",
-      "ComponentVersion": "1.0.0",
-      "ComponentDescription": "A component that publishes messages.",
-      "ComponentPublisher": "Amazon",
-      "ComponentConfiguration": {
-        "DefaultConfiguration": {
-          "accessControl": {
-            "aws.greengrass.ipc.mqttproxy": {
-              "com.iotcore.Publisher:mqttproxy:1": {
-                "policyDescription": "Allows access to publish to all AWS IoT Core topics.",
-                "operations": [
-                  "aws.greengrass#PublishToIoTCore"
-                ],
-                "resources": [
-                  "*"
-                ]
-              }
-            }
+  "RecipeFormatVersion": "2020-01-25",
+  "ComponentName": "com.iotcore.Publisher",
+  "ComponentVersion": "1.0.0",
+  "ComponentDescription": "A component that publishes messages.",
+  "ComponentPublisher": "Amazon",
+  "ComponentConfiguration": {
+    "DefaultConfiguration": {
+      "accessControl": {
+        "aws.greengrass.ipc.mqttproxy": {
+          "com.iotcore.Publisher:mqttproxy:1": {
+            "policyDescription": "Allows access to publish to all AWS IoT Core topics.",
+            "operations": [
+              "aws.greengrass#PublishToIoTCore"
+            ],
+            "resources": [
+              "*"
+            ]
           }
         }
-      },
-      "Manifests": [{
-        "Platform": {
-          "os": "linux"
-        },
-        "Lifecycle": {
-          "Install": {
-            "RequiresPrivilege": true,
-            "Script": "sudo pip3 install awsiotsdk"
-          },
-          "Run": "python3 {artifacts:path}/iotcore_publisher.py"
-        }
-      }]
+      }
     }
+  },
+  "Manifests": [{
+    "Platform": {
+      "os": "linux"
+    },
+    "Lifecycle": {
+      "Install": {
+        "RequiresPrivilege": true,
+        "Script": "sudo pip3 install awsiotsdk"
+      },
+      "Run": "python3 {artifacts:path}/iotcore_publisher.py"
+    }
+  }]
+}
 ```
 
 ## Subscribe To IoT Core
@@ -164,36 +164,36 @@ operation.close()
 
 ```java
 {
-    "RecipeFormatVersion": "2020-01-25",
-    "ComponentName": "com.iotcore.Subscriber",
-    "ComponentVersion": "1.0.0",
-    "ComponentDescription": "A component that subscribes to messages.",
-    "ComponentPublisher": "Amazon",
-    "ComponentConfiguration": {
-      "DefaultConfiguration": {
-        "accessControl": {
-          "aws.greengrass.ipc.mqttproxy": {
-            "com.iotcore.Subscriber:mqttproxy:1": {
-              "policyDescription": "Allows access to subscribe to all AWS IoT Core topics.",
-              "operations": [
-                "aws.greengrass#SubscribeToIoTCore"
-              ],
-              "resources": [
-                "*"
-              ]
-            }
+  "RecipeFormatVersion": "2020-01-25",
+  "ComponentName": "com.iotcore.Subscriber",
+  "ComponentVersion": "1.0.0",
+  "ComponentDescription": "A component that subscribes to messages.",
+  "ComponentPublisher": "Amazon",
+  "ComponentConfiguration": {
+    "DefaultConfiguration": {
+      "accessControl": {
+        "aws.greengrass.ipc.mqttproxy": {
+          "com.iotcore.Subscriber:mqttproxy:1": {
+            "policyDescription": "Allows access to subscribe to all AWS IoT Core topics.",
+            "operations": [
+              "aws.greengrass#SubscribeToIoTCore"
+            ],
+            "resources": [
+              "*"
+            ]
           }
         }
       }
-    },
-    "Manifests": [
-      {
-        "Lifecycle": {
-          "Install": "pip3 install awsiotsdk",
-          "Run": "python3 -u {artifacts:path}/iotcore_subscriber.py"
-        }
+    }
+  },
+  "Manifests": [
+    {
+      "Lifecycle": {
+        "Install": "pip3 install awsiotsdk",
+        "Run": "python3 -u {artifacts:path}/iotcore_subscriber.py"
       }
-    ]
+    }
+  ]
 }
 ```  
 
