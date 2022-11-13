@@ -2,7 +2,7 @@
 
 ### Greengrass installation 
 
-[Workshop Greengrass](https://github.com/kyopark2014/iot-greengrass/blob/main/workshop-greengrass-beginner.md)을 참조하여 아래와 같이 Greengrass를 설치할 수 있습니다. 
+아래와 같이 Greengrass를 설치할 수 있습니다. 
 
 1) Greengrass 다운로드합니다. 
 
