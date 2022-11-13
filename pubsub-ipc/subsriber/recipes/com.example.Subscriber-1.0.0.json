@@ -9,7 +9,7 @@
         "accessControl": {
           "aws.greengrass.ipc.pubsub": {
             "com.example.Subscriber:pubsub:1": {
-              "policyDescription": "Allows access to publish to all topics.",
+              "policyDescription": "Allows access to subscribe to all topics.",
               "operations": [
                 "aws.greengrass#SubscribeToTopic"
               ],
