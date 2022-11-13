@@ -1,4 +1,4 @@
-# Greengrass Preperation
+# Greengrass Preparation
 
 ### Greengrass installation 
 
