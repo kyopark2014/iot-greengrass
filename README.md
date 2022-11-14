@@ -112,7 +112,7 @@ Greengrass 사용시 보안을 위하여 기능이 제한된 계정을 사용하
 
 ### Greengrass 설치
 
-[greengrass-installation](https://github.com/kyopark2014/iot-greengrass/blob/main/preparation.md#greengrass-installation)에 따라 greengrass 디바이스에 greengrass를 설치하고 core device로 등록합니다.
+[Greengrass Preparation](https://github.com/kyopark2014/iot-greengrass/blob/main/greengrass-commands.md#greengrass-preparation)에 따라 greengrass 디바이스에 greengrass를 설치하고 core device로 등록합니다.
 
 ### Greengrass Commands와 Memo
 
