@@ -22,7 +22,7 @@ sudo -E java -Droot="/greengrass/v2" -Dlog.store=FILE -jar ./GreengrassCore/lib/
 	--deploy-dev-tools true
 ```
 
-## Commends
+## Commands
 
 - Greengrass-cli 버전 확인 
 
