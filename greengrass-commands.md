@@ -22,6 +22,16 @@ sudo -E java -Droot="/greengrass/v2" -Dlog.store=FILE -jar ./GreengrassCore/lib/
 	--deploy-dev-tools true
 ```
 
+## Docker Container
+
+- Docker Group User 등록
+
+아래와 같이 Docker 이미지를 구동하기 위하여 ggc_user에 docker를 추가합니다.
+
+```java
+sudo usermod -aG docker ggc_user
+```
+
 ## Commands
 
 - Greengrass-cli 버전 확인 
