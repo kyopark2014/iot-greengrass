@@ -22,6 +22,8 @@ sudo -E java -Droot="/greengrass/v2" -Dlog.store=FILE -jar ./GreengrassCore/lib/
 	--deploy-dev-tools true
 ```
 
+## Commends
+
 - Greengrass-cli 버전 확인 
 
 ```java
@@ -29,7 +31,7 @@ $ /greengrass/v2/bin/greengrass-cli -V
 Greengrass CLI Version: 2.5.6
 ```
 
-## Commends
+
 
 - Component 리스트 확인하기 
 
