@@ -1,5 +1,7 @@
 # Greengrass 명령어와 중요한 메모들
 
+## Greengrass Preparation
+
 - Greengrass installer 다운로드
 
 ```java
@@ -26,6 +28,8 @@ sudo -E java -Droot="/greengrass/v2" -Dlog.store=FILE -jar ./GreengrassCore/lib/
 $ /greengrass/v2/bin/greengrass-cli -V
 Greengrass CLI Version: 2.5.6
 ```
+
+## Commends
 
 - Component 리스트 확인하기 
 
