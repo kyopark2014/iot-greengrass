@@ -11,13 +11,13 @@ unzip greengrass-nucleus-latest.zip -d GreengrassCore
 
 ```java
 sudo -E java -Droot="/greengrass/v2" -Dlog.store=FILE -jar ./GreengrassCore/lib/Greengrass.jar \
---aws-region ap-northeast-2 \
---thing-name GreengrassQuickStartCore-1815d42ba73 \
---thing-group-name GreengrassQuickStartGroup \
---component-default-user ggc_user:ggc_group \
---provision true \
---setup-system-service true \
---deploy-dev-tools true
+	--aws-region ap-northeast-2 \
+	--thing-name GreengrassCore-18163f7ac3e \
+	--thing-group-name GreengrassGroup \
+	--component-default-user ggc_user:ggc_group \
+	--provision true \
+	--setup-system-service true \
+	--deploy-dev-tools true
 ```
 
 - Greengrass-cli 버전 확인 
