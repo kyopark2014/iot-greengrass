@@ -37,7 +37,7 @@ sudo usermod -aG docker ggc_user
 - Greengrass-cli 버전 확인 
 
 ```java
-$ /greengrass/v2/bin/greengrass-cli -V
+/greengrass/v2/bin/greengrass-cli -V
 Greengrass CLI Version: 2.5.6
 ```
 
@@ -46,7 +46,7 @@ Greengrass CLI Version: 2.5.6
 - Component 리스트 확인하기 
 
 ```java
-$ sudo /greengrass/v2/bin/greengrass-cli component list
+sudo /greengrass/v2/bin/greengrass-cli component list
 ```
 
 - 배포를 위한 Bucket에 파일 복사
@@ -59,7 +59,7 @@ aws s3 cp --recursive ~/GGv2Dev/ s3://$MYBUCKET
 - Local 배포전 Greengrass 서버에 component 등록 
 
 ```java
-$ aws greengrassv2 create-component-version  \
+aws greengrassv2 create-component-version  \
 --inline-recipe fileb://com.example.HelloMqtt-1.0.0.json \
 --region $AWS_DEFAULT_REGION
 ```
@@ -67,7 +67,7 @@ $ aws greengrassv2 create-component-version  \
 - S3를 이용한 배포전에 Greengrass에 component 등록 
 
 ```java
-$ sudo /greengrass/v2/bin/greengrass-cli deployment create \
+sudo /greengrass/v2/bin/greengrass-cli deployment create \
   --recipeDir ~/GGv2Dev/recipes \
   --artifactDir ~/GGv2Dev/artifacts \
   --merge "com.example.HelloMqtt=1.0.0"
@@ -76,25 +76,25 @@ $ sudo /greengrass/v2/bin/greengrass-cli deployment create \
 - Greengree 로그 확인 
 
 ```java
-$ sudo tail -f /greengrass/v2/logs/greengrass.log
+sudo tail -f /greengrass/v2/logs/greengrass.log
 ```
 
 - Component 로그 확인 
 
 ```java
-$ sudo tail -f /greengrass/v2/logs/com.example.HelloMqtt.log
+sudo tail -f /greengrass/v2/logs/com.example.HelloMqtt.log
 ```
 
 - Component 재시작 
 
 ```java
-$ sudo /greengrass/v2/bin/greengrass-cli component restart --names "com.example.HelloWorld"
+sudo /greengrass/v2/bin/greengrass-cli component restart --names "com.example.HelloWorld"
 ```
 
 - Component 삭제 
 
 ```java
-$ sudo /greengrass/v2/bin/greengrass-cli deployment create --remove="com.example.HelloMqtt"
+sudo /greengrass/v2/bin/greengrass-cli deployment create --remove="com.example.HelloMqtt"
 ```
 
 
