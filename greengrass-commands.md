@@ -32,45 +32,6 @@ sudo -E java -Droot="/greengrass/v2" -Dlog.store=FILE -jar ./GreengrassCore/lib/
 sudo usermod -aG docker ggc_user
 ```
 
-## Basic Docker Commends
-
-- Docker 소스로 이미지를 빌드합니다. 
-
-```java
-docker build -t example:v1 .
-```
-
-- 빌드된 이미지를 확인합니다. 
-
-```java
-docker images
-```
-
-- Docker를 실행합니다. 
-
-```java
-docker run -d -p 8080:8080 inference:v1
-```
-
-
-- Docker의 실행된 container 정보를 확인합니다. 
-
-```java
-docker ps
-
-CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS         PORTS                    NAMES
-41e297948511   inference:v1   "/lambda-entrypoint.…"   6 seconds ago   Up 4 seconds   0.0.0.0:8080->8080/tcp   stupefied_carson
-```
-
-- Bash shell로 접속합니다.
-
-```java
-docker exec -it  41e297948511 /bin/bash
-```
-
-
-
-
 ## Commands
 
 - Greengrass-cli 버전 확인 
@@ -227,4 +188,43 @@ sudo systemctl restart greengrass.service
 	}]
 }
 ```
+
+
+## Basic Docker Commends
+
+- Docker 소스로 이미지를 빌드합니다. 
+
+```java
+docker build -t example:v1 .
+```
+
+- 빌드된 이미지를 확인합니다. 
+
+```java
+docker images
+```
+
+- Docker를 실행합니다. 
+
+```java
+docker run -d -p 8080:8080 inference:v1
+```
+
+
+- Docker의 실행된 container 정보를 확인합니다. 
+
+```java
+docker ps
+
+CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS         PORTS                    NAMES
+41e297948511   inference:v1   "/lambda-entrypoint.…"   6 seconds ago   Up 4 seconds   0.0.0.0:8080->8080/tcp   stupefied_carson
+```
+
+- Bash shell로 접속합니다.
+
+```java
+docker exec -it  41e297948511 /bin/bash
+```
+
+
 
