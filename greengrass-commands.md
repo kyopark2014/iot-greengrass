@@ -34,7 +34,7 @@ sudo usermod -aG docker ggc_user
 
 ## Inference Image Debugging
 
-Docker 이미지에 설치된 라이브러리 버전등이 학습 환경과 다른 경우에, 정상적으로 동작하지 않을수 있습니다. 이를 확인하려면, 인프라를 설치(Deploy)한 후에 로그를 통해 확인하여야 하는데, 반복적으로 인프라를 설치하면서 디버깅하는 과정은 시간을 많이 소모합니다. 아래에서는 docker 이미지에서 직접 테스트하는 방법을 보여주고 있습니다. 
+[AWS Lambda에서 XGBoost 머신러닝(ML) 구현하기](https://github.com/kyopark2014/lambda-with-ML-container/blob/main/README.md)와 같이, Docker 이미지에 설치된 ML 라이브러리 버전등이 학습 환경과 다른 경우에, 정상적으로 동작하지 않을수 있습니다. 이를 확인하려면, 인프라를 설치(Deploy)한 후에 로그를 통해 확인하여야 하는데, 반복적으로 인프라를 설치하면서 디버깅하는 과정은 시간을 많이 소모합니다. 아래에서는 docker 이미지에서 직접 테스트하는 방법을 보여주고 있습니다. 
 
 Docker 소스로 이동하여 이미지를 빌드합니다. 
 
