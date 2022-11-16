@@ -207,7 +207,7 @@ docker images
 - Docker를 실행합니다. 
 
 ```java
-docker run -d -p 8080:8080 inference:v1
+docker run -d -p 8080:8080 example:v1
 ```
 
 
@@ -217,7 +217,7 @@ docker run -d -p 8080:8080 inference:v1
 docker ps
 
 CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS         PORTS                    NAMES
-41e297948511   inference:v1   "/lambda-entrypoint.…"   6 seconds ago   Up 4 seconds   0.0.0.0:8080->8080/tcp   stupefied_carson
+41e297948511   example:v1   "/lambda-entrypoint.…"   6 seconds ago   Up 4 seconds   0.0.0.0:8080->8080/tcp   stupefied_carson
 ```
 
 - Bash shell로 접속합니다.
