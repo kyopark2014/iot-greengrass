@@ -38,6 +38,15 @@ Component는 여러개의 artifacts를 가질수 있습니다. Artifacts에는 �
         },
         {
           "URI": "s3://DOC-EXAMPLE-BUCKET/hello_world_linux.py"
+        },
+        {
+          "URI": "docker:public.ecr.aws/cloudwatch-agent/cloudwatch-agent:latest"
+        },
+        {
+          "URI": "docker:mysql:8.0"
+        },
+        {
+          "URI": "s3://DOC-EXAMPLE-BUCKET/folder/docker-compose.yaml"
         }
       ]
 ```
