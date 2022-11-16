@@ -30,7 +30,7 @@ Component는 여러개의 artifacts를 가질수 있습니다. Artifacts에는 �
 ```java
       "Artifacts": [
         {
-          "URI": "${'s3://[bucketName]/artifacts/com.example.consumer/1.0.0/consumer.py"
+          "URI": "s3://DOC-EXAMPLE-BUCKET/artifacts/com.example.MyDockerComponent/1.0.0/hello-world.tar"
         },
         {
           "URI": "s3://DOC-EXAMPLE-BUCKET/hello_world.zip",
