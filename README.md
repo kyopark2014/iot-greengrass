@@ -81,7 +81,12 @@ Component가 IPC 통신으로 iotMqttClient service로 메시지를 보내면, �
 
 ### Lambda Component
 
-[Lambda를 Component로 등록](https://github.com/kyopark2014/iot-greengrass/blob/main/lambda.md)하여 사용할 수 있습니다. 
+- [Lambda Basic](https://github.com/kyopark2014/iot-greengrass/blob/main/lambda.md)에서는 Greengrass의 Lambda 기능에 대해 설명합니다.
+
+- [Console에서 Lambda 생성하기](https://github.com/kyopark2014/iot-greengrass/tree/main/lambda)에서는 AWS Console에서 Greengrass Lambda를 
+생성하는 
+생성하는 방법에 
+
 
 [CDK로 Lambda component 배포하기](https://github.com/kyopark2014/iot-greengrass-with-lambda-component)에서는 CDK로 Lambda 및 Local Component를 배포할 수 있습니다. 
 
