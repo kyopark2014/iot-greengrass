@@ -74,15 +74,23 @@ Component가 IPC 통신으로 iotMqttClient service로 메시지를 보내면, �
   }
   ```
 
+### Local Component
+
+[CDK로 IPC Client V2 배포하기](https://github.com/kyopark2014/iot-greengrass-with-ipc-client-v2)에서는 CDK로 Greengrass에서 IPC Client V2를 배포하는 방법에 대해 설명합니다. 
+
 
 ### Lambda Component
 
 [Lambda를 Component로 등록](https://github.com/kyopark2014/iot-greengrass/blob/main/lambda.md)하여 사용할 수 있습니다. 
 
+[CDK로 Lambda component 배포하기](https://github.com/kyopark2014/iot-greengrass-with-lambda-component)에서는 CDK로 Lambda 및 Local Component를 배포할 수 있습니다. 
 
-### Docker Component
+### Container Component
 
 [Docker 이미지를 이용](https://github.com/kyopark2014/iot-greengrass/blob/main/docker-component.md)하여 Component를 생성할 수 있습니다. 
+
+[CDK로 Container Conmponent 배포하기](https://github.com/kyopark2014/iot-greengrass-with-container-component/blob/main/README.md)는 Greengrass에 Docker 환경을 구성하고 Component를 구성하는 방법에 대해 설명합니다. 
+
 
 ### Credentials Provider Workflow
 
