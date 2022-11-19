@@ -11,11 +11,11 @@ Lambda component는 독립적으로 greengrass에서 정의되는것이 아니�
 
 1) Lambda 함수에 있는 코드를 써야 하는 경우 
 
-You have application code in Lambda functions that you want to deploy to core devices.
+Greengrass 디바이스에서 AWS Lambda를 사용할 수 있게 하여 줌으로써, 온라인/오프라인 관계없이 항상 Lambda 함수를 사용할 수 있게 되며, 비용 절감에도 효과가 있습니다. 
 
 2) Greengrass V1으로 개발한 App을 V2에서 사용하고 싶은 경우
 
-You have AWS IoT Greengrass V1 applications that you want to run on AWS IoT Greengrass V2 core devices.
+Greengrass V1으로 개발된 Connector를 Greengrass V2에서 실행할 수 있습니다. 
 
 ## Dependencies
 
