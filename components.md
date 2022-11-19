@@ -28,27 +28,27 @@ Greengrass component는 Greengrass core device를 설치(deploy)하는 소프트
 Component는 여러개의 artifacts를 가질수 있습니다. Artifacts에는 스크립트, 컴파일된 코드, 정적 리소스 등이 포함합니다. Component는 종속적으로 관계를 가지고 있는 다른 component의 artifacts도 사용할 수 있습니다. 
 
 ```java
-      "Artifacts": [
-        {
-          "URI": "s3://DOC-EXAMPLE-BUCKET/artifacts/com.example.MyDockerComponent/1.0.0/hello-world.tar"
-        },
-        {
-          "URI": "s3://DOC-EXAMPLE-BUCKET/hello_world.zip",
-          "Unarchive": "ZIP"
-        },
-        {
-          "URI": "s3://DOC-EXAMPLE-BUCKET/hello_world_linux.py"
-        },
-        {
-          "URI": "docker:public.ecr.aws/cloudwatch-agent/cloudwatch-agent:latest"
-        },
-        {
-          "URI": "docker:mysql:8.0"
-        },
-        {
-          "URI": "s3://DOC-EXAMPLE-BUCKET/folder/docker-compose.yaml"
-        }
-      ]
+"Artifacts": [
+  {
+    "URI": "s3://DOC-EXAMPLE-BUCKET/artifacts/com.example.MyDockerComponent/1.0.0/hello-world.tar"
+  },
+  {
+    "URI": "s3://DOC-EXAMPLE-BUCKET/hello_world.zip",
+    "Unarchive": "ZIP"
+  },
+  {
+    "URI": "s3://DOC-EXAMPLE-BUCKET/hello_world_linux.py"
+  },
+  {
+    "URI": "docker:public.ecr.aws/cloudwatch-agent/cloudwatch-agent:latest"
+  },
+  {
+    "URI": "docker:mysql:8.0"
+  },
+  {
+    "URI": "s3://DOC-EXAMPLE-BUCKET/folder/docker-compose.yaml"
+  }
+]
 ```
 
 ## Component types
