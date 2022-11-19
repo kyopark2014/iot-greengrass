@@ -10,7 +10,7 @@ Greengrass V1.x에서는 Docker connector를 이용하였고 V2.0에서는 Compo
 
 Greengrass에서 Docker Container를 Component이용하기 위해서는 아래와 같은 설정이 필요합니다. 
 
-Greengrass 디바이스에 접속하여 아래와 같이 사용자를 doker user group에 추가하여야 합니다. 
+Greengrass 디바이스에 접속하여 아래와 같이 사용자를 docker user group에 추가하여야 합니다. 
 
 ```java
 sudo usermod -aG docker ggc_user
