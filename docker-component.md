@@ -4,7 +4,7 @@
 
 ![image](https://user-images.githubusercontent.com/52392004/181383024-b5a23ef4-8b56-4d41-b4c9-6d7256c02081.png)
 
-Greengrass V1.x에서는 Docker connector를 이용하였고 V2.0에서는 Component의 Recipy의 environment variable에 정의된 registry에서 Docker Component를 생성하게 됩니다. 
+Greengrass V1.x에서는 Docker connector를 이용하였고 V2.0에서는 Component의 Recipe의 environment variable에 정의된 registry에서 Docker Component를 생성하게 됩니다. 
 
 ## Docker Container Preparation
 
