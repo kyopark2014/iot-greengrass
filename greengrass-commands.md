@@ -30,13 +30,7 @@ Cloud9으로 개발환경을 구성시에는 [Cloud9을 Greengrass 디바이스�
 
 ## Docker Container
 
-- Docker Group User 등록
-
-아래와 같이 Docker 이미지를 구동하기 위하여 ggc_user에 docker를 추가합니다.
-
-```java
-sudo usermod -aG docker ggc_user
-```
+[Docker Container 준비](https://github.com/kyopark2014/iot-greengrass/blob/main/docker-component.md#docker-container-preparation)에 따라 greengrass를 docker user group에 등록하고, ECR 퍼미션을 부여합니다. 
 
 ## Commands
 
