@@ -2,9 +2,9 @@
 
 ## Greengrass Preparation
 
-아래와 같이 Greengrass를 다운로드합니다.
-
 - Greengrass installer 다운로드
+
+아래와 같이 Greengrass를 다운로드합니다.
 
 ```java
 curl -s https://d2s8p88vqu9w66.cloudfront.net/releases/greengrass-nucleus-latest.zip > greengrass-nucleus-latest.zip
