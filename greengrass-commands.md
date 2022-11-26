@@ -22,6 +22,8 @@ sudo -E java -Droot="/greengrass/v2" -Dlog.store=FILE -jar ./GreengrassCore/lib/
 	--deploy-dev-tools true
 ```
 
+Cloud9으로 개발환경을 구성시에는 [Cloud9을 Greengrass 디바이스로 사용하기](https://github.com/kyopark2014/iot-greengrass/blob/main/cloud9.md)을 참조합니다. 
+
 ## Docker Container
 
 - Docker Group User 등록
