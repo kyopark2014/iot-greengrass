@@ -6,7 +6,7 @@ Cloud9은 브라우저만으로 코드를 작성, 실행 및 디버깅할 수 �
 
 [Cloud9 Console](https://ap-northeast-2.console.aws.amazon.com/cloud9control/home?region=ap-northeast-2#/create)에서 아래와 같이 [Name]을 입력합니다.
 
-![image](https://user-images.githubusercontent.com/52392004/204112451-19162601-e8b7-45c9-a5fa-e5443ac0a7e3.png)
+![noname](https://user-images.githubusercontent.com/52392004/204112727-f14df4fc-830f-4c58-b229-8adda848a7c0.png)
 
 [Instance type]은 어떤 type이라도 관련없으나 여기서는 편의상 m5.large를 선택하였습니다. Platform은 "Ubuntu Server 18.04 LTS"을 선택합니다. 
 
