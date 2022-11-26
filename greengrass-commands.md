@@ -2,6 +2,8 @@
 
 ## Greengrass Preparation
 
+아래와 같이 Greengrass를 다운로드합니다.
+
 - Greengrass installer 다운로드
 
 ```java
@@ -10,6 +12,8 @@ unzip greengrass-nucleus-latest.zip -d GreengrassCore
 ```
 
 - Greengrass 설치 
+
+아래와 같이 Greengrass 디바이스를 IoT Core Device로 등록할 수 있습니다. 여기서 디바이스 이름은 "GreengrassCore-18163f7ac3e"으로 하였습니다. 여러개의 디바이스를 사용시에는 다른 이름을 사용하여야 합니다. 
 
 ```java
 sudo -E java -Droot="/greengrass/v2" -Dlog.store=FILE -jar ./GreengrassCore/lib/Greengrass.jar \
