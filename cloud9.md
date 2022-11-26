@@ -18,7 +18,11 @@ Cloud9은 브라우저만으로 코드를 작성, 실행 및 디버깅할 수 �
 
 ### Greengrass installer 다운로드
 
-Cloud9을 오픈하고 터미널을 열어서, 아래와 같이 Greengrass를 다운로드 합니다. 
+Cloud9을 오픈하고 터미널을 실행합니다.
+
+![noname](https://user-images.githubusercontent.com/52392004/204112636-de69a319-86d8-4199-91ff-1ff9fa1871b8.png)
+
+아래와 같이 Greengrass를 다운로드 합니다. 
 
 ```java
 curl -s https://d2s8p88vqu9w66.cloudfront.net/releases/greengrass-nucleus-latest.zip > greengrass-nucleus-latest.zip
@@ -40,4 +44,7 @@ sudo -E java -Droot="/greengrass/v2" -Dlog.store=FILE -jar ./GreengrassCore/lib/
 	--deploy-dev-tools true
 ```
 
-설치가 다 완료가 되면, 
+설치가 다 완료가 되면, [Greengrass Console](https://ap-northeast-2.console.aws.amazon.com/iot/home?region=ap-northeast-2#/greengrass/v2/cores)에서 아래와 같이 Greengrass core device로 "GreengrassCore-18163f7ac3e"가 등록된것을 알 수 있습니다.
+
+![noname](https://user-images.githubusercontent.com/52392004/204112707-7d82e8dd-4e30-4c24-9e77-c64f42995a76.png)
+
