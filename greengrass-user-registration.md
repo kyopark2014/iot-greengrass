@@ -1,5 +1,11 @@
 # Greengrass를 위한 계정 등록 
 
+먼저 아래 명령어로 account-id를 확인합니다.
+
+```java
+aws sts get-caller-identity --query Account --output text
+```
+
 IAM console에서 Create Policy를 선택하여 "aws-policy-greengrass"를 생성합니다. 
 
 https://us-east-1.console.aws.amazon.com/iamv2/home#/policies
